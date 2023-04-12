@@ -1,33 +1,51 @@
-import { useEffect } from 'preact/hooks';
+import { h } from 'preact';
+import { useEffect, useState } from 'preact/hooks';
 import RandomUser from './classes/RandomUser';
 import Card from './components/Card';
 import MainContainer from './components/MainContainer';
+import { type RandomUserResponse } from './classes/types';
 
 export function App() {
-  useEffect(() => {
-    const teste: RandomUser = new RandomUser({
-      results: 10,
-      seed: 'eita',
-      page: 3,
-      nat: ['br', 'fr'],
-      inc: ['name'],
-      exc: ['gender'],
+  const [users, setUsers] = useState<RandomUserResponse>();
+  const [isUpdating, setIsUpdating] = useState<boolean>(true);
+
+  const retriveUsers = async () => {
+    setIsUpdating(true);
+
+    const data: RandomUser = new RandomUser({
+      results: 7,
+      format: 'json',
+      nat: ['br'],
     });
-    teste
+
+    data
       .retrieve()
       .then((response) => {
-        console.log(response);
+        setUsers(response as RandomUserResponse);
       })
       .catch((error) => {
         console.error(error);
+      })
+      .finally(() => {
+        setIsUpdating(false);
       });
+  };
+
+  useEffect(() => {
+    retriveUsers();
   }, []);
 
   return (
     <MainContainer>
-      <Card key="0" testId="card">
-        Dados
-      </Card>
+      <button onClick={retriveUsers} disabled={isUpdating}>
+        Atualizar
+      </button>
+      {users?.results.length &&
+        users.results.map((el, i) => (
+          <Card key={`${i}_${Date.now()}`} id={`user_card_${i}`} testId={`test_user_card_${i}`}>
+            {[el.name.title, el.name.first, el.name.last].join(' ')}
+          </Card>
+        ))}
     </MainContainer>
   );
 }

@@ -14,6 +14,9 @@
       },
       "env": {
         "vitest-globals/env": true
+      },
+      "rules": {
+        "@typescript-eslint/no-floating-promises": "off"
       }
     }
   ],
