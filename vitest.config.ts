@@ -9,8 +9,7 @@ export default defineConfig({
     globals: true,
     environment: 'happy-dom',
     setupFiles: ['./src/__test__/test-setup.ts'],
-    includeSource: ['src/**/*.{ts,tsx}'],
-    exclude: ['src/__test__'],
+    includeSource: ['./src/**/*.{ts,tsx}'],
     coverage: {
       reporter: ['json-summary', 'text'],
       exclude: [
