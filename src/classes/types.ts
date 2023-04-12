@@ -1,5 +1,10 @@
 // https://randomuser.me/documentation
 
+export type Password = {
+  charSets?: Array<'special' | 'upper' | 'lower' | 'number'>;
+  length?: string;
+};
+
 export type Fields =
   | 'gender'
   | 'name'
@@ -15,11 +20,11 @@ export type Fields =
   | 'nat';
 
 export type Nationalities = {
-  '1.0'?: 'AU' | 'BR' | 'CA' | 'CH' | 'DE' | 'DK' | 'ES' | 'FI' | 'FR' | 'GB' | 'IE' | 'IR' | 'NL' | 'NZ' | 'TR' | 'US';
+  '1.0'?: 'au' | 'br' | 'ca' | 'ch' | 'de' | 'dk' | 'es' | 'fi' | 'fr' | 'gb' | 'ie' | 'ir' | 'nl' | 'nz' | 'tr' | 'us';
   '1.1'?: Nationalities['1.0'];
-  '1.2'?: Nationalities['1.0'] | 'NO';
+  '1.2'?: Nationalities['1.0'] | 'no';
   '1.3'?: Nationalities['1.2'];
-  '1.4'?: Nationalities['1.2'] | 'IN' | 'IR' | 'MX' | 'NL' | 'NZ' | 'RS' | 'TR' | 'UA' | 'US';
+  '1.4'?: Nationalities['1.2'] | 'in' | 'ir' | 'mx' | 'nl' | 'nz' | 'rs' | 'tr' | 'ua' | 'us';
 };
 
 export type User = {
@@ -100,10 +105,11 @@ export type RandomUserProps = {
     version: '1.0' | '1.1' | '1.2' | '1.3' | '1.4';
     results?: number;
     gender?: 'male' | 'female';
-    password?: string;
+    password?: Password;
     seed?: string;
-    nat?: Nationalities[RandomUserProps['props']['version']];
+    nat?: Array<Nationalities[RandomUserProps['props']['version']]>;
     page?: number;
-    inc?: Fields;
+    inc?: Fields[];
+    exc?: Fields[];
   };
 };

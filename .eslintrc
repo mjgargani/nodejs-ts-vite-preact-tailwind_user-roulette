@@ -3,13 +3,17 @@
     "browser": true,
     "es2021": true
   },
-  "extends": ["eslint:recommended", "preact", "xo"],
+  "plugins": ["vitest", "@typescript-eslint"],
+  "extends": ["plugin:vitest/recommended", "plugin:vitest-globals/recommended", "eslint:recommended", "preact", "xo"],
   "overrides": [
     {
       "extends": ["xo-typescript", "prettier"],
       "files": ["*.ts", "*.tsx"],
       "parserOptions": {
         "project": ["./tsconfig.json"]
+      },
+      "env": {
+        "vitest-globals/env": true
       }
     }
   ],
