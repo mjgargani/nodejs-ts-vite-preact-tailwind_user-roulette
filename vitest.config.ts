@@ -12,6 +12,11 @@ export default defineConfig({
     includeSource: ['src/**/*.{ts,tsx}'],
     coverage: {
       reporter: ['json-summary', 'text'],
+      exclude: [
+        'src/**/*d.ts',
+        'src/index.tsx',
+        'src/**/types.ts',
+      ],
     },
     mockReset: true,
     restoreMocks: true,
