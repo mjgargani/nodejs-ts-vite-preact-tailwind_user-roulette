@@ -5,3 +5,4 @@ npx tsc
 npm run lint:fix
 npm run format
 npm run test:no-watch
+git add .
