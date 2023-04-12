@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "test": "vitest watch",
     "test:no-watch": "vitest run",
-    "test:coverage": "vitest run --coverage",
+    "test:coverage": "npm run test:no-watch -- --coverage",
+    "test:badges": "npm run test:coverage && jest-coverage-badges --output './badges'",
     "lint": "eslint . --ext .ts,.tsx",
     "lint:fix": "eslint --fix 'src/**/*.{ts,tsx}'",
     "format": "prettier --write 'src/**/*.{ts,tsx,css,md,json}'"
@@ -26,6 +27,7 @@
     "eslint-plugin-vitest-globals": "^1.3.1",
     "happy-dom": "^9.2.1",
     "i": "^0.3.7",
+    "jest-coverage-badges": "^1.1.2",
     "prettier": "^2.8.7",
     "typescript": "^4.9.3",
     "vite": "^4.2.0",
