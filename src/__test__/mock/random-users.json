@@ -26,29 +26,12 @@
         }
       },
       "email": "heldo.campos@example.com",
-      "login": {
-        "uuid": "71deeadb-1d62-402a-aafa-2645bbafb318",
-        "username": "whitemouse262",
-        "password": "nokia",
-        "salt": "gYAlckP3",
-        "md5": "02453332b76c44d3df149c61cdf7780b",
-        "sha1": "863be27edf50cbd108a1ad1d370b48c25c1b2a70",
-        "sha256": "92b7b11044f3d38288658e2fa8830a24fc5c718f70e4fd6b898ddef4efa5c186"
-      },
       "dob": {
         "date": "1968-03-29T05:26:03.876Z",
         "age": 55
       },
-      "registered": {
-        "date": "2008-05-04T19:25:42.326Z",
-        "age": 14
-      },
       "phone": "(77) 6972-0550",
       "cell": "(63) 8842-4673",
-      "id": {
-        "name": "CPF",
-        "value": "877.348.307-98"
-      },
       "picture": {
         "large": "https://randomuser.me/api/portraits/men/35.jpg",
         "medium": "https://randomuser.me/api/portraits/med/men/35.jpg",
@@ -82,29 +65,12 @@
         }
       },
       "email": "celma.lima@example.com",
-      "login": {
-        "uuid": "96dd637a-b5db-4c46-850b-fdf82874787c",
-        "username": "smalltiger904",
-        "password": "ariana",
-        "salt": "Tc8mtx2v",
-        "md5": "0dedb0fe7089d0f61652d56965bfdc37",
-        "sha1": "0193f67c3cc8853ba24f191518eba810a569b474",
-        "sha256": "1fd00c131f1ef5e3dda55228ea0cac2527979cf8cf5744b6e03f13b51982525b"
-      },
       "dob": {
         "date": "1964-06-01T07:39:53.612Z",
         "age": 58
       },
-      "registered": {
-        "date": "2013-10-02T00:18:11.943Z",
-        "age": 9
-      },
       "phone": "(38) 5355-4654",
       "cell": "(79) 8717-2896",
-      "id": {
-        "name": "CPF",
-        "value": "485.427.769-52"
-      },
       "picture": {
         "large": "https://randomuser.me/api/portraits/women/39.jpg",
         "medium": "https://randomuser.me/api/portraits/med/women/39.jpg",
@@ -138,29 +104,12 @@
         }
       },
       "email": "heber.pinto@example.com",
-      "login": {
-        "uuid": "0f356d51-dee5-4965-9858-96996bfcb2c4",
-        "username": "yellowdog647",
-        "password": "nova",
-        "salt": "eRYLHuZy",
-        "md5": "eeaaddf0c9a99be7fa2e64e0a1a405cb",
-        "sha1": "17e4ac168d7b03aa54cd6caa817540a1ac947c61",
-        "sha256": "2a4367d658964e04140db64ad2301d861df62906a5aaad5916c8800da6fb05bf"
-      },
       "dob": {
         "date": "1981-04-14T19:29:46.817Z",
         "age": 41
       },
-      "registered": {
-        "date": "2018-07-19T20:35:36.061Z",
-        "age": 4
-      },
       "phone": "(84) 2924-9621",
       "cell": "(03) 9222-7127",
-      "id": {
-        "name": "CPF",
-        "value": "541.341.326-62"
-      },
       "picture": {
         "large": "https://randomuser.me/api/portraits/men/51.jpg",
         "medium": "https://randomuser.me/api/portraits/med/men/51.jpg",
@@ -194,29 +143,12 @@
         }
       },
       "email": "neura.cardoso@example.com",
-      "login": {
-        "uuid": "b7d873cc-ae93-4167-870c-d8f1bd985d6a",
-        "username": "ticklishbird880",
-        "password": "sinner",
-        "salt": "0ibBJETo",
-        "md5": "f683f80a4f3a92db6ca504c3e8d71a45",
-        "sha1": "279a5b7c18b6aa4719ca1ca224c43b0c28a166b9",
-        "sha256": "e75cdde21363aa325bf06b037381e802d06fad12b44588a64ff40e7acce68476"
-      },
       "dob": {
         "date": "1994-04-01T07:42:50.801Z",
         "age": 29
       },
-      "registered": {
-        "date": "2019-11-21T06:15:05.856Z",
-        "age": 3
-      },
       "phone": "(82) 8808-4294",
       "cell": "(05) 7293-6792",
-      "id": {
-        "name": "CPF",
-        "value": "312.216.774-62"
-      },
       "picture": {
         "large": "https://randomuser.me/api/portraits/women/96.jpg",
         "medium": "https://randomuser.me/api/portraits/med/women/96.jpg",
@@ -250,29 +182,12 @@
         }
       },
       "email": "vanio.souza@example.com",
-      "login": {
-        "uuid": "9ac8d73f-47fa-4320-8f34-4c13b8715725",
-        "username": "organicbear517",
-        "password": "illusion",
-        "salt": "8lnx1nN8",
-        "md5": "ecf0f039deb80bcc5f7c6a89fbbd5884",
-        "sha1": "b7625194d60fd4fe221ca5e3b299736a6b523178",
-        "sha256": "d8ebd8f52caee8752ad38292d93e94e8966c31aa48bb966a339de7285b9cb268"
-      },
       "dob": {
         "date": "1989-12-14T21:35:35.872Z",
         "age": 33
       },
-      "registered": {
-        "date": "2010-08-31T05:35:51.398Z",
-        "age": 12
-      },
       "phone": "(13) 7136-8012",
       "cell": "(98) 2158-4193",
-      "id": {
-        "name": "CPF",
-        "value": "297.374.449-75"
-      },
       "picture": {
         "large": "https://randomuser.me/api/portraits/men/28.jpg",
         "medium": "https://randomuser.me/api/portraits/med/men/28.jpg",
@@ -306,29 +221,12 @@
         }
       },
       "email": "lucinda.freitas@example.com",
-      "login": {
-        "uuid": "a31db1a2-308a-40f2-8797-b3dd0ddefc4c",
-        "username": "purpledog313",
-        "password": "gigi",
-        "salt": "sTptagJt",
-        "md5": "9c4428f07ad444941aeadb5a90bb2deb",
-        "sha1": "4dab794f48ad8527ac89a2b459d31861a530b7d2",
-        "sha256": "eb112a1e58688406e4042e23119deb41b41cda04e171fcc7e30d62664286022d"
-      },
       "dob": {
         "date": "1956-12-02T20:36:17.203Z",
         "age": 66
       },
-      "registered": {
-        "date": "2012-12-09T03:48:12.310Z",
-        "age": 10
-      },
       "phone": "(38) 9753-1203",
       "cell": "(19) 6424-8358",
-      "id": {
-        "name": "CPF",
-        "value": "740.087.459-81"
-      },
       "picture": {
         "large": "https://randomuser.me/api/portraits/women/82.jpg",
         "medium": "https://randomuser.me/api/portraits/med/women/82.jpg",
@@ -362,29 +260,12 @@
         }
       },
       "email": "matio.gomes@example.com",
-      "login": {
-        "uuid": "d74f708b-4f5a-4bf4-8234-1acb6a403ff7",
-        "username": "heavyrabbit421",
-        "password": "1994",
-        "salt": "8jPlifuW",
-        "md5": "d23b7eac6d2bdf32b909e33e5185eec2",
-        "sha1": "fd4e142e2ea01f61962a180a6c8f5153cc23c6d4",
-        "sha256": "d1a789943499a700f7aabf4e2e943415bd63989005b5076bc75ea55e52d2bbf7"
-      },
       "dob": {
         "date": "1990-05-04T18:33:42.761Z",
         "age": 32
       },
-      "registered": {
-        "date": "2019-07-21T23:59:21.952Z",
-        "age": 3
-      },
       "phone": "(81) 4961-9416",
       "cell": "(93) 0582-9602",
-      "id": {
-        "name": "CPF",
-        "value": "382.518.647-18"
-      },
       "picture": {
         "large": "https://randomuser.me/api/portraits/men/41.jpg",
         "medium": "https://randomuser.me/api/portraits/med/men/41.jpg",

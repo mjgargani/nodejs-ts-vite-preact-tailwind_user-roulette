@@ -16,8 +16,10 @@ export function App() {
 
     const data: RandomUser = new RandomUser({
       results: 7,
+      seed: '123',
       format: 'json',
       nat: ['br'],
+      exc: ['login', 'registered', 'id'],
     });
 
     data
