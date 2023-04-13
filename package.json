@@ -17,14 +17,18 @@
     "husky": "husky install"
   },
   "dependencies": {
-    "preact": "^10.13.0"
+    "preact": "^10.13.0",
+    "remove": "^0.1.5"
   },
   "devDependencies": {
     "@preact/preset-vite": "^2.5.0",
     "@testing-library/preact": "^3.2.3",
+    "@types/enzyme": "^3.10.12",
     "@typescript-eslint/eslint-plugin": "^5.58.0",
     "@typescript-eslint/parser": "^5.58.0",
     "c8": "^7.13.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-preact-pure": "^4.1.0",
     "eslint": "^8.38.0",
     "eslint-config-preact": "^1.3.0",
     "eslint-config-prettier": "^8.8.0",
@@ -32,10 +36,13 @@
     "eslint-config-xo-typescript": "^0.57.0",
     "eslint-plugin-vitest": "^0.1.4",
     "eslint-plugin-vitest-globals": "^1.3.1",
-    "happy-dom": "^9.2.1",
     "husky": "^8.0.3",
     "jest-coverage-badges": "^1.1.2",
+    "jsdom": "^21.1.1",
+    "msw": "^1.2.1",
     "prettier": "^2.8.7",
+    "react": "npm:@preact/compat@^17.1.2",
+    "react-dom": "npm:@preact/compat@^17.1.2",
     "typescript": "^4.9.3",
     "vite": "^4.2.0",
     "vite-plugin-eslint": "^1.8.1",

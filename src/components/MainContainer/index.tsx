@@ -1,3 +1,5 @@
+import React from 'preact/compat';
+
 import type Preact from 'preact';
 import './styles.css';
 

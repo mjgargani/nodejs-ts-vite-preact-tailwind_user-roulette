@@ -42,7 +42,7 @@ export type User = {
     city: string;
     state: string;
     country: string;
-    postcode: string;
+    postcode: string | number;
     coordinates: {
       latitude: string;
       longitude: string;
@@ -81,7 +81,7 @@ export type User = {
     medium: string;
     thumbnail: string;
   };
-  nat: 'US';
+  nat: string;
 };
 
 export type RandomUserResponse = {

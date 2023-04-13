@@ -1,3 +1,5 @@
+import React from 'preact/compat';
+
 import { h } from 'preact';
 import { useEffect, useState } from 'preact/hooks';
 import RandomUser from './classes/RandomUser';
@@ -37,7 +39,7 @@ export function App() {
 
   return (
     <MainContainer>
-      <button onClick={retriveUsers} disabled={isUpdating}>
+      <button data-testid="test_update_btn" onClick={retriveUsers} disabled={isUpdating}>
         Atualizar
       </button>
       {users?.results.length &&

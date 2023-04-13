@@ -1,3 +1,5 @@
+import React from 'preact/compat';
+
 import { type h, type ComponentChildren } from 'preact';
 import './styles.css';
 
