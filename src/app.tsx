@@ -41,6 +41,7 @@ export function App() {
 
   return (
     <MainContainer>
+      <h1 className="text-3xl font-light underline">Hello world!</h1>
       <button data-testid="test_update_btn" onClick={retriveUsers} disabled={isUpdating}>
         Atualizar
       </button>

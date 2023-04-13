@@ -3,8 +3,15 @@
     "browser": true,
     "es2021": true
   },
-  "plugins": ["vitest", "@typescript-eslint"],
-  "extends": ["plugin:vitest/recommended", "plugin:vitest-globals/recommended", "eslint:recommended", "preact", "xo"],
+  "plugins": ["vitest", "@typescript-eslint", "tailwindcss"],
+  "extends": [
+    "plugin:vitest/recommended",
+    "plugin:vitest-globals/recommended",
+    "eslint:recommended",
+    "plugin:tailwindcss/recommended",
+    "preact",
+    "xo"
+  ],
   "overrides": [
     {
       "extends": ["xo-typescript", "prettier"],
