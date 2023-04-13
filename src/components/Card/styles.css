@@ -5,40 +5,40 @@
 #user_card_4,
 #user_card_5,
 #user_card_6 {
-  position: fixed;
+	position: fixed;
 }
 
 #user_card_0 {
-  top: 0;
-  left: 0;
+	top: 0;
+	left: 0;
 }
 
 #user_card_1 {
-  top: 12.5%;
-  left: 14%;
+	top: 12.5%;
+	left: 14%;
 }
 
 #user_card_2 {
-  top: 25%;
-  left: 28%;
+	top: 25%;
+	left: 28%;
 }
 
 #user_card_3 {
-  top: 37.5%;
-  left: 42%;
+	top: 37.5%;
+	left: 42%;
 }
 
 #user_card_4 {
-  top: 25%;
-  left: 56%;
+	top: 25%;
+	left: 56%;
 }
 
 #user_card_5 {
-  top: 12.5%;
-  left: 70%;
+	top: 12.5%;
+	left: 70%;
 }
 
 #user_card_6 {
-  top: 0;
-  left: 84%;
+	top: 0;
+	left: 84%;
 }

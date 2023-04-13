@@ -1,283 +1,283 @@
 {
-  "results": [
-    {
-      "gender": "male",
-      "name": {
-        "title": "Mr",
-        "first": "Heldo",
-        "last": "Campos"
-      },
-      "location": {
-        "street": {
-          "number": 9120,
-          "name": "Rua Três"
-        },
-        "city": "Parnaíba",
-        "state": "Roraima",
-        "country": "Brazil",
-        "postcode": 73921,
-        "coordinates": {
-          "latitude": "-74.8924",
-          "longitude": "-98.6155"
-        },
-        "timezone": {
-          "offset": "+8:00",
-          "description": "Beijing, Perth, Singapore, Hong Kong"
-        }
-      },
-      "email": "heldo.campos@example.com",
-      "dob": {
-        "date": "1968-03-29T05:26:03.876Z",
-        "age": 55
-      },
-      "phone": "(77) 6972-0550",
-      "cell": "(63) 8842-4673",
-      "picture": {
-        "large": "https://randomuser.me/api/portraits/men/35.jpg",
-        "medium": "https://randomuser.me/api/portraits/med/men/35.jpg",
-        "thumbnail": "https://randomuser.me/api/portraits/thumb/men/35.jpg"
-      },
-      "nat": "BR"
-    },
-    {
-      "gender": "female",
-      "name": {
-        "title": "Mrs",
-        "first": "Celma",
-        "last": "Lima"
-      },
-      "location": {
-        "street": {
-          "number": 4744,
-          "name": "Rua Principal"
-        },
-        "city": "Lauro de Freitas",
-        "state": "Rondônia",
-        "country": "Brazil",
-        "postcode": 25478,
-        "coordinates": {
-          "latitude": "3.6318",
-          "longitude": "-144.2089"
-        },
-        "timezone": {
-          "offset": "-3:30",
-          "description": "Newfoundland"
-        }
-      },
-      "email": "celma.lima@example.com",
-      "dob": {
-        "date": "1964-06-01T07:39:53.612Z",
-        "age": 58
-      },
-      "phone": "(38) 5355-4654",
-      "cell": "(79) 8717-2896",
-      "picture": {
-        "large": "https://randomuser.me/api/portraits/women/39.jpg",
-        "medium": "https://randomuser.me/api/portraits/med/women/39.jpg",
-        "thumbnail": "https://randomuser.me/api/portraits/thumb/women/39.jpg"
-      },
-      "nat": "BR"
-    },
-    {
-      "gender": "male",
-      "name": {
-        "title": "Mr",
-        "first": "Héber",
-        "last": "Pinto"
-      },
-      "location": {
-        "street": {
-          "number": 34,
-          "name": "Rua São Paulo "
-        },
-        "city": "São João de Meriti",
-        "state": "Paraíba",
-        "country": "Brazil",
-        "postcode": 96790,
-        "coordinates": {
-          "latitude": "-59.0431",
-          "longitude": "86.0804"
-        },
-        "timezone": {
-          "offset": "0:00",
-          "description": "Western Europe Time, London, Lisbon, Casablanca"
-        }
-      },
-      "email": "heber.pinto@example.com",
-      "dob": {
-        "date": "1981-04-14T19:29:46.817Z",
-        "age": 41
-      },
-      "phone": "(84) 2924-9621",
-      "cell": "(03) 9222-7127",
-      "picture": {
-        "large": "https://randomuser.me/api/portraits/men/51.jpg",
-        "medium": "https://randomuser.me/api/portraits/med/men/51.jpg",
-        "thumbnail": "https://randomuser.me/api/portraits/thumb/men/51.jpg"
-      },
-      "nat": "BR"
-    },
-    {
-      "gender": "female",
-      "name": {
-        "title": "Mrs",
-        "first": "Neura",
-        "last": "Cardoso"
-      },
-      "location": {
-        "street": {
-          "number": 2179,
-          "name": "Avenida da Democracia"
-        },
-        "city": "Mogi Guaçu",
-        "state": "Piauí",
-        "country": "Brazil",
-        "postcode": 15497,
-        "coordinates": {
-          "latitude": "71.6902",
-          "longitude": "174.3171"
-        },
-        "timezone": {
-          "offset": "-7:00",
-          "description": "Mountain Time (US & Canada)"
-        }
-      },
-      "email": "neura.cardoso@example.com",
-      "dob": {
-        "date": "1994-04-01T07:42:50.801Z",
-        "age": 29
-      },
-      "phone": "(82) 8808-4294",
-      "cell": "(05) 7293-6792",
-      "picture": {
-        "large": "https://randomuser.me/api/portraits/women/96.jpg",
-        "medium": "https://randomuser.me/api/portraits/med/women/96.jpg",
-        "thumbnail": "https://randomuser.me/api/portraits/thumb/women/96.jpg"
-      },
-      "nat": "BR"
-    },
-    {
-      "gender": "male",
-      "name": {
-        "title": "Mr",
-        "first": "Vânio",
-        "last": "Souza"
-      },
-      "location": {
-        "street": {
-          "number": 2127,
-          "name": "Rua Três"
-        },
-        "city": "Juiz de Fora",
-        "state": "Mato Grosso do Sul",
-        "country": "Brazil",
-        "postcode": 52157,
-        "coordinates": {
-          "latitude": "84.2022",
-          "longitude": "-114.1502"
-        },
-        "timezone": {
-          "offset": "+1:00",
-          "description": "Brussels, Copenhagen, Madrid, Paris"
-        }
-      },
-      "email": "vanio.souza@example.com",
-      "dob": {
-        "date": "1989-12-14T21:35:35.872Z",
-        "age": 33
-      },
-      "phone": "(13) 7136-8012",
-      "cell": "(98) 2158-4193",
-      "picture": {
-        "large": "https://randomuser.me/api/portraits/men/28.jpg",
-        "medium": "https://randomuser.me/api/portraits/med/men/28.jpg",
-        "thumbnail": "https://randomuser.me/api/portraits/thumb/men/28.jpg"
-      },
-      "nat": "BR"
-    },
-    {
-      "gender": "female",
-      "name": {
-        "title": "Mrs",
-        "first": "Lucinda",
-        "last": "Freitas"
-      },
-      "location": {
-        "street": {
-          "number": 6788,
-          "name": "Rua Amazonas "
-        },
-        "city": "Araucária",
-        "state": "Distrito Federal",
-        "country": "Brazil",
-        "postcode": 55473,
-        "coordinates": {
-          "latitude": "-49.7723",
-          "longitude": "38.0966"
-        },
-        "timezone": {
-          "offset": "-9:00",
-          "description": "Alaska"
-        }
-      },
-      "email": "lucinda.freitas@example.com",
-      "dob": {
-        "date": "1956-12-02T20:36:17.203Z",
-        "age": 66
-      },
-      "phone": "(38) 9753-1203",
-      "cell": "(19) 6424-8358",
-      "picture": {
-        "large": "https://randomuser.me/api/portraits/women/82.jpg",
-        "medium": "https://randomuser.me/api/portraits/med/women/82.jpg",
-        "thumbnail": "https://randomuser.me/api/portraits/thumb/women/82.jpg"
-      },
-      "nat": "BR"
-    },
-    {
-      "gender": "male",
-      "name": {
-        "title": "Mr",
-        "first": "Mátio",
-        "last": "Gomes"
-      },
-      "location": {
-        "street": {
-          "number": 5388,
-          "name": "Rua Carlos Gomes"
-        },
-        "city": "Barueri",
-        "state": "Ceará",
-        "country": "Brazil",
-        "postcode": 87082,
-        "coordinates": {
-          "latitude": "58.4694",
-          "longitude": "-147.6523"
-        },
-        "timezone": {
-          "offset": "+4:30",
-          "description": "Kabul"
-        }
-      },
-      "email": "matio.gomes@example.com",
-      "dob": {
-        "date": "1990-05-04T18:33:42.761Z",
-        "age": 32
-      },
-      "phone": "(81) 4961-9416",
-      "cell": "(93) 0582-9602",
-      "picture": {
-        "large": "https://randomuser.me/api/portraits/men/41.jpg",
-        "medium": "https://randomuser.me/api/portraits/med/men/41.jpg",
-        "thumbnail": "https://randomuser.me/api/portraits/thumb/men/41.jpg"
-      },
-      "nat": "BR"
-    }
-  ],
-  "info": {
-    "seed": "123",
-    "results": 7,
-    "page": 1,
-    "version": "1.4"
-  }
+	"results": [
+		{
+			"gender": "male",
+			"name": {
+				"title": "Mr",
+				"first": "Heldo",
+				"last": "Campos"
+			},
+			"location": {
+				"street": {
+					"number": 9120,
+					"name": "Rua Três"
+				},
+				"city": "Parnaíba",
+				"state": "Roraima",
+				"country": "Brazil",
+				"postcode": 73921,
+				"coordinates": {
+					"latitude": "-74.8924",
+					"longitude": "-98.6155"
+				},
+				"timezone": {
+					"offset": "+8:00",
+					"description": "Beijing, Perth, Singapore, Hong Kong"
+				}
+			},
+			"email": "heldo.campos@example.com",
+			"dob": {
+				"date": "1968-03-29T05:26:03.876Z",
+				"age": 55
+			},
+			"phone": "(77) 6972-0550",
+			"cell": "(63) 8842-4673",
+			"picture": {
+				"large": "https://randomuser.me/api/portraits/men/35.jpg",
+				"medium": "https://randomuser.me/api/portraits/med/men/35.jpg",
+				"thumbnail": "https://randomuser.me/api/portraits/thumb/men/35.jpg"
+			},
+			"nat": "BR"
+		},
+		{
+			"gender": "female",
+			"name": {
+				"title": "Mrs",
+				"first": "Celma",
+				"last": "Lima"
+			},
+			"location": {
+				"street": {
+					"number": 4744,
+					"name": "Rua Principal"
+				},
+				"city": "Lauro de Freitas",
+				"state": "Rondônia",
+				"country": "Brazil",
+				"postcode": 25478,
+				"coordinates": {
+					"latitude": "3.6318",
+					"longitude": "-144.2089"
+				},
+				"timezone": {
+					"offset": "-3:30",
+					"description": "Newfoundland"
+				}
+			},
+			"email": "celma.lima@example.com",
+			"dob": {
+				"date": "1964-06-01T07:39:53.612Z",
+				"age": 58
+			},
+			"phone": "(38) 5355-4654",
+			"cell": "(79) 8717-2896",
+			"picture": {
+				"large": "https://randomuser.me/api/portraits/women/39.jpg",
+				"medium": "https://randomuser.me/api/portraits/med/women/39.jpg",
+				"thumbnail": "https://randomuser.me/api/portraits/thumb/women/39.jpg"
+			},
+			"nat": "BR"
+		},
+		{
+			"gender": "male",
+			"name": {
+				"title": "Mr",
+				"first": "Héber",
+				"last": "Pinto"
+			},
+			"location": {
+				"street": {
+					"number": 34,
+					"name": "Rua São Paulo "
+				},
+				"city": "São João de Meriti",
+				"state": "Paraíba",
+				"country": "Brazil",
+				"postcode": 96790,
+				"coordinates": {
+					"latitude": "-59.0431",
+					"longitude": "86.0804"
+				},
+				"timezone": {
+					"offset": "0:00",
+					"description": "Western Europe Time, London, Lisbon, Casablanca"
+				}
+			},
+			"email": "heber.pinto@example.com",
+			"dob": {
+				"date": "1981-04-14T19:29:46.817Z",
+				"age": 41
+			},
+			"phone": "(84) 2924-9621",
+			"cell": "(03) 9222-7127",
+			"picture": {
+				"large": "https://randomuser.me/api/portraits/men/51.jpg",
+				"medium": "https://randomuser.me/api/portraits/med/men/51.jpg",
+				"thumbnail": "https://randomuser.me/api/portraits/thumb/men/51.jpg"
+			},
+			"nat": "BR"
+		},
+		{
+			"gender": "female",
+			"name": {
+				"title": "Mrs",
+				"first": "Neura",
+				"last": "Cardoso"
+			},
+			"location": {
+				"street": {
+					"number": 2179,
+					"name": "Avenida da Democracia"
+				},
+				"city": "Mogi Guaçu",
+				"state": "Piauí",
+				"country": "Brazil",
+				"postcode": 15497,
+				"coordinates": {
+					"latitude": "71.6902",
+					"longitude": "174.3171"
+				},
+				"timezone": {
+					"offset": "-7:00",
+					"description": "Mountain Time (US & Canada)"
+				}
+			},
+			"email": "neura.cardoso@example.com",
+			"dob": {
+				"date": "1994-04-01T07:42:50.801Z",
+				"age": 29
+			},
+			"phone": "(82) 8808-4294",
+			"cell": "(05) 7293-6792",
+			"picture": {
+				"large": "https://randomuser.me/api/portraits/women/96.jpg",
+				"medium": "https://randomuser.me/api/portraits/med/women/96.jpg",
+				"thumbnail": "https://randomuser.me/api/portraits/thumb/women/96.jpg"
+			},
+			"nat": "BR"
+		},
+		{
+			"gender": "male",
+			"name": {
+				"title": "Mr",
+				"first": "Vânio",
+				"last": "Souza"
+			},
+			"location": {
+				"street": {
+					"number": 2127,
+					"name": "Rua Três"
+				},
+				"city": "Juiz de Fora",
+				"state": "Mato Grosso do Sul",
+				"country": "Brazil",
+				"postcode": 52157,
+				"coordinates": {
+					"latitude": "84.2022",
+					"longitude": "-114.1502"
+				},
+				"timezone": {
+					"offset": "+1:00",
+					"description": "Brussels, Copenhagen, Madrid, Paris"
+				}
+			},
+			"email": "vanio.souza@example.com",
+			"dob": {
+				"date": "1989-12-14T21:35:35.872Z",
+				"age": 33
+			},
+			"phone": "(13) 7136-8012",
+			"cell": "(98) 2158-4193",
+			"picture": {
+				"large": "https://randomuser.me/api/portraits/men/28.jpg",
+				"medium": "https://randomuser.me/api/portraits/med/men/28.jpg",
+				"thumbnail": "https://randomuser.me/api/portraits/thumb/men/28.jpg"
+			},
+			"nat": "BR"
+		},
+		{
+			"gender": "female",
+			"name": {
+				"title": "Mrs",
+				"first": "Lucinda",
+				"last": "Freitas"
+			},
+			"location": {
+				"street": {
+					"number": 6788,
+					"name": "Rua Amazonas "
+				},
+				"city": "Araucária",
+				"state": "Distrito Federal",
+				"country": "Brazil",
+				"postcode": 55473,
+				"coordinates": {
+					"latitude": "-49.7723",
+					"longitude": "38.0966"
+				},
+				"timezone": {
+					"offset": "-9:00",
+					"description": "Alaska"
+				}
+			},
+			"email": "lucinda.freitas@example.com",
+			"dob": {
+				"date": "1956-12-02T20:36:17.203Z",
+				"age": 66
+			},
+			"phone": "(38) 9753-1203",
+			"cell": "(19) 6424-8358",
+			"picture": {
+				"large": "https://randomuser.me/api/portraits/women/82.jpg",
+				"medium": "https://randomuser.me/api/portraits/med/women/82.jpg",
+				"thumbnail": "https://randomuser.me/api/portraits/thumb/women/82.jpg"
+			},
+			"nat": "BR"
+		},
+		{
+			"gender": "male",
+			"name": {
+				"title": "Mr",
+				"first": "Mátio",
+				"last": "Gomes"
+			},
+			"location": {
+				"street": {
+					"number": 5388,
+					"name": "Rua Carlos Gomes"
+				},
+				"city": "Barueri",
+				"state": "Ceará",
+				"country": "Brazil",
+				"postcode": 87082,
+				"coordinates": {
+					"latitude": "58.4694",
+					"longitude": "-147.6523"
+				},
+				"timezone": {
+					"offset": "+4:30",
+					"description": "Kabul"
+				}
+			},
+			"email": "matio.gomes@example.com",
+			"dob": {
+				"date": "1990-05-04T18:33:42.761Z",
+				"age": 32
+			},
+			"phone": "(81) 4961-9416",
+			"cell": "(93) 0582-9602",
+			"picture": {
+				"large": "https://randomuser.me/api/portraits/men/41.jpg",
+				"medium": "https://randomuser.me/api/portraits/med/men/41.jpg",
+				"thumbnail": "https://randomuser.me/api/portraits/thumb/men/41.jpg"
+			},
+			"nat": "BR"
+		}
+	],
+	"info": {
+		"seed": "123",
+		"results": 7,
+		"page": 1,
+		"version": "1.4"
+	}
 }

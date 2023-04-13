@@ -8,49 +8,49 @@ import MainContainer from './components/MainContainer';
 import { type RandomUserResponse } from './classes/types';
 
 export function App() {
-  const [users, setUsers] = useState<RandomUserResponse>();
-  const [isUpdating, setIsUpdating] = useState<boolean>(true);
+	const [users, setUsers] = useState<RandomUserResponse>();
+	const [isUpdating, setIsUpdating] = useState<boolean>(true);
 
-  const retriveUsers = async () => {
-    setIsUpdating(true);
+	const retriveUsers = async () => {
+		setIsUpdating(true);
 
-    const data: RandomUser = new RandomUser({
-      results: 7,
-      seed: '123',
-      format: 'json',
-      nat: ['br'],
-      exc: ['login', 'registered', 'id'],
-    });
+		const data: RandomUser = new RandomUser({
+			results: 7,
+			seed: '123',
+			format: 'json',
+			nat: ['br'],
+			exc: ['login', 'registered', 'id'],
+		});
 
-    data
-      .retrieve()
-      .then((response) => {
-        setUsers(response as RandomUserResponse);
-      })
-      .catch((error) => {
-        console.error(error);
-      })
-      .finally(() => {
-        setIsUpdating(false);
-      });
-  };
+		data
+			.retrieve()
+			.then((response) => {
+				setUsers(response as RandomUserResponse);
+			})
+			.catch((error) => {
+				console.error(error);
+			})
+			.finally(() => {
+				setIsUpdating(false);
+			});
+	};
 
-  useEffect(() => {
-    retriveUsers();
-  }, []);
+	useEffect(() => {
+		retriveUsers();
+	}, []);
 
-  return (
-    <MainContainer>
-      <h1 className="text-3xl font-light underline">Hello world!</h1>
-      <button data-testid="test_update_btn" onClick={retriveUsers} disabled={isUpdating}>
-        Atualizar
-      </button>
-      {users?.results.length &&
-        users.results.map((el, i) => (
-          <Card key={`${i}_${Date.now()}`} id={`user_card_${i}`} testId={`test_user_card_${i}`}>
-            {[el.name.title, el.name.first, el.name.last].join(' ')}
-          </Card>
-        ))}
-    </MainContainer>
-  );
+	return (
+		<MainContainer>
+			<h1 className="text-3xl font-light underline">Hello world!</h1>
+			<button data-testid="test_update_btn" onClick={retriveUsers} disabled={isUpdating}>
+				Atualizar
+			</button>
+			{users?.results.length &&
+				users.results.map((el, i) => (
+					<Card key={`${i}_${Date.now()}`} id={`user_card_${i}`} testId={`test_user_card_${i}`}>
+						{[el.name.title, el.name.first, el.name.last].join(' ')}
+					</Card>
+				))}
+		</MainContainer>
+	);
 }
