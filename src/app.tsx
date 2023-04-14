@@ -5,7 +5,7 @@ import { useCallback, useEffect, useState } from 'preact/hooks';
 import RandomUser from './classes/RandomUser';
 import Card from './components/Card';
 import MainContainer from './components/MainContainer';
-import { type RandomUserResponse } from './classes/types';
+import { CustomUser, type RandomUserResponse } from './classes/types';
 import { nanoid } from 'nanoid';
 import closeRound from './utils/closeRound';
 
@@ -43,7 +43,15 @@ export function App() {
 			return data
 				.retrieve()
 				.then((response) => {
-					setUsers(response as RandomUserResponse);
+					const colors = ['red', 'blue', 'green', 'yellow', 'gray'];
+					const results: CustomUser[] = (response as RandomUserResponse).results.map((el, i) => ({
+						...el,
+						angle: i * 30,
+						bgColor: `bg-${colors[Math.floor(Math.random() * colors.length)]}-100`,
+					}));
+					const newUsers = { ...(response as RandomUserResponse), results };
+					console.log(newUsers);
+					setUsers(newUsers as RandomUserResponse);
 				})
 				.catch((error) => {
 					console.error(error);
@@ -78,28 +86,31 @@ export function App() {
 	const userCards = useCallback(
 		() =>
 			users?.results.length &&
-			users.results.map((el, i) => {
-				const angle = i * 30;
-				return (
-					<div
-						key={`${angle}_${el.login.uuid}`}
-						data-angle={angle}
-						data-uuid={el.login.uuid}
-						selected={angle === baseAngle}
-						// eslint-disable-next-line tailwindcss/no-custom-classname
-						class={`min-h-3/4 fixed top-0 flex w-max origin-top items-end bg-green-600`}
-						style={{
-							transform: `rotate(calc(${angle}deg - ${baseAngle}deg))`,
-						}}
-						onClick={handleTargetAngle}
-					>
-						<Card id={`user_card_${angle}`} testId={`test_user_card_${angle}`}>
-							<p>{angle}</p>
+			(users.results as CustomUser[]).map((el) => (
+				<div
+					key={`${el.angle}_${el.login.uuid}`}
+					data-angle={el.angle}
+					data-uuid={el.login.uuid}
+					selected={el.angle === baseAngle}
+					// eslint-disable-next-line tailwindcss/no-custom-classname
+					class={`min-h-3/4 fixed top-0 flex w-1/12 origin-top items-end ${
+						isUpdating ? 'bg-gray-100' : el.bgColor
+					} text-black shadow-lg cursor-pointer transition-colors`}
+					style={{
+						transform: `rotate(calc(${el.angle}deg - ${baseAngle}deg))`,
+					}}
+					onClick={handleTargetAngle}
+				>
+					<Card id={`user_card_${el.angle}`} testId={`test_user_card_${el.angle}`}>
+						<div
+							style={{ filter: isUpdating ? 'blur(8px)' : 'unset', WebkitFilter: isUpdating ? 'blur(8px)' : 'unset' }}
+						>
+							<p>{el.angle}</p>
 							<p>{[el.name.title, el.name.first, el.name.last].join(' ')}</p>
-						</Card>
-					</div>
-				);
-			}),
+						</div>
+					</Card>
+				</div>
+			)),
 		[users, baseAngle],
 	);
 
@@ -110,11 +121,13 @@ export function App() {
 					<label for="seed" class="min-w-full text-center mr-2">
 						Seed:
 					</label>
-					<input id="seed" type="text" value={seed} onInput={handleSeed} class="mr-2" />
-					<button onClick={() => handleSeed({ target: { value: () => nanoid() } })}>🎲</button>
+					<input id="seed" type="text" value={seed} onInput={handleSeed} class="mr-2" disabled={isUpdating} />
+					<button onClick={() => handleSeed({ target: { value: () => nanoid() } })} disabled={isUpdating}>
+						🎲
+					</button>
 				</div>
-
 				{userCards()}
+				<div class="h-1/4 fixed -top-24 flex w-1/12 origin-top bg-violet-100 rounded-full shadow-lg"></div>
 			</MainContainer>
 		)
 	);

@@ -84,8 +84,13 @@ export type User = {
 	nat: string;
 };
 
+export type CustomUser = {
+	angle: number;
+	bgColor: string;
+} & User;
+
 export type RandomUserResponse = {
-	results: User[];
+	results: User[] | CustomUser[];
 	info: {
 		seed: string;
 		results: number;
