@@ -63,14 +63,14 @@ export function App() {
 	useEffect(() => {
 		const abs = targetAngle - baseAngle;
 		const diff = abs > 180 ? abs - 360 : abs < -180 ? abs + 360 : abs;
-		const speed = Number((Math.abs(diff) / 10).toFixed(2));
+		const speed = Number((Math.abs(diff) / 20).toFixed(2));
 
 		if (diff > 0) {
-			setBaseAngle(baseAngle > 359 ? 0 : closeRound(baseAngle + speed));
+			setBaseAngle(baseAngle > 359 ? 0 : closeRound(baseAngle + speed, 'ceil'));
 		}
 
 		if (diff < 0) {
-			setBaseAngle(baseAngle < 0 ? 359 : closeRound(baseAngle - speed));
+			setBaseAngle(baseAngle < 0 ? 359 : closeRound(baseAngle - speed, 'floor'));
 		}
 
 		setLog(`base: ${Math.trunc(baseAngle)} | target: ${targetAngle} | diff: ${Math.trunc(diff)}`);
@@ -87,6 +87,7 @@ export function App() {
 						key={`${angle}_${el.login.uuid}`}
 						data-angle={angle}
 						data-uuid={el.login.uuid}
+						selected={angle === baseAngle}
 						// eslint-disable-next-line tailwindcss/no-custom-classname
 						class={`min-h-3/4 fixed top-0 flex w-max origin-top items-end bg-green-600`}
 						style={{
