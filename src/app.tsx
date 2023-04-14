@@ -13,9 +13,8 @@ export function App() {
 	const [users, setUsers] = useState<RandomUserResponse>();
 	const [isUpdating, setIsUpdating] = useState<boolean>(true);
 	const [seed, setSeed] = useState<string>('123');
-	const [baseAngle, setBaseAngle] = useState<number>(0);
+	const [baseAngle, setBaseAngle] = useState<number>(180);
 	const [targetAngle, setTargetAngle] = useState<number>(0);
-	const [log, setLog] = useState<string>('');
 
 	const handleTargetAngle = ({ target }: any) => {
 		setTargetAngle(target?.dataset.angle as number);
@@ -23,6 +22,8 @@ export function App() {
 
 	const handleSeed = ({ target }: any) => {
 		setSeed(target?.value as string);
+		setBaseAngle(180);
+		setTargetAngle(0);
 	};
 
 	const retriveUsers = useCallback(
@@ -72,9 +73,6 @@ export function App() {
 		if (diff < 0) {
 			setBaseAngle(baseAngle < 0 ? 359 : closeRound(baseAngle - speed, 'floor'));
 		}
-
-		setLog(`base: ${Math.trunc(baseAngle)} | target: ${targetAngle} | diff: ${Math.trunc(diff)}`);
-		console.log('useEffect');
 	}, [baseAngle, targetAngle]);
 
 	const userCards = useCallback(
@@ -114,7 +112,6 @@ export function App() {
 					</label>
 					<input id="seed" type="text" value={seed} onInput={handleSeed} class="mr-2" />
 					<button onClick={() => handleSeed({ target: { value: () => nanoid() } })}>🎲</button>
-					<p class="text-center">{log}</p>
 				</div>
 
 				{userCards()}
