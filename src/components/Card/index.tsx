@@ -1,10 +1,9 @@
 import React from 'preact/compat';
 
 import { type h, type ComponentChildren } from 'preact';
-import './styles.css';
 
 type CardProps = {
-	key: string;
+	key?: string;
 	id: string | h.JSX.SignalLike<string | undefined>;
 	testId: string;
 	children: ComponentChildren;
@@ -12,7 +11,7 @@ type CardProps = {
 
 function Card({ key, id, testId, children }: CardProps) {
 	return (
-		<div key={key} id={id} data-testid={testId}>
+		<div key={key} id={id} data-testid={testId} style={{ pointerEvents: 'none' }}>
 			{children}
 		</div>
 	);
