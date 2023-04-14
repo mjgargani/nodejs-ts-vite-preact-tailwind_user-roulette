@@ -50,7 +50,6 @@ export function App() {
 						bgColor: `bg-${colors[Math.floor(Math.random() * colors.length)]}-100`,
 					}));
 					const newUsers = { ...(response as RandomUserResponse), results };
-					console.log(newUsers);
 					setUsers(newUsers as RandomUserResponse);
 				})
 				.catch((error) => {
@@ -93,21 +92,15 @@ export function App() {
 					data-uuid={el.login.uuid}
 					selected={el.angle === baseAngle}
 					// eslint-disable-next-line tailwindcss/no-custom-classname
-					class={`min-h-3/4 fixed top-0 flex w-1/12 origin-top items-end ${
-						isUpdating ? 'bg-gray-100' : el.bgColor
-					} text-black shadow-lg cursor-pointer transition-colors`}
+					class={`min-h-3/4 fixed top-0 flex md:w-1/12 w-1/4 origin-top items-end bg-gray-100 text-black shadow-lg cursor-pointer rounded`}
 					style={{
 						transform: `rotate(calc(${el.angle}deg - ${baseAngle}deg))`,
 					}}
 					onClick={handleTargetAngle}
 				>
 					<Card id={`user_card_${el.angle}`} testId={`test_user_card_${el.angle}`}>
-						<div
-							style={{ filter: isUpdating ? 'blur(8px)' : 'unset', WebkitFilter: isUpdating ? 'blur(8px)' : 'unset' }}
-						>
-							<p>{el.angle}</p>
-							<p>{[el.name.title, el.name.first, el.name.last].join(' ')}</p>
-						</div>
+						<p>{el.angle}</p>
+						<p>{[el.name.title, el.name.first, el.name.last].join(' ')}</p>
 					</Card>
 				</div>
 			)),
@@ -117,12 +110,24 @@ export function App() {
 	return (
 		users?.results.length && (
 			<MainContainer>
-				<div class="absolute bottom-0 max-h-min whitespace-nowrap">
+				<div class="absolute bottom-0 max-h-min md:whitespace-nowrap max-md:flex max-md:flex-col">
 					<label for="seed" class="min-w-full text-center mr-2">
 						Seed:
 					</label>
-					<input id="seed" type="text" value={seed} onInput={handleSeed} class="mr-2" disabled={isUpdating} />
-					<button onClick={() => handleSeed({ target: { value: () => nanoid() } })} disabled={isUpdating}>
+					<input
+						id="seed"
+						type="text"
+						value={seed}
+						onInput={handleSeed}
+						class="mr-2"
+						disabled={isUpdating}
+						data-testid="test-input-seed"
+					/>
+					<button
+						onClick={() => handleSeed({ target: { value: () => nanoid() } })}
+						disabled={isUpdating}
+						data-testid="test-btn-random-seed"
+					>
 						🎲
 					</button>
 				</div>

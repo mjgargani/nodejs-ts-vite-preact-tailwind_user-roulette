@@ -3,11 +3,15 @@ import { h } from 'preact';
 import { render, screen, cleanup } from '@testing-library/preact';
 import { App } from '../../app';
 import { server } from '../mock/server';
-import { results as randomUsersMock } from '../mock/random-users.json';
+import randomUsersMock from '../mock/random-users.json';
+import { Mock } from 'vitest';
+
+global.fetch = vi.fn();
 
 beforeEach(() => {
-	server(200).resetHandlers();
-	server(200).listen();
+	(fetch as Mock).mockResolvedValue({
+		json: async () => Promise.resolve(randomUsersMock),
+	});
 });
 
 afterEach(() => {
@@ -19,49 +23,59 @@ describe('main page tests', () => {
 		const { container } = render(<App />);
 		expect(container).toBeInTheDocument();
 
-		const updateBtn = await screen.findByTestId(/test_update_btn/);
-		expect(updateBtn).toBeInTheDocument();
-		expect(updateBtn).toBeDisabled();
+		const updateInputSeed = await screen.findByTestId(/test-input-seed/);
+		const updateBtnSeedRandom = await screen.findByTestId(/test-btn-random-seed/);
+
+		expect(updateInputSeed).toBeInTheDocument();
+		expect(updateBtnSeedRandom).toBeInTheDocument();
 
 		const cards = await screen.findAllByTestId(/test_user_card_\d/);
-		expect(cards).toHaveLength(7);
+		expect(cards).toHaveLength(12);
 
-		expect(updateBtn).toBeEnabled();
+		expect(updateInputSeed).toBeEnabled();
+		expect(updateBtnSeedRandom).toBeEnabled();
 	});
 
-	it('needs to contain a main random user card from api, with correct collapsed data', async () => {
+	it.only('needs to contain a main random user card from api, with correct collapsed data', async () => {
 		const { container } = render(<App />);
 		expect(container).toBeInTheDocument();
 
-		const updateBtn = await screen.findByTestId(/test_update_btn/);
-		expect(updateBtn).toBeInTheDocument();
-		expect(updateBtn).toBeDisabled();
+		const updateInputSeed = await screen.findByTestId(/test-input-seed/);
+		const updateBtnSeedRandom = await screen.findByTestId(/test-btn-random-seed/);
+
+		expect(updateInputSeed).toBeInTheDocument();
+		expect(updateBtnSeedRandom).toBeInTheDocument();
 
 		const cards = await screen.findAllByTestId(/test_user_card_\d/);
-		expect(cards).toHaveLength(7);
+		expect(cards).toHaveLength(12);
 
-		expect(updateBtn).toBeEnabled();
+		expect(updateInputSeed).toBeEnabled();
+		expect(updateBtnSeedRandom).toBeEnabled();
 
-		const mainCard = await screen.findByTestId(/test_user_card_3/);
+		const defaultCard = await screen.findByTestId(/test_user_card_0/);
 
-		expect(mainCard).toContainHTML(`<h3>Sra ${randomUsersMock[3].name.first} ${randomUsersMock[3].name.last}</h3>`);
-		expect(mainCard).toContainHTML(`<title>feminino</title>`);
-		expect(mainCard).toContainHTML(`<title>brasileira</title>`);
-		expect(mainCard).toContainHTML(
-			`<span>${Math.floor((Date.now() - new Date(randomUsersMock[3].dob.date).getTime()) / 31536000000)} anos</span>`,
+		expect(defaultCard).toContainHTML(
+			`<h3>Sr ${randomUsersMock.results[0].name.first} ${randomUsersMock.results[0].name.last}</h3>`,
 		);
-		expect(mainCard).toContainHTML(`<section id="main-user-card-details" data-expanded />`);
-		expect(mainCard).toContainHTML(`<h4>Endereço</h4>`);
-		expect(mainCard).toContainHTML(
+		expect(defaultCard).toContainHTML(`<title>masculino</title>`);
+		expect(defaultCard).toContainHTML(`<title>brasileiro</title>`);
+		expect(defaultCard).toContainHTML(
+			`<span>${Math.floor(
+				(Date.now() - new Date(randomUsersMock.results[0].dob.date).getTime()) / 31536000000,
+			)} anos</span>`,
+		);
+		expect(defaultCard).toContainHTML(`<section id="main-user-card-details" data-expanded />`);
+		expect(defaultCard).toContainHTML(`<h4>Endereço</h4>`);
+		expect(defaultCard).toContainHTML(
 			'<ul>' +
-				`<li>${randomUsersMock[3].location.street.name}, ${randomUsersMock[3].location.street.number}</li>` +
-				`<li>${randomUsersMock[3].location.city}, ${randomUsersMock[3].location.state} - Brasil</li>` +
+				`<li>${randomUsersMock.results[0].location.street.name}, ${randomUsersMock.results[0].location.street.number}</li>` +
+				`<li>${randomUsersMock.results[0].location.city}, ${randomUsersMock.results[0].location.state} - Brasil</li>` +
 				'</ul>',
 		);
 
 		const mainCardPicture = await screen.findByTestId(/test_user_card_3_picture/);
 		expect(mainCardPicture).toHaveStyle({
-			'background-image': `url(${randomUsersMock[3].picture.medium})`,
+			'background-image': `url(${randomUsersMock.results[3].picture.medium})`,
 			'background-size': 'cover',
 			'background-repeat': 'no-repeat',
 			'background-position': 'center',

@@ -26,6 +26,15 @@
 				}
 			},
 			"email": "heldo.campos@example.com",
+			"login": {
+				"uuid": "71deeadb-1d62-402a-aafa-2645bbafb318",
+				"username": "whitemouse262",
+				"password": "nokia",
+				"salt": "gYAlckP3",
+				"md5": "02453332b76c44d3df149c61cdf7780b",
+				"sha1": "863be27edf50cbd108a1ad1d370b48c25c1b2a70",
+				"sha256": "92b7b11044f3d38288658e2fa8830a24fc5c718f70e4fd6b898ddef4efa5c186"
+			},
 			"dob": {
 				"date": "1968-03-29T05:26:03.876Z",
 				"age": 55
@@ -65,6 +74,15 @@
 				}
 			},
 			"email": "celma.lima@example.com",
+			"login": {
+				"uuid": "96dd637a-b5db-4c46-850b-fdf82874787c",
+				"username": "smalltiger904",
+				"password": "ariana",
+				"salt": "Tc8mtx2v",
+				"md5": "0dedb0fe7089d0f61652d56965bfdc37",
+				"sha1": "0193f67c3cc8853ba24f191518eba810a569b474",
+				"sha256": "1fd00c131f1ef5e3dda55228ea0cac2527979cf8cf5744b6e03f13b51982525b"
+			},
 			"dob": {
 				"date": "1964-06-01T07:39:53.612Z",
 				"age": 58
@@ -104,9 +122,18 @@
 				}
 			},
 			"email": "heber.pinto@example.com",
+			"login": {
+				"uuid": "0f356d51-dee5-4965-9858-96996bfcb2c4",
+				"username": "yellowdog647",
+				"password": "nova",
+				"salt": "eRYLHuZy",
+				"md5": "eeaaddf0c9a99be7fa2e64e0a1a405cb",
+				"sha1": "17e4ac168d7b03aa54cd6caa817540a1ac947c61",
+				"sha256": "2a4367d658964e04140db64ad2301d861df62906a5aaad5916c8800da6fb05bf"
+			},
 			"dob": {
 				"date": "1981-04-14T19:29:46.817Z",
-				"age": 41
+				"age": 42
 			},
 			"phone": "(84) 2924-9621",
 			"cell": "(03) 9222-7127",
@@ -143,6 +170,15 @@
 				}
 			},
 			"email": "neura.cardoso@example.com",
+			"login": {
+				"uuid": "b7d873cc-ae93-4167-870c-d8f1bd985d6a",
+				"username": "ticklishbird880",
+				"password": "sinner",
+				"salt": "0ibBJETo",
+				"md5": "f683f80a4f3a92db6ca504c3e8d71a45",
+				"sha1": "279a5b7c18b6aa4719ca1ca224c43b0c28a166b9",
+				"sha256": "e75cdde21363aa325bf06b037381e802d06fad12b44588a64ff40e7acce68476"
+			},
 			"dob": {
 				"date": "1994-04-01T07:42:50.801Z",
 				"age": 29
@@ -182,6 +218,15 @@
 				}
 			},
 			"email": "vanio.souza@example.com",
+			"login": {
+				"uuid": "9ac8d73f-47fa-4320-8f34-4c13b8715725",
+				"username": "organicbear517",
+				"password": "illusion",
+				"salt": "8lnx1nN8",
+				"md5": "ecf0f039deb80bcc5f7c6a89fbbd5884",
+				"sha1": "b7625194d60fd4fe221ca5e3b299736a6b523178",
+				"sha256": "d8ebd8f52caee8752ad38292d93e94e8966c31aa48bb966a339de7285b9cb268"
+			},
 			"dob": {
 				"date": "1989-12-14T21:35:35.872Z",
 				"age": 33
@@ -221,6 +266,15 @@
 				}
 			},
 			"email": "lucinda.freitas@example.com",
+			"login": {
+				"uuid": "a31db1a2-308a-40f2-8797-b3dd0ddefc4c",
+				"username": "purpledog313",
+				"password": "gigi",
+				"salt": "sTptagJt",
+				"md5": "9c4428f07ad444941aeadb5a90bb2deb",
+				"sha1": "4dab794f48ad8527ac89a2b459d31861a530b7d2",
+				"sha256": "eb112a1e58688406e4042e23119deb41b41cda04e171fcc7e30d62664286022d"
+			},
 			"dob": {
 				"date": "1956-12-02T20:36:17.203Z",
 				"age": 66
@@ -260,6 +314,15 @@
 				}
 			},
 			"email": "matio.gomes@example.com",
+			"login": {
+				"uuid": "d74f708b-4f5a-4bf4-8234-1acb6a403ff7",
+				"username": "heavyrabbit421",
+				"password": "1994",
+				"salt": "8jPlifuW",
+				"md5": "d23b7eac6d2bdf32b909e33e5185eec2",
+				"sha1": "fd4e142e2ea01f61962a180a6c8f5153cc23c6d4",
+				"sha256": "d1a789943499a700f7aabf4e2e943415bd63989005b5076bc75ea55e52d2bbf7"
+			},
 			"dob": {
 				"date": "1990-05-04T18:33:42.761Z",
 				"age": 32
@@ -272,12 +335,246 @@
 				"thumbnail": "https://randomuser.me/api/portraits/thumb/men/41.jpg"
 			},
 			"nat": "BR"
+		},
+		{
+			"gender": "female",
+			"name": {
+				"title": "Ms",
+				"first": "Núria",
+				"last": "Caldeira"
+			},
+			"location": {
+				"street": {
+					"number": 1873,
+					"name": "Rua Das Flores "
+				},
+				"city": "Corumbá",
+				"state": "Pernambuco",
+				"country": "Brazil",
+				"postcode": 88612,
+				"coordinates": {
+					"latitude": "-51.7274",
+					"longitude": "141.2465"
+				},
+				"timezone": {
+					"offset": "+10:00",
+					"description": "Eastern Australia, Guam, Vladivostok"
+				}
+			},
+			"email": "nuria.caldeira@example.com",
+			"login": {
+				"uuid": "767f236d-3af7-4907-8642-5b25ae113fc3",
+				"username": "goldenbutterfly645",
+				"password": "shirley",
+				"salt": "m1HK6KnO",
+				"md5": "a2665d30b66555291749b837673ebf22",
+				"sha1": "e68a89da4840e846216f8e1b6dbf12963a6100b0",
+				"sha256": "05352c1886df85741c35fc31d98b67b32d7e0366cdbe361bbe0216f0d12bae6e"
+			},
+			"dob": {
+				"date": "1970-03-05T10:14:50.433Z",
+				"age": 53
+			},
+			"phone": "(75) 5669-0429",
+			"cell": "(14) 8671-6242",
+			"picture": {
+				"large": "https://randomuser.me/api/portraits/women/0.jpg",
+				"medium": "https://randomuser.me/api/portraits/med/women/0.jpg",
+				"thumbnail": "https://randomuser.me/api/portraits/thumb/women/0.jpg"
+			},
+			"nat": "BR"
+		},
+		{
+			"gender": "male",
+			"name": {
+				"title": "Mr",
+				"first": "Elioenai",
+				"last": "Barbosa"
+			},
+			"location": {
+				"street": {
+					"number": 7738,
+					"name": "Rua Quinze de Novembro "
+				},
+				"city": "Salvador",
+				"state": "Roraima",
+				"country": "Brazil",
+				"postcode": 57200,
+				"coordinates": {
+					"latitude": "-58.5524",
+					"longitude": "19.8758"
+				},
+				"timezone": {
+					"offset": "+9:30",
+					"description": "Adelaide, Darwin"
+				}
+			},
+			"email": "elioenai.barbosa@example.com",
+			"login": {
+				"uuid": "e72e53eb-6b67-46fb-98e9-761a11384b35",
+				"username": "yellowcat261",
+				"password": "pocket",
+				"salt": "2le0ejsM",
+				"md5": "fcd8343769ce3ba6375da022fc4b0dcc",
+				"sha1": "c7f9874306065a1112d7b9febc8d7b6a173fe657",
+				"sha256": "684fc829c5de8eed55f086ac8149c5594ca242788476abae3ad298c711c5985c"
+			},
+			"dob": {
+				"date": "1950-11-23T08:10:31.431Z",
+				"age": 72
+			},
+			"phone": "(22) 0038-8062",
+			"cell": "(35) 0468-5192",
+			"picture": {
+				"large": "https://randomuser.me/api/portraits/men/48.jpg",
+				"medium": "https://randomuser.me/api/portraits/med/men/48.jpg",
+				"thumbnail": "https://randomuser.me/api/portraits/thumb/men/48.jpg"
+			},
+			"nat": "BR"
+		},
+		{
+			"gender": "female",
+			"name": {
+				"title": "Ms",
+				"first": "Marilaine",
+				"last": "da Paz"
+			},
+			"location": {
+				"street": {
+					"number": 3678,
+					"name": "Rua Vinte de Setembro"
+				},
+				"city": "Porto Alegre",
+				"state": "Piauí",
+				"country": "Brazil",
+				"postcode": 48719,
+				"coordinates": {
+					"latitude": "-89.8145",
+					"longitude": "-140.9485"
+				},
+				"timezone": {
+					"offset": "-5:00",
+					"description": "Eastern Time (US & Canada), Bogota, Lima"
+				}
+			},
+			"email": "marilaine.dapaz@example.com",
+			"login": {
+				"uuid": "956a2338-d4ef-4b85-a305-1ea737d58dc7",
+				"username": "silverbird994",
+				"password": "5656",
+				"salt": "4es04VIJ",
+				"md5": "c02c32736405594059e2b3bc1abae10b",
+				"sha1": "9a01b412e11eaa37fb3469ac166ac3b81a47332d",
+				"sha256": "dfa05e8eaeec70d3f4db7e8ff6a57179848d0462336e358aff54e301b8723502"
+			},
+			"dob": {
+				"date": "1965-08-13T16:48:59.962Z",
+				"age": 57
+			},
+			"phone": "(71) 9541-1914",
+			"cell": "(47) 1081-3209",
+			"picture": {
+				"large": "https://randomuser.me/api/portraits/women/34.jpg",
+				"medium": "https://randomuser.me/api/portraits/med/women/34.jpg",
+				"thumbnail": "https://randomuser.me/api/portraits/thumb/women/34.jpg"
+			},
+			"nat": "BR"
+		},
+		{
+			"gender": "female",
+			"name": {
+				"title": "Ms",
+				"first": "Mimosa",
+				"last": "Moreira"
+			},
+			"location": {
+				"street": {
+					"number": 9842,
+					"name": "Rua Belo Horizonte "
+				},
+				"city": "Boa Vista",
+				"state": "Paraná",
+				"country": "Brazil",
+				"postcode": 86522,
+				"coordinates": {
+					"latitude": "-84.9828",
+					"longitude": "-163.4669"
+				},
+				"timezone": {
+					"offset": "-6:00",
+					"description": "Central Time (US & Canada), Mexico City"
+				}
+			},
+			"email": "mimosa.moreira@example.com",
+			"login": {
+				"uuid": "cc78ee29-1a7a-4821-bdf2-a2215c07c5cd",
+				"username": "brownpanda978",
+				"password": "cubs",
+				"salt": "m3qkvJBb",
+				"md5": "6c51df65890623866fbcff5f465b7d4d",
+				"sha1": "e1015c8ea43b627389902d33b6e092d4c270c895",
+				"sha256": "bbe34fe315c495ff1597fa8c9350446ad42aacba68284b1162cf1d4a3b638ac6"
+			},
+			"dob": {
+				"date": "1957-07-07T15:11:05.871Z",
+				"age": 65
+			},
+			"phone": "(17) 8332-9806",
+			"cell": "(84) 3102-7620",
+			"picture": {
+				"large": "https://randomuser.me/api/portraits/women/70.jpg",
+				"medium": "https://randomuser.me/api/portraits/med/women/70.jpg",
+				"thumbnail": "https://randomuser.me/api/portraits/thumb/women/70.jpg"
+			},
+			"nat": "BR"
+		},
+		{
+			"gender": "female",
+			"name": {
+				"title": "Mrs",
+				"first": "Guisela",
+				"last": "Pinto"
+			},
+			"location": {
+				"street": {
+					"number": 7745,
+					"name": "Rua Alagoas "
+				},
+				"city": "Chapecó",
+				"state": "Tocantins",
+				"country": "Brazil",
+				"postcode": 77316,
+				"coordinates": {
+					"latitude": "-15.6148",
+					"longitude": "141.3230"
+				},
+				"timezone": {
+					"offset": "+4:30",
+					"description": "Kabul"
+				}
+			},
+			"email": "guisela.pinto@example.com",
+			"login": {
+				"uuid": "36e91f72-9f51-48e4-ba03-5e392da6b2d8",
+				"username": "tinyfrog432",
+				"password": "opendoor",
+				"salt": "3m06o7NP",
+				"md5": "239816ac1fb0804af8ba0217cf7ad428",
+				"sha1": "0a3b884d5dcc128af93fd5e1002e25f7fb8c6152",
+				"sha256": "7ccbbbbe0f121a49d262c6898b3d52e6de89a9d6a9730bb2157a13a725b308cd"
+			},
+			"dob": {
+				"date": "1992-04-14T06:47:29.119Z",
+				"age": 31
+			},
+			"phone": "(01) 2726-5910",
+			"cell": "(85) 5539-2979",
+			"picture": {
+				"large": "https://randomuser.me/api/portraits/women/56.jpg",
+				"medium": "https://randomuser.me/api/portraits/med/women/56.jpg",
+				"thumbnail": "https://randomuser.me/api/portraits/thumb/women/56.jpg"
+			},
+			"nat": "BR"
 		}
-	],
-	"info": {
-		"seed": "123",
-		"results": 7,
-		"page": 1,
-		"version": "1.4"
-	}
+	]
 }
