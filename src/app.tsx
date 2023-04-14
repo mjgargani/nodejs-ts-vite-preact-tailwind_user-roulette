@@ -13,10 +13,12 @@ export function App() {
 	const [isUpdating, setIsUpdating] = useState<boolean>(true);
 	const [seed, setSeed] = useState<string>('123');
 	const [baseAngle, setBaseAngle] = useState<number>(0);
+	const [targetAngle, setTargetAngle] = useState<number>(0);
+	const [log, setLog] = useState<string>('');
 
-	const handleBaseAngle = ({ target }: any) => {
+	const handleTargetAngle = ({ target }: any) => {
 		console.log(target?.data);
-		setBaseAngle(target?.dataset.angle as number);
+		setTargetAngle(target?.dataset.angle as number);
 	};
 
 	const handleSeed = ({ target }: any) => {
@@ -58,13 +60,26 @@ export function App() {
 		if (seed && retriveUsers) retriveUsers();
 	}, [seed, retriveUsers]);
 
-	useEffect(() => {}, []);
+	useEffect(() => {
+		const abs = targetAngle - baseAngle;
+		const diff = abs > 180 ? abs - 360 : abs < -180 ? abs + 360 : abs;
+
+		if (diff > 0) {
+			setBaseAngle(baseAngle > 359 ? 0 : baseAngle + 1);
+		}
+
+		if (diff < 0) {
+			setBaseAngle(baseAngle < 0 ? 359 : baseAngle - 1);
+		}
+
+		setLog(`base: ${baseAngle} | target: ${targetAngle} | diff: ${diff}`);
+	}, [baseAngle, targetAngle]);
 
 	const userCards = useCallback(
 		() =>
 			users?.results.length &&
 			users.results.map((el, i) => {
-				const angle = baseAngle + i * 30;
+				const angle = i * 30;
 				return (
 					<div
 						key={`${angle}_${el.login.uuid}`}
@@ -75,7 +90,7 @@ export function App() {
 						style={{
 							transform: `rotate(calc(${angle}deg - ${baseAngle}deg))`,
 						}}
-						onClick={handleBaseAngle}
+						onClick={handleTargetAngle}
 					>
 						<Card id={`user_card_${angle}`} testId={`test_user_card_${angle}`}>
 							<p>{angle}</p>
@@ -96,6 +111,7 @@ export function App() {
 					</label>
 					<input id="seed" type="text" value={seed} onInput={handleSeed} class="mr-2" />
 					<button onClick={() => handleSeed({ target: { value: () => nanoid() } })}>🎲</button>
+					<p class="text-center">{log}</p>
 				</div>
 
 				{userCards()}
