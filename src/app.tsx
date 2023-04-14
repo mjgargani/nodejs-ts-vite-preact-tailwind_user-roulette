@@ -6,24 +6,21 @@ import RandomUser from './classes/RandomUser';
 import Card from './components/Card';
 import MainContainer from './components/MainContainer';
 import { type RandomUserResponse } from './classes/types';
+import { nanoid } from 'nanoid';
 
 export function App() {
 	const [users, setUsers] = useState<RandomUserResponse>();
 	const [isUpdating, setIsUpdating] = useState<boolean>(true);
 	const [seed, setSeed] = useState<string>('123');
-	const [rouletteRotationBase, setRouletteRotationBase] = useState<number>(0);
-	const [angleSelect, setAngleSelect] = useState<number>(0);
-	const [direction, setDirection] = useState<'left' | 'right' | false>(false);
+	const [baseAngle, setBaseAngle] = useState<number>(0);
 
-	const handleAngleSelect = ({ target }: any) => {
+	const handleBaseAngle = ({ target }: any) => {
 		console.log(target?.data);
-		setAngleSelect(target?.dataset.angle as number);
+		setBaseAngle(target?.dataset.angle as number);
 	};
 
 	const handleSeed = ({ target }: any) => {
 		setSeed(target?.value as string);
-		setRouletteRotationBase(180);
-		setAngleSelect(0);
 	};
 
 	const retriveUsers = useCallback(
@@ -37,7 +34,7 @@ export function App() {
 				seed,
 				format: 'json',
 				nat: ['br'],
-				exc: ['login', 'registered', 'id'],
+				exc: ['registered', 'id'],
 			});
 
 			return data
@@ -61,66 +58,48 @@ export function App() {
 		if (seed && retriveUsers) retriveUsers();
 	}, [seed, retriveUsers]);
 
-	useEffect(() => {
-		const diff = 360 - Math.abs(rouletteRotationBase - angleSelect);
+	useEffect(() => {}, []);
 
-		if (direction === false && diff > 0) {
-			setDirection(diff > 180 ? 'left' : 'right');
-		}
-
-		if (direction !== false && diff > 0) {
-			if (direction === 'right') {
-				setRouletteRotationBase(rouletteRotationBase > 360 ? 0 : rouletteRotationBase + 1);
-			} else if (direction === 'left') {
-				setRouletteRotationBase(rouletteRotationBase <= 0 ? 360 : rouletteRotationBase - 1);
-			}
-		}
-
-		if (diff <= 0) {
-			setDirection(false);
-		}
-	}, [rouletteRotationBase, angleSelect, direction]);
+	const userCards = useCallback(
+		() =>
+			users?.results.length &&
+			users.results.map((el, i) => {
+				const angle = baseAngle + i * 30;
+				return (
+					<div
+						key={`${angle}_${el.login.uuid}`}
+						data-angle={angle}
+						data-uuid={el.login.uuid}
+						// eslint-disable-next-line tailwindcss/no-custom-classname
+						class={`min-h-3/4 fixed top-0 flex w-max origin-top items-end bg-green-600`}
+						style={{
+							transform: `rotate(calc(${angle}deg - ${baseAngle}deg))`,
+						}}
+						onClick={handleBaseAngle}
+					>
+						<Card id={`user_card_${angle}`} testId={`test_user_card_${angle}`}>
+							<p>{angle}</p>
+							<p>{[el.name.title, el.name.first, el.name.last].join(' ')}</p>
+						</Card>
+					</div>
+				);
+			}),
+		[users, baseAngle],
+	);
 
 	return (
-		<MainContainer>
-			<form class="absolute bottom-0 flex max-h-min flex-col">
-				<label for="seed" class="min-w-full text-center">
-					Seed: {seed}
-				</label>
-				<input id="seed" type="text" value={seed} onInput={handleSeed} />
-				<p for="roulette-test" class="min-w-full text-center mt-2">
-					{rouletteRotationBase}deg
-				</p>
-				<p for="roulette-test" class="min-w-full text-center mt-2">
-					selected {angleSelect}deg
-				</p>
-				<p>diff {Math.abs(rouletteRotationBase - angleSelect)}</p>
-				<p>direction {direction}</p>
-			</form>
+		users?.results.length && (
+			<MainContainer>
+				<div class="absolute bottom-0 max-h-min whitespace-nowrap">
+					<label for="seed" class="min-w-full text-center mr-2">
+						Seed:
+					</label>
+					<input id="seed" type="text" value={seed} onInput={handleSeed} class="mr-2" />
+					<button onClick={() => handleSeed({ target: { value: () => nanoid() } })}>🎲</button>
+				</div>
 
-			{users?.results.length &&
-				users.results.map((el, i) => {
-					const angle = i * 30;
-					const angleId = 360 - angle;
-					return (
-						<div
-							key={`${angle}_${Date.now()}`}
-							data-angle={angleId}
-							selected={angleSelect === angle}
-							// eslint-disable-next-line tailwindcss/no-custom-classname
-							class={`min-h-3/4 fixed top-0 flex w-max origin-top items-end bg-green-600 transition-all duration-500`}
-							style={{
-								transform: `rotate(calc(${angle}deg + ${rouletteRotationBase}deg))`,
-							}}
-							onClick={handleAngleSelect}
-						>
-							<Card id={`user_card_${angle}`} testId={`test_user_card_${angle}`}>
-								<p>{angleId}</p>
-								<p>{[el.name.title, el.name.first, el.name.last].join(' ')}</p>
-							</Card>
-						</div>
-					);
-				})}
-		</MainContainer>
+				{userCards()}
+			</MainContainer>
+		)
 	);
 }
