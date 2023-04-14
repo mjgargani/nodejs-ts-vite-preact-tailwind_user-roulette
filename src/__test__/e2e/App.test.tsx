@@ -1,10 +1,10 @@
 import React from 'preact/compat';
 import { h } from 'preact';
-import { render, screen, cleanup } from '@testing-library/preact';
-import { App } from '../../app';
-import { server } from '../mock/server';
+import { render, screen, cleanup, waitFor } from '@testing-library/preact';
+import App from '../../app';
 import randomUsersMock from '../mock/random-users.json';
-import { Mock } from 'vitest';
+import { type Mock } from 'vitest';
+import '../../i18n';
 
 global.fetch = vi.fn();
 
@@ -36,7 +36,7 @@ describe('main page tests', () => {
 		expect(updateBtnSeedRandom).toBeEnabled();
 	});
 
-	it.only('needs to contain a main random user card from api, with correct collapsed data', async () => {
+	it('needs to contain a main random user card from api, with correct collapsed data', async () => {
 		const { container } = render(<App />);
 		expect(container).toBeInTheDocument();
 
@@ -54,28 +54,24 @@ describe('main page tests', () => {
 
 		const defaultCard = await screen.findByTestId(/test_user_card_0/);
 
-		expect(defaultCard).toContainHTML(
-			`<h3>Sr ${randomUsersMock.results[0].name.first} ${randomUsersMock.results[0].name.last}</h3>`,
+		expect(defaultCard).toHaveTextContent(
+			`Sr ${randomUsersMock.results[0].name.first} ${randomUsersMock.results[0].name.last}`,
 		);
-		expect(defaultCard).toContainHTML(`<title>masculino</title>`);
-		expect(defaultCard).toContainHTML(`<title>brasileiro</title>`);
-		expect(defaultCard).toContainHTML(
-			`<span>${Math.floor(
-				(Date.now() - new Date(randomUsersMock.results[0].dob.date).getTime()) / 31536000000,
-			)} anos</span>`,
+		expect(defaultCard).toHaveTextContent('♂️');
+		expect(defaultCard).toHaveTextContent('🇧🇷');
+		const age = Math.floor((Date.now() - new Date(randomUsersMock.results[0].dob.date).getTime()) / 31536000000);
+		expect(defaultCard).toHaveTextContent(`${age} anos`);
+		expect(defaultCard).toHaveTextContent('Endereço');
+		expect(defaultCard).toHaveTextContent(
+			`${randomUsersMock.results[0].location.street.name}, ${randomUsersMock.results[0].location.street.number}`,
 		);
-		expect(defaultCard).toContainHTML(`<section id="main-user-card-details" data-expanded />`);
-		expect(defaultCard).toContainHTML(`<h4>Endereço</h4>`);
-		expect(defaultCard).toContainHTML(
-			'<ul>' +
-				`<li>${randomUsersMock.results[0].location.street.name}, ${randomUsersMock.results[0].location.street.number}</li>` +
-				`<li>${randomUsersMock.results[0].location.city}, ${randomUsersMock.results[0].location.state} - Brasil</li>` +
-				'</ul>',
+		expect(defaultCard).toHaveTextContent(
+			`${randomUsersMock.results[0].location.city} - ${randomUsersMock.results[0].location.state}, Brasil`,
 		);
 
-		const mainCardPicture = await screen.findByTestId(/test_user_card_3_picture/);
+		const mainCardPicture = await screen.findByTestId(/test_user_card_picture_0/);
 		expect(mainCardPicture).toHaveStyle({
-			'background-image': `url(${randomUsersMock.results[3].picture.medium})`,
+			'background-image': `url(${randomUsersMock.results[0].picture.medium})`,
 			'background-size': 'cover',
 			'background-repeat': 'no-repeat',
 			'background-position': 'center',

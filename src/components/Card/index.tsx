@@ -11,7 +11,7 @@ type CardProps = {
 
 function Card({ key, id, testId, children }: CardProps) {
 	return (
-		<div key={key} id={id} data-testid={testId} style={{ pointerEvents: 'none' }}>
+		<div key={key} id={id} data-testid={testId} class="pointer-events-none min-w-full">
 			{children}
 		</div>
 	);
