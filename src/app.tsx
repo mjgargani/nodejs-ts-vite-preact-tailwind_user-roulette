@@ -7,6 +7,7 @@ import Card from './components/Card';
 import MainContainer from './components/MainContainer';
 import { type RandomUserResponse } from './classes/types';
 import { nanoid } from 'nanoid';
+import closeRound from './utils/closeRound';
 
 export function App() {
 	const [users, setUsers] = useState<RandomUserResponse>();
@@ -17,7 +18,6 @@ export function App() {
 	const [log, setLog] = useState<string>('');
 
 	const handleTargetAngle = ({ target }: any) => {
-		console.log(target?.data);
 		setTargetAngle(target?.dataset.angle as number);
 	};
 
@@ -63,16 +63,18 @@ export function App() {
 	useEffect(() => {
 		const abs = targetAngle - baseAngle;
 		const diff = abs > 180 ? abs - 360 : abs < -180 ? abs + 360 : abs;
+		const speed = Number((Math.abs(diff) / 10).toFixed(2));
 
 		if (diff > 0) {
-			setBaseAngle(baseAngle > 359 ? 0 : baseAngle + 1);
+			setBaseAngle(baseAngle > 359 ? 0 : closeRound(baseAngle + speed));
 		}
 
 		if (diff < 0) {
-			setBaseAngle(baseAngle < 0 ? 359 : baseAngle - 1);
+			setBaseAngle(baseAngle < 0 ? 359 : closeRound(baseAngle - speed));
 		}
 
-		setLog(`base: ${baseAngle} | target: ${targetAngle} | diff: ${diff}`);
+		setLog(`base: ${Math.trunc(baseAngle)} | target: ${targetAngle} | diff: ${Math.trunc(diff)}`);
+		console.log('useEffect');
 	}, [baseAngle, targetAngle]);
 
 	const userCards = useCallback(
