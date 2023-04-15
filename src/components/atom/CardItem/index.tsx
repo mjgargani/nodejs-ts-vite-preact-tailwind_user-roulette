@@ -25,7 +25,7 @@ function CardItem({ id, testId, user, angle }: CardProps) {
 		address: isSelected.value ? '' : 'max-h-0 overflow-y-hidden',
 		picture: {
 			size: isSelected.value ? user.picture.large : user.picture.thumbnail,
-			blur: isSelected.value ? '' : 'blur(4px)',
+			blur: isSelected.value ? '' : 'blur(2px)',
 			height: isSelected.value ? 'h-36' : 'h-24',
 		},
 		text: {
@@ -40,8 +40,13 @@ function CardItem({ id, testId, user, angle }: CardProps) {
 			data-angle={angle}
 			data-uuid={user.login.uuid}
 			selected={isSelected}
-			class={`${classes.container} absolute top-0 h-2 flex origin-top cursor-pointer items-end rounded bg-gray-100 text-black shadow-lg rounded-b-full`}
+			class={`${classes.container} absolute top-0 h-2 flex origin-top cursor-pointer items-end rounded text-black shadow-lg rounded-b-full`}
 			style={{
+				backgroundColor: current.lego.value ? user.color : 'Snow',
+				backgroundImage: current.lego.value
+					? `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 50 50'%3E%3Ccircle cx='25' cy='25' r='10' fill='black' fill-opacity='0.1'/%3E%3C/svg%3E")`
+					: null,
+				backgroundSize: current.lego.value ? '50px 50px' : null,
 				transform: `rotate(calc(${angle}deg + ${signals.angle}deg))`,
 			}}
 			onClick={({ target: { dataset } }) => {
@@ -53,7 +58,7 @@ function CardItem({ id, testId, user, angle }: CardProps) {
 		>
 			<div class={`${classes.content} min-w-full pointer-events-none`}>
 				<div class="m-1">
-					<h3 class={`mb-2 text-center ${classes.text.title}`}>
+					<h3 class={`mb-2 text-center rounded bg-black bg-opacity-5 p-1 ${classes.text.title}`}>
 						{[t(user.name.title), user.name.first, user.name.last].join(' ')}
 					</h3>
 					<section id="main-user-card-details" data-expanded={isSelected} class={classes.address}>
@@ -61,10 +66,10 @@ function CardItem({ id, testId, user, angle }: CardProps) {
 							<span class="mr-2">{t(user.gender)}</span>
 							<span>{t(user.nat)}</span>
 						</p>
-						<p class="mb-2 rounded bg-gray-300 text-center text-base">
+						<p class="mb-2 rounded bg-black bg-opacity-5 text-center text-base">
 							<span>{Math.floor((Date.now() - new Date(user.dob.date).getTime()) / 31536000000)} anos</span>
 						</p>
-						<h4 class="mb-2 rounded bg-gray-300 text-center text-base">{t('Address')}</h4>
+						<h4 class="mb-2 rounded bg-black bg-opacity-5 text-center text-base">{t('Address')}</h4>
 						<ul>
 							<li class="mb-2 text-sm">{`${user.location.street.name}, ${user.location.street.number}`}</li>
 							<li class="mb-2 text-sm">{`${user.location.city} - ${user.location.state}, ${t(

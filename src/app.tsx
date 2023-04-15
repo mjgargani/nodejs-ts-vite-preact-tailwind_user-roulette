@@ -11,6 +11,19 @@ import { batch, computed, effect, signal } from '@preact/signals';
 import CardItem from './components/atom/CardItem';
 import './app.css';
 
+const colors = [
+	'#E6B0AA',
+	'#D7BDE2',
+	'#A9CCE3',
+	'#AED6F1',
+	'#A3E4D7',
+	'#A9DFBF',
+	'#F9E79F',
+	'#EDBB99',
+	'#E5E7E9',
+	'#E5E7E9',
+];
+
 export const signals = {
 	loading: signal<boolean>(true),
 	seed: signal<string>('1234'),
@@ -80,7 +93,11 @@ const retriveUsers = effect(() => {
 		.retrieve()
 		.then((response) => {
 			const original = (response as RandomUserResponse).results;
-			const results = original.map((el, i) => ({ ...el, angle: 360 - i * 30 }));
+			const results = original.map((el, i) => ({
+				...el,
+				angle: 360 - i * 30,
+				color: colors[Math.floor(Math.random() * colors.length)],
+			}));
 			batch(() => {
 				handle.users.results(results);
 				handle.selected(results[0].login.uuid);
