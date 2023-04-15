@@ -1,47 +1,69 @@
 import React from 'react';
 import type Preact from 'preact';
 import { type h } from 'preact';
-import { CustomUser } from '@/classes/types';
-import { handle, signals } from '@/app';
+import { User } from '@/classes/types';
+import { current, handle, signals } from '@/app';
 import { useTranslation } from 'react-i18next';
-import { computed } from '@preact/signals';
+import { batch, computed } from '@preact/signals';
 
 type CardProps = {
 	id?: string;
 	testId?: string;
 	angle: number;
-	user?: CustomUser;
+	user?: User;
 };
 
 function CardItem({ id, testId, user, angle }: CardProps) {
-	const { t } = useTranslation();
+	if (!user) return <></>;
 
-	return user ? (
+	const { t } = useTranslation();
+	const targetAngle = 360 - angle;
+	const isSelected = computed(() => current.selected.value === user?.login.uuid);
+	const classes = {
+		container: isSelected.value ? 'min-h-9/10 md:w-1/8 z-10 w-1/2' : 'min-h-3/4 z-0 w-1/3 md:w-1/12',
+		content: isSelected.value ? '' : 'opacity-20',
+		address: isSelected.value ? '' : 'max-h-0 overflow-y-hidden',
+		picture: {
+			size: isSelected.value ? user.picture.large : user.picture.thumbnail,
+			blur: isSelected.value ? '' : 'blur(4px)',
+			height: isSelected.value ? 'h-36' : 'h-24',
+		},
+		text: {
+			title: isSelected.value ? 'text-xl md:text-2xl' : 'text-lg md:text-xl',
+		},
+	};
+
+	return (
 		<div
 			id={id}
 			data-testid={testId}
-			data-angle={user.angle}
+			data-angle={angle}
 			data-uuid={user.login.uuid}
-			selected={true}
-			class={`${
-				true ? 'min-h-9/10 md:w-1/8 z-10 w-1/2' : 'min-h-3/4 z-0 w-1/3 md:w-1/12'
-			} fixed top-0 flex origin-top cursor-pointer items-end rounded bg-gray-100 text-black shadow-lg transition-transform`}
+			selected={isSelected}
+			class={`${classes.container} absolute top-0 h-2 flex origin-top cursor-pointer items-end rounded bg-gray-100 text-black shadow-lg rounded-b-full`}
 			style={{
 				transform: `rotate(calc(${angle}deg + ${signals.angle}deg))`,
 			}}
-			onClick={handle.angle}
+			onClick={({ target: { dataset } }) => {
+				batch(() => {
+					handle.angle(targetAngle);
+					handle.selected(dataset?.uuid);
+				});
+			}}
 		>
-			<div class={`${true ? '' : 'opacity-50'} min-w-full`}>
+			<div class={`${classes.content} min-w-full pointer-events-none`}>
 				<div class="m-1">
-					<h3 class="mb-2 text-center text-xl">{[t(user.name.title), user.name.first, user.name.last].join(' ')}</h3>
-					<p class="mb-2 text-center text-xl">
-						<span class="mr-2">{t(user.gender)}</span>
-						<span>{t(user.nat)}</span>
-					</p>
-					<p class="text-l mb-2 text-center text-gray-500">
-						<span>{Math.floor((Date.now() - new Date(user.dob.date).getTime()) / 31536000000)} anos</span>
-					</p>
-					<section id="main-user-card-details" data-expanded={true} class={true ? '' : 'hidden'}>
+					<h3 class={`mb-2 text-center ${classes.text.title}`}>
+						{[t(user.name.title), user.name.first, user.name.last].join(' ')}
+					</h3>
+					<section id="main-user-card-details" data-expanded={isSelected} class={classes.address}>
+						<p class="mb-2 text-center text-xl">
+							<span class="mr-2">{t(user.gender)}</span>
+							<span>{t(user.nat)}</span>
+						</p>
+						<p class="mb-2 rounded bg-gray-300 text-center text-base">
+							<span>{Math.floor((Date.now() - new Date(user.dob.date).getTime()) / 31536000000)} anos</span>
+						</p>
 						<h4 class="mb-2 rounded bg-gray-300 text-center text-base">{t('Address')}</h4>
 						<ul>
 							<li class="mb-2 text-sm">{`${user.location.street.name}, ${user.location.street.number}`}</li>
@@ -51,21 +73,20 @@ function CardItem({ id, testId, user, angle }: CardProps) {
 						</ul>
 					</section>
 					<div
-						data-testid={`test_user_card_picture_${user.angle}`}
+						data-testid={`test_user_card_picture_${angle}`}
 						style={{
-							backgroundImage: `url(${true ? user.picture.large : user.picture.thumbnail})`,
+							backgroundImage: `url(${classes.picture.size})`,
 							backgroundSize: 'cover',
 							backgroundRepeat: 'no-repeat',
 							backgroundPosition: 'center',
-							filter: true ? '' : 'blur(4px)',
+							filter: classes.picture.blur,
+							borderRadius: '1000px 1000px 9999px 9999px',
 						}}
-						class="h-36 min-w-min rounded"
+						class={`${classes.picture.height} min-w-min`}
 					/>
 				</div>
 			</div>
 		</div>
-	) : (
-		<></>
 	);
 }
 
