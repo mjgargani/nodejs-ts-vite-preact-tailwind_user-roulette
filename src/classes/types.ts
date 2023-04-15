@@ -111,5 +111,6 @@ export type RandomUserProps = {
 		page?: number;
 		inc?: Fields[];
 		exc?: Fields[];
+		lego?: boolean;
 	};
 };

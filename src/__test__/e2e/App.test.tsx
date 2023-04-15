@@ -98,7 +98,7 @@ describe('main page tests', () => {
 		expect(container).toBeInTheDocument();
 	});
 
-	it('needs, as the api developer page, a konami code to unlock the lego api', async () => {
+	it('needs, as the api developer page, an access to lego api', async () => {
 		const { container } = render(<App />);
 		expect(container).toBeInTheDocument();
 	});

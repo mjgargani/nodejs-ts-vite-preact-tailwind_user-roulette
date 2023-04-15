@@ -3,11 +3,13 @@
 		"translation": {
 			"Mr": "Sr",
 			"Mrs": "Sra",
+			"Miss": "Srta",
 			"male": "♂️",
 			"female": "♀️",
 			"Brazil": "Brasil",
 			"Address": "Endereço",
 			"BR": "🇧🇷",
+			"LEGO": "🧱",
 			"Seed": "🌱"
 		}
 	}

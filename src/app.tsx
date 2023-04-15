@@ -20,6 +20,7 @@ export const signals = {
 	},
 	selected: signal<string>(''),
 	swipe: signal<number>(1),
+	lego: signal<boolean>(false),
 };
 
 export const current = {
@@ -31,6 +32,7 @@ export const current = {
 	},
 	selected: computed(() => signals.selected.value),
 	swipe: computed(() => signals.swipe.value),
+	lego: computed(() => signals.lego.value),
 };
 
 export const handle = {
@@ -61,6 +63,7 @@ export const handle = {
 		}
 		return !!value && (signals.swipe.value = value);
 	},
+	lego: () => (signals.lego.value = !signals.lego.value),
 };
 
 const retriveUsers = effect(() => {
@@ -70,6 +73,7 @@ const retriveUsers = effect(() => {
 		format: 'json',
 		nat: ['br'],
 		exc: ['registered', 'id'],
+		lego: signals.lego.value,
 	});
 
 	data
@@ -95,7 +99,7 @@ function App() {
 	return (
 		<MainContainer>
 			<div class="absolute bottom-0 w-3/4 md:w-1/4 whitespace-nowrap text-center z-50 bg-black rounded-t p-2">
-				<label for="seed" class="mr-2 min-w-full text-center">
+				<label for="seed" class="mr-1 min-w-full text-center">
 					{t('Seed')}
 				</label>
 				<input
@@ -103,8 +107,8 @@ function App() {
 					type="text"
 					value={signals.seed}
 					onChange={handle.seed}
-					class={`mr-2 w-2/4 md:w-3/4  ${current.loading ? 'cursor-not-allowed' : ''}`}
-					disabled={current.loading}
+					class={`mr-1 w-2/4 md:w-3/4  ${current.loading.value ? 'cursor-not-allowed' : ''}`}
+					disabled={current.loading.value}
 					data-testid="test-input-seed"
 				/>
 				<button
@@ -113,11 +117,24 @@ function App() {
 						handle.seed({ target: { value: nanoid() } });
 						handle.angle(current.angle - 180);
 					}}
-					disabled={current.loading}
-					class={current.loading ? 'cursor-not-allowed' : ''}
+					disabled={current.loading.value}
+					class={`${current.loading.value ? 'cursor-not-allowed' : ''} mr-1`}
 					data-testid="test-btn-random-seed"
 				>
 					🎲
+				</button>
+				<button
+					onClick={() => {
+						handle.loading(true);
+						handle.lego();
+						handle.seed({ target: { value: nanoid() } });
+						handle.angle(current.angle - 180);
+					}}
+					disabled={current.loading.value}
+					class={`${current.loading.value ? 'cursor-not-allowed' : ''} ${signals.lego.value ? '' : 'opacity-50'}`}
+					data-testid="test-btn-random-seed"
+				>
+					🧱
 				</button>
 			</div>
 

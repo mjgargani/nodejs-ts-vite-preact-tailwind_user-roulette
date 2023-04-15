@@ -35,6 +35,7 @@ class RandomUser implements RandomUserProps {
 		page,
 		inc,
 		exc,
+		lego,
 	}: { nat?: Array<Nationalities['1.4']> } & Partial<RandomUserProps['props']> = {}) {
 		this.props.results = results;
 		this.props.gender = gender;
@@ -44,6 +45,7 @@ class RandomUser implements RandomUserProps {
 		this.props.page = page;
 		this.props.inc = inc;
 		this.props.exc = exc;
+		this.props.lego = lego;
 
 		const query = [
 			results ? `results=${results}` : undefined,
@@ -56,6 +58,7 @@ class RandomUser implements RandomUserProps {
 			page ? `page=${page}` : undefined,
 			inc ? `inc=${inc.filter(Boolean).join(',')}` : undefined,
 			exc ? `exc=${exc.filter(Boolean).join(',')}` : undefined,
+			lego ? 'lego' : undefined,
 		];
 
 		this.requestUrl =
