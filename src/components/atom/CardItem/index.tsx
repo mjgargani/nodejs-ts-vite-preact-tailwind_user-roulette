@@ -20,7 +20,9 @@ function CardItem({ id, testId, user, angle }: CardProps) {
 	const targetAngle = 360 - angle;
 	const isSelected = computed(() => current.selected.value === user?.login.uuid);
 	const classes = {
-		container: isSelected.value ? 'min-h-9/10 md:w-1/8 z-10 w-1/2' : 'min-h-3/4 z-0 w-1/3 md:w-1/12',
+		container: `${isSelected.value ? 'min-h-9/10 md:w-1/8 z-10 w-1/2' : 'min-h-3/4 z-0 w-1/3 md:w-1/12'} ${
+			current.lego.value ? 'rounded-b' : 'rounded-b-full'
+		}`,
 		content: isSelected.value ? '' : 'opacity-20',
 		address: isSelected.value ? '' : 'max-h-0 overflow-y-hidden',
 		picture: {
@@ -40,13 +42,13 @@ function CardItem({ id, testId, user, angle }: CardProps) {
 			data-angle={angle}
 			data-uuid={user.login.uuid}
 			selected={isSelected}
-			class={`${classes.container} absolute top-0 h-2 flex origin-top cursor-pointer items-end rounded text-black shadow-lg rounded-b-full`}
+			class={`${classes.container} absolute top-0 h-2 flex origin-top cursor-pointer items-end rounded text-black shadow-lg`}
 			style={{
 				backgroundColor: current.lego.value ? user.color : 'Snow',
 				backgroundImage: current.lego.value
 					? `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 50 50'%3E%3Ccircle cx='25' cy='25' r='10' fill='black' fill-opacity='0.1'/%3E%3C/svg%3E")`
 					: null,
-				backgroundSize: current.lego.value ? '50px 50px' : null,
+				backgroundSize: current.lego.value ? '40' : null,
 				transform: `rotate(calc(${angle}deg + ${signals.angle}deg))`,
 			}}
 			onClick={({ target: { dataset } }) => {
@@ -85,7 +87,7 @@ function CardItem({ id, testId, user, angle }: CardProps) {
 							backgroundRepeat: 'no-repeat',
 							backgroundPosition: 'center',
 							filter: classes.picture.blur,
-							borderRadius: '1000px 1000px 9999px 9999px',
+							borderRadius: current.lego.value ? '3%' : '1000px 1000px 9999px 9999px',
 						}}
 						class={`${classes.picture.height} min-w-min`}
 					/>
