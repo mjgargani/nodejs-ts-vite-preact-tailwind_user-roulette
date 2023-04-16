@@ -1,19 +1,19 @@
 import { batch, effect } from '@preact/signals';
 import RandomUser from './RandomUser';
-import { handle, signals } from '@/components/signals';
+import { current, handle, signals } from '@/components/signals';
 import { RandomUserResponse } from './types';
 import colors from '@/utils/colors';
 
 export default effect(() => {
-	handle.selected('none');
+	handle.loading(true);
 
 	const data: RandomUser = new RandomUser({
 		results: 12,
-		seed: signals.seed.value,
+		seed: current.seed.value,
 		format: 'json',
 		nat: ['br'],
 		exc: ['registered', 'id'],
-		lego: signals.lego.value,
+		lego: current.lego.peek(),
 	});
 
 	data
@@ -22,14 +22,17 @@ export default effect(() => {
 			const original = (response as RandomUserResponse).results;
 			const results = original.map((el, i) => ({
 				...el,
-				angle: 360 - i * 30,
+				angle: i * 30,
 				color: colors[Math.floor(Math.random() * colors.length)],
 			}));
 			batch(() => {
 				handle.users.results(results);
-				handle.selected(results[5].login.uuid);
-				handle.angle(results[5].angle);
-				handle.loading(false);
+				setTimeout(() => {
+					batch(() => {
+						handle.selected(results[Math.floor(Math.random() * results.length)].login.uuid);
+						handle.loading(false);
+					});
+				}, 1000);
 			});
 		})
 		.catch((error) => {

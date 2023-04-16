@@ -18,7 +18,6 @@ function CardItem({ id, testId, user, angle }: CardProps) {
 	if (!user) return <></>;
 	const { t } = current.i18next.value;
 
-	const targetAngle = computed(() => 360 - angle).value;
 	const isSelected = computed(() => current.selected.value === user?.login.uuid).value;
 	const classes = twClasses(isSelected, user);
 
@@ -29,7 +28,7 @@ function CardItem({ id, testId, user, angle }: CardProps) {
 			data-angle={angle}
 			data-uuid={user.login.uuid}
 			selected={isSelected}
-			class={`${classes.container} absolute top-0 h-2 flex origin-top cursor-pointer items-end rounded text-black shadow-lg`}
+			class={`${classes.container} absolute top-0 h-2 flex origin-top items-end rounded text-black shadow-lg`}
 			style={{
 				backgroundColor: current.lego.value ? user.color : 'Snow',
 				backgroundImage: current.lego.value
@@ -41,7 +40,6 @@ function CardItem({ id, testId, user, angle }: CardProps) {
 			onClick={({ target }: Event) => {
 				const dataset = (target as HTMLDivElement).dataset;
 				batch(() => {
-					handle.angle(targetAngle);
 					handle.selected(dataset.uuid! as string);
 				});
 			}}

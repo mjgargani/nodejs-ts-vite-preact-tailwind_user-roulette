@@ -71,6 +71,7 @@ class RandomUser implements RandomUserProps {
 
 		return fetch(this.requestUrl, {
 			method: 'GET',
+			cache: 'force-cache',
 			headers: {
 				'access-control-allow-origin': '*',
 				'content-type': `${contentType(format)}; charset=utf-8`,

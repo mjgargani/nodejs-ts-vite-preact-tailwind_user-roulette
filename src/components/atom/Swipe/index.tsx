@@ -9,7 +9,10 @@ function Swipe() {
 				max="2"
 				class="h-full w-full"
 				value={current.swipe}
-				onInput={(e) => handle.swipe(Number((e.target! as HTMLInputElement).value))}
+				onInput={(e: Event) => {
+					e.preventDefault();
+					handle.swipe(Number((e.target! as HTMLInputElement).value));
+				}}
 				onPointerUp={() => handle.swipe(1)}
 			/>
 		</div>
