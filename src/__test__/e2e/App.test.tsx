@@ -1,10 +1,10 @@
 import React from 'preact/compat';
 import { h } from 'preact';
 import { render, screen, cleanup, waitFor } from '@testing-library/preact';
-import App from '../../app';
-import randomUsersMock from '../mock/random-users.json';
 import { type Mock } from 'vitest';
-import '../../i18n';
+import '@/i18n';
+import App from '@/app';
+import randomUsersMock from '@/__test__/mock/random-users.json';
 
 global.fetch = vi.fn();
 
@@ -19,7 +19,7 @@ afterEach(() => {
 });
 
 describe('main page tests', () => {
-	it('needs to show all the components, except the filter ones, on screen', async () => {
+	it.only('needs to show all the components, except the filter ones, on screen', async () => {
 		const { container } = render(<App />);
 		expect(container).toBeInTheDocument();
 

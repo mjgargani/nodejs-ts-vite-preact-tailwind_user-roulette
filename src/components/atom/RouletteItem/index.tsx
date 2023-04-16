@@ -1,39 +1,26 @@
-import React from 'react';
+import React from 'preact/compat';
 import type Preact from 'preact';
 import { type h } from 'preact';
-import { User } from '@/classes/types';
-import { current, handle, signals } from '@/app';
+import { CustomUser } from '@/classes/types';
 import { useTranslation } from 'react-i18next';
 import { batch, computed } from '@preact/signals';
+import { current, handle, signals } from '@/components/signals';
+import twClasses from './twClasses';
 
 type CardProps = {
 	id?: string;
 	testId?: string;
 	angle: number;
-	user?: User;
+	user?: CustomUser;
 };
 
 function CardItem({ id, testId, user, angle }: CardProps) {
 	if (!user) return <></>;
+	const { t } = current.i18next.value;
 
-	const { t } = useTranslation();
-	const targetAngle = 360 - angle;
-	const isSelected = computed(() => current.selected.value === user?.login.uuid);
-	const classes = {
-		container: `${isSelected.value ? 'min-h-9/10 md:w-1/8 z-10 w-1/2' : 'min-h-3/4 z-0 w-1/3 md:w-1/12'} ${
-			current.lego.value ? 'rounded-b' : 'rounded-b-full'
-		}`,
-		content: isSelected.value ? '' : 'opacity-20',
-		address: isSelected.value ? '' : 'max-h-0 overflow-y-hidden',
-		picture: {
-			size: isSelected.value ? user.picture.large : user.picture.thumbnail,
-			blur: isSelected.value ? '' : 'blur(2px)',
-			height: isSelected.value ? 'h-36' : 'h-24',
-		},
-		text: {
-			title: isSelected.value ? 'text-xl md:text-2xl' : 'text-lg md:text-xl',
-		},
-	};
+	const targetAngle = computed(() => 360 - angle).value;
+	const isSelected = computed(() => current.selected.value === user?.login.uuid).value;
+	const classes = twClasses(isSelected, user);
 
 	return (
 		<div
@@ -51,10 +38,11 @@ function CardItem({ id, testId, user, angle }: CardProps) {
 				backgroundSize: current.lego.value ? '40' : null,
 				transform: `rotate(calc(${angle}deg + ${signals.angle}deg))`,
 			}}
-			onClick={({ target: { dataset } }) => {
+			onClick={({ target }: Event) => {
+				const dataset = (target as HTMLDivElement).dataset;
 				batch(() => {
 					handle.angle(targetAngle);
-					handle.selected(dataset?.uuid);
+					handle.selected(dataset.uuid! as string);
 				});
 			}}
 		>

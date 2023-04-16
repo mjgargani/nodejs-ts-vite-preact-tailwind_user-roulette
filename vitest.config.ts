@@ -1,5 +1,6 @@
 /// <reference types="vitest" />
 import { defineConfig } from 'vitest/config';
+import { fileURLToPath, URL } from 'url';
 
 export default defineConfig({
 	define: {
@@ -16,5 +17,10 @@ export default defineConfig({
 		},
 		mockReset: true,
 		restoreMocks: true,
+	},
+	resolve: {
+		alias: {
+			'@': fileURLToPath(new URL('./src', import.meta.url)),
+		},
 	},
 });
