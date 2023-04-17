@@ -13,16 +13,15 @@ function RouletteItemDetails({ isSelected, user, classes }: RouletteItemDetailsP
 
 	return (
 		<section id="main-user-card-details" data-expanded={isSelected} class={classes.address}>
-			<p class="mb-2 text-center text-xl">
+			<p class="mb-2 text-center text-sm md:text-xl">
 				<span class="mr-2">{t(user.gender)}</span>
 				<span>{t(user.nat)}</span>
 			</p>
-			<p class="mb-2 rounded bg-black bg-opacity-5 text-center text-base">
+			<p class="mb-2 rounded bg-black bg-opacity-5 text-center text-sm md:text-base">
 				<span>{currentAge(user.dob.date)} anos</span>
 			</p>
-			<h4 class="mb-2 rounded bg-black bg-opacity-5 text-center text-base">{t('Address')}</h4>
+			<h4 class="mb-2 rounded bg-black bg-opacity-5 text-center text-sm md:text-base">{t('Address')}</h4>
 			<ul>
-				<li class="mb-2 text-sm">{`${user.location.street.name}, ${user.location.street.number}`}</li>
 				<li class="mb-2 text-sm">{`${user.location.city} - ${user.location.state}, ${t(user.location.country)}`}</li>
 			</ul>
 		</section>

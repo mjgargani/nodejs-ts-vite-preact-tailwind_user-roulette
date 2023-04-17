@@ -1,3 +1,7 @@
 #filter-container {
 	-webkit-tap-highlight-color: rgba(255, 255, 255, .25);
 }
+
+#filter-container-content {
+	transition: height 0.25s;
+}

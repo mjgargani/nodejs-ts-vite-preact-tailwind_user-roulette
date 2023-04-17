@@ -7,6 +7,11 @@ import filters from './filters.json';
 import './styles.css';
 
 function Filters() {
+	if (current.lego.value) {
+		handle.show(false);
+		return <></>;
+	}
+
 	const { t } = current.i18next.value;
 
 	const handleFilters = (e: Event) => {
@@ -34,14 +39,12 @@ function Filters() {
 			class={`absolute top-0 w-3/4 md:w-1/4 text-center z-50 bg-black text-gray-50 rounded-b p-2 cursor-pointer ${
 				current.loading.value ? 'grayscale pointer-events-none' : ''
 			}`}
-			style={{
-				transition: 'height 1s',
-			}}
+			id="filter-container"
 		>
 			<div class="w-full select-none" onClick={() => handle.show(!current.show.value)}>
 				🗂️
 			</div>
-			<div class={`flex flex-col overflow-auto transition-all ${current.show.value ? 'h-72' : 'h-0'}`}>
+			<div id="filter-container-content" class={`flex flex-col overflow-auto ${current.show.value ? 'h-72' : 'h-0'}`}>
 				<div class="flex flex-col justify-center">
 					<label class="m-1">{t('Genders')}</label>
 					<div class="flex flex-wrap justify-center bg-gray-900 rounded">

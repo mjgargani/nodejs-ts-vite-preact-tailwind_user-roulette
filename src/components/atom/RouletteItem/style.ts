@@ -13,7 +13,7 @@ export const twClasses = (isSelected: boolean, user: CustomUser) => ({
 		height: isSelected ? 'h-36' : 'h-24',
 	},
 	text: {
-		title: isSelected ? 'text-xl md:text-2xl' : 'text-lg md:text-xl',
+		title: isSelected ? 'text-lg md:text-2xl' : 'text-sm md:text-xl',
 	},
 });
 
