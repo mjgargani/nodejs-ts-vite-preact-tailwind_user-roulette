@@ -1,3 +1,5 @@
+import React from 'preact/compat';
+
 import { current, handle } from '@/components/signals';
 import { batch } from '@preact/signals';
 
@@ -11,7 +13,7 @@ function Swipe() {
 	};
 
 	return (
-		<div class="fixed h-full w-full m-0 p-0 top-0 z-40 opacity-0 md:hidden">
+		<div class="fixed top-0 z-40 m-0 h-full w-full p-0 opacity-0 md:hidden">
 			<input
 				type="range"
 				min="0"

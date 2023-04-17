@@ -2,11 +2,13 @@ import React from 'preact/compat';
 import { h } from 'preact';
 import { render, screen, cleanup, waitFor } from '@testing-library/preact';
 import { type Mock } from 'vitest';
-import '@/i18n';
+import i18n from '@/i18n';
 import App from '@/app';
 import randomUsersMock from '@/__test__/mock/random-users.json';
+import { type CustomUser } from '@/classes/types';
 
 global.fetch = vi.fn();
+global.HTMLMediaElement.prototype.play = vi.fn();
 
 beforeEach(() => {
 	(fetch as Mock).mockResolvedValue({
@@ -19,72 +21,101 @@ afterEach(() => {
 });
 
 describe('main page tests', () => {
-	it.only('needs to show all the components, except the filter ones, on screen', async () => {
+	it('needs to show all the components on screen', async () => {
 		const { container } = render(<App />);
 		expect(container).toBeInTheDocument();
 
-		const updateInputSeed = await screen.findByTestId(/test-input-seed/);
-		const updateBtnSeedRandom = await screen.findByTestId(/test-btn-random-seed/);
+		const inputSeed = await screen.findByTestId(/test-input-seed/);
+		const btnSeedRandom = (await screen.findAllByTestId(/test-btn-random-seed/))[0];
+		const btnLego = (await screen.findAllByTestId(/test-btn-lego/))[0];
 
-		expect(updateInputSeed).toBeInTheDocument();
-		expect(updateBtnSeedRandom).toBeInTheDocument();
+		expect(inputSeed).toBeInTheDocument();
+		expect(btnSeedRandom).toBeInTheDocument();
+		expect(btnLego).toBeInTheDocument();
 
-		const cards = await screen.findAllByTestId(/test_user_card_\d/);
+		expect(inputSeed).toBeDisabled();
+		expect(btnSeedRandom).toBeDisabled();
+		expect(btnLego).toBeDisabled();
+
+		const checkGenders = await screen.findAllByTestId(/test_filter_gender_\w/);
+		const checkNat = await screen.findAllByTestId(/test_filter_nat_\w/);
+
+		expect(checkGenders).toHaveLength(2);
+		expect(checkNat).toHaveLength(21);
+
+		const cards = await screen.findAllByTestId(/test-user-card-\d/);
 		expect(cards).toHaveLength(12);
 
-		expect(updateInputSeed).toBeEnabled();
-		expect(updateBtnSeedRandom).toBeEnabled();
+		await waitFor(
+			() => {
+				expect(inputSeed).toBeEnabled();
+				expect(btnSeedRandom).toBeEnabled();
+				expect(btnLego).toBeEnabled();
+			},
+			{ timeout: 5000 },
+		);
 	});
 
-	it('needs to contain a main random user card from api, with correct collapsed data', async () => {
+	it('needs to contain a main random user card from api, with correct expanded data', async () => {
 		const { container } = render(<App />);
 		expect(container).toBeInTheDocument();
 
-		const updateInputSeed = await screen.findByTestId(/test-input-seed/);
-		const updateBtnSeedRandom = await screen.findByTestId(/test-btn-random-seed/);
-
-		expect(updateInputSeed).toBeInTheDocument();
-		expect(updateBtnSeedRandom).toBeInTheDocument();
-
-		const cards = await screen.findAllByTestId(/test_user_card_\d/);
+		const cards = await screen.findAllByTestId(/test-user-card-\d/);
 		expect(cards).toHaveLength(12);
 
-		expect(updateInputSeed).toBeEnabled();
-		expect(updateBtnSeedRandom).toBeEnabled();
+		const selectedCard = await screen.findByTestId(/test-user-card-\d+_selected/);
+		const { uuid } = selectedCard.dataset;
 
-		const defaultCard = await screen.findByTestId(/test_user_card_0/);
+		const selectedUser = (randomUsersMock.results as CustomUser[]).filter((el) => el.login.uuid === uuid)[0];
 
-		expect(defaultCard).toHaveTextContent(
-			`Sr ${randomUsersMock.results[0].name.first} ${randomUsersMock.results[0].name.last}`,
-		);
-		expect(defaultCard).toHaveTextContent('♂️');
-		expect(defaultCard).toHaveTextContent('🇧🇷');
-		const age = Math.floor((Date.now() - new Date(randomUsersMock.results[0].dob.date).getTime()) / 31536000000);
-		expect(defaultCard).toHaveTextContent(`${age} anos`);
-		expect(defaultCard).toHaveTextContent('Endereço');
-		expect(defaultCard).toHaveTextContent(
-			`${randomUsersMock.results[0].location.street.name}, ${randomUsersMock.results[0].location.street.number}`,
-		);
-		expect(defaultCard).toHaveTextContent(
-			`${randomUsersMock.results[0].location.city} - ${randomUsersMock.results[0].location.state}, Brasil`,
-		);
+		const { t } = i18n;
 
-		const mainCardPicture = await screen.findByTestId(/test_user_card_picture_0/);
-		expect(mainCardPicture).toHaveStyle({
-			'background-image': `url(${randomUsersMock.results[0].picture.medium})`,
-			'background-size': 'cover',
-			'background-repeat': 'no-repeat',
-			'background-position': 'center',
-		});
+		expect(selectedCard).toHaveTextContent(
+			`${t(selectedUser.name.title)} ${selectedUser.name.first} ${selectedUser.name.last}`,
+		);
+		expect(selectedCard).toHaveTextContent(`${t(selectedUser.gender)}`);
+		expect(selectedCard).toHaveTextContent(`${t(selectedUser.nat.toLocaleLowerCase())}`);
+		const age = Math.floor((Date.now() - new Date(selectedUser.dob.date).getTime()) / 31536000000);
+		expect(selectedCard).toHaveTextContent(`${age} anos`);
+		expect(selectedCard).toHaveTextContent('Endereço');
+		expect(selectedCard).toHaveTextContent(`${selectedUser.location.city} - ${selectedUser.location.state}, Brasil`);
+
+		const mainCardPicture = await screen.findByTestId(/test-user-card-picture-\d+_selected/);
+		expect(mainCardPicture).toHaveStyle(`background-image: url(${selectedUser.picture.large})`);
+		expect(mainCardPicture).toHaveStyle('background-position: center');
+		expect(mainCardPicture).toHaveStyle('background-repeat: no-repeat');
+		expect(mainCardPicture).toHaveStyle('background-size: cover');
 	});
 
-	it('needs to contain the rest of the list (page) of random users, only with the avatar and the name', async () => {
-		const { container } = render(<App />);
-		expect(container).toBeInTheDocument();
-	});
+	it.each([Array.from(Array(randomUsersMock.results).keys())])(
+		'needs to contain the rest of the list (page) of random users, only with the avatar and the name (card: %p)',
+		async (index) => {
+			const { container } = render(<App />);
+			expect(container).toBeInTheDocument();
 
-	it('needs, as the api developer page, an access to lego api', async () => {
-		const { container } = render(<App />);
-		expect(container).toBeInTheDocument();
-	});
+			const cards = await screen.findAllByTestId(/test-user-card-\d/);
+			expect(cards).toHaveLength(12);
+
+			const currentCard = cards[index];
+			expect(currentCard).toBeInTheDocument();
+
+			const { uuid } = currentCard.dataset;
+			const [currentData] = randomUsersMock.results.filter((el) => el.login.uuid === uuid);
+			const isSelected = currentCard.dataset.selected === 'true';
+
+			const { t } = i18n;
+			expect(currentCard).toHaveTextContent(
+				`${t(currentData.name.title)} ${currentData.name.first} ${currentData.name.last}`,
+			);
+
+			const cardPictures = await screen.findAllByTestId(/^test-user-card-picture-/);
+			const mainCardPicture = cardPictures[index];
+
+			const picture = isSelected ? currentData.picture.large : currentData.picture.thumbnail;
+			expect(mainCardPicture).toHaveStyle(`background-image: url(${picture})`);
+			expect(mainCardPicture).toHaveStyle('background-position: center');
+			expect(mainCardPicture).toHaveStyle('background-repeat: no-repeat');
+			expect(mainCardPicture).toHaveStyle('background-size: cover');
+		},
+	);
 });

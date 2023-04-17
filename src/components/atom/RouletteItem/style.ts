@@ -1,4 +1,4 @@
-import { CustomUser } from '@/classes/types';
+import { type CustomUser } from '@/classes/types';
 import { current, signals } from '@/components/signals';
 
 export const twClasses = (isSelected: boolean, user: CustomUser) => ({
@@ -23,5 +23,5 @@ export const additionalStyles = (angle: number, user: CustomUser) => ({
 		? `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 50 50'%3E%3Ccircle cx='25' cy='25' r='10' fill='black' fill-opacity='0.1'/%3E%3C/svg%3E")`
 		: null,
 	backgroundSize: current.lego.value ? '40' : null,
-	transform: `rotate(calc(${angle}deg + ${signals.angle}deg))`,
+	transform: `rotate(calc(${angle}deg + ${signals.angle.value}deg))`,
 });

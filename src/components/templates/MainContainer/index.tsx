@@ -3,7 +3,7 @@ import React from 'preact/compat';
 import type Preact from 'preact';
 import './styles.css';
 import { current, handle } from '@/components/signals';
-import { ComponentChildren } from 'preact';
+import { type ComponentChildren } from 'preact';
 
 type MainContainerProps = {
 	children: ComponentChildren;

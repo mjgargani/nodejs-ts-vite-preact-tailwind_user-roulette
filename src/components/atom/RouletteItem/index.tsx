@@ -2,7 +2,7 @@ import React from 'preact/compat';
 import type Preact from 'preact';
 import { type h } from 'preact';
 
-import { CustomUser } from '@/classes/types';
+import { type CustomUser } from '@/classes/types';
 import { batch, computed } from '@preact/signals';
 import { current, handle, signals } from '@/components/signals';
 import { twClasses, additionalStyles } from './style';
@@ -28,26 +28,28 @@ function CardItem({ id, testId, user, angle }: CardProps) {
 	const handleClick = ({ target }: Event) => {
 		current.audio.value.click.currentTime = 0;
 		current.audio.value.click.play();
-		const dataset = (target as HTMLDivElement).dataset;
+		const { dataset } = target as HTMLDivElement;
 		batch(() => {
-			handle.selected(dataset.uuid! as string);
+			handle.selected(dataset.uuid!);
 		});
 	};
 
 	return (
 		<div
 			id={id}
-			data-testid={testId}
+			data-testid={`${testId ?? ''}${isSelected ? '_selected' : ''}`}
+			data-angle={angle}
 			data-uuid={user.login.uuid}
-			class={`${classes.container} absolute top-0 h-2 flex origin-top items-end rounded text-black shadow-lg select-none`}
+			data-selected={isSelected}
+			class={`${classes.container} absolute top-0 flex h-2 origin-top select-none items-end rounded text-black shadow-lg`}
 			style={styles}
 			onClick={handleClick}
 		>
-			<div class={`${classes.content} min-w-full pointer-events-none`}>
+			<div class={`${classes.content} pointer-events-none min-w-full`}>
 				<div class="m-1">
 					<RouletteItemTitle user={user} classes={classes} />
 					<RouletteItemDetails isSelected={isSelected} user={user} classes={classes} />
-					<RouletteItemPicture angle={angle} classes={classes} />
+					<RouletteItemPicture isSelected={isSelected} angle={angle} classes={classes} />
 				</div>
 			</div>
 		</div>

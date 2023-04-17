@@ -1,45 +1,46 @@
 {
-  "env": {
-    "browser": true,
-    "es2021": true
-  },
-  "plugins": ["vitest", "@typescript-eslint", "tailwindcss"],
-  "extends": [
-    "plugin:vitest/recommended",
-    "plugin:vitest-globals/recommended",
-    "eslint:recommended",
-    "plugin:tailwindcss/recommended",
-    "preact",
-    "xo"
-  ],
-  "overrides": [
-    {
-      "extends": ["xo-typescript", "prettier"],
-      "files": ["*.ts", "*.tsx"],
-      "parserOptions": {
-        "project": ["./tsconfig.json"]
-      },
-      "env": {
-        "vitest-globals/env": true
-      },
-      "rules": {
-        "@typescript-eslint/no-floating-promises": "off"
-      }
-    }
-  ],
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true
-    },
-    "ecmaVersion": "latest",
-    "sourceType": "module"
-  },
-  "settings": {
-    "jest": {
-      "version": 27
-    }
-  },
-  "ignorePatterns": ["*.d.ts"],
-  "rules": {}
+	"env": {
+		"browser": true,
+		"es2021": true
+	},
+	"plugins": ["vitest", "@typescript-eslint", "tailwindcss"],
+	"extends": [
+		"plugin:vitest/recommended",
+		"plugin:vitest-globals/recommended",
+		"eslint:recommended",
+		"plugin:tailwindcss/recommended",
+		"preact",
+		"xo"
+	],
+	"overrides": [
+		{
+			"extends": ["xo-typescript", "prettier"],
+			"files": ["*.ts", "*.tsx"],
+			"parserOptions": {
+				"project": ["./tsconfig.json"]
+			},
+			"env": {
+				"vitest-globals/env": true
+			},
+			"rules": {
+				"@typescript-eslint/no-floating-promises": "off",
+				"no-return-assign": "off"
+			}
+		}
+	],
+	"parser": "@typescript-eslint/parser",
+	"parserOptions": {
+		"ecmaFeatures": {
+			"jsx": true
+		},
+		"ecmaVersion": "latest",
+		"sourceType": "module"
+	},
+	"settings": {
+		"jest": {
+			"version": 27
+		}
+	},
+	"ignorePatterns": ["*.d.ts"],
+	"rules": {}
 }

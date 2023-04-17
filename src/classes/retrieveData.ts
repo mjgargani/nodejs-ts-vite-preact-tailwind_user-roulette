@@ -1,7 +1,7 @@
 import { batch, effect } from '@preact/signals';
 import RandomUser from './RandomUser';
 import { current, handle } from '@/components/signals';
-import { RandomUserResponse } from './types';
+import { type RandomUserResponse } from './types';
 import colors from '@/utils/colors';
 
 export default effect(() => {
@@ -26,15 +26,14 @@ export default effect(() => {
 				angle: i * 30,
 				color: colors[Math.floor(Math.random() * colors.length)],
 			}));
-			batch(() => {
-				handle.users.results(results);
-				setTimeout(() => {
-					batch(() => {
-						handle.selected(results[Math.floor(Math.random() * results.length)].login.uuid);
-						handle.loading(false);
-					});
-				}, 1000);
-			});
+
+			handle.users.results(results);
+			setTimeout(() => {
+				batch(() => {
+					handle.selected(results[Math.floor(Math.random() * results.length)].login.uuid);
+					handle.loading(false);
+				});
+			}, 1000);
 		})
 		.catch((error) => {
 			handle.loading(false);
