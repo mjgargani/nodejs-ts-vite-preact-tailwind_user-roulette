@@ -19,6 +19,7 @@ export const signals = {
 	lego: signal<boolean>(false),
 	i18next: signal<UseTranslationResponse<'translation', undefined> | null>(null),
 	spin: signal<boolean>(false),
+	audio: signal<{ [key: string]: HTMLAudioElement }>({}),
 };
 
 export const current = {
@@ -33,6 +34,7 @@ export const current = {
 	lego: computed(() => signals.lego.value),
 	i18next: computed(() => signals.i18next.value as UseTranslationResponse<'translation', undefined>),
 	spin: computed(() => signals.spin.value),
+	audio: computed(() => signals.audio.value),
 };
 
 export const handle = {
@@ -47,4 +49,5 @@ export const handle = {
 	lego: () => (signals.lego.value = !signals.lego.value),
 	i18next: (hook: UseTranslationResponse<'translation', undefined>) => (signals.i18next.value = hook),
 	spin,
+	audio: (name: string, element: HTMLAudioElement) => Object.assign(signals.audio.value, { [name]: element }),
 };

@@ -1,6 +1,6 @@
 import { batch, effect } from '@preact/signals';
 import RandomUser from './RandomUser';
-import { current, handle, signals } from '@/components/signals';
+import { current, handle } from '@/components/signals';
 import { RandomUserResponse } from './types';
 import colors from '@/utils/colors';
 

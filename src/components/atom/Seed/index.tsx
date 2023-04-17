@@ -39,7 +39,7 @@ function Seed() {
 				type="text"
 				value={current.seed}
 				onChange={delaySeed}
-				class="mr-1 w-2/4 md:w-3/4"
+				class="mr-1 w-2/4 md:w-3/4 bg-gray-900 text-gray-50"
 				disabled={current.loading.value}
 				data-testid="test-input-seed"
 			/>

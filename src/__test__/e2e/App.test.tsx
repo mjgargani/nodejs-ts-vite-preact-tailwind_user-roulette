@@ -83,21 +83,6 @@ describe('main page tests', () => {
 		expect(container).toBeInTheDocument();
 	});
 
-	it('needs, from the expanded card of selected random user, the detailed info', async () => {
-		const { container } = render(<App />);
-		expect(container).toBeInTheDocument();
-	});
-
-	it('needs a local storage for the colected data', async () => {
-		const { container } = render(<App />);
-		expect(container).toBeInTheDocument();
-	});
-
-	it('needs to recover data from local storage, if the api fails, with a warning', async () => {
-		const { container } = render(<App />);
-		expect(container).toBeInTheDocument();
-	});
-
 	it('needs, as the api developer page, an access to lego api', async () => {
 		const { container } = render(<App />);
 		expect(container).toBeInTheDocument();
