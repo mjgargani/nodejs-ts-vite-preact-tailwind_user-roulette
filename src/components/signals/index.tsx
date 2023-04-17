@@ -1,4 +1,4 @@
-import { CustomUser } from '@/classes/types';
+import { CustomUser, Nationalities, User } from '@/classes/types';
 import { computed, signal } from '@preact/signals';
 import { UseTranslationResponse } from 'react-i18next';
 import selected from './handlers/selected';
@@ -21,6 +21,11 @@ export const signals = {
 	spin: signal<boolean>(false),
 	audio: signal<{ [key: string]: HTMLAudioElement }>({}),
 	click: signal<boolean>(true),
+	filters: signal<{
+		gender: User['gender'][] | undefined;
+		nat: Nationalities['1.4'][] | undefined;
+	} | null>(null),
+	show: signal<boolean>(false),
 };
 
 export const current = {
@@ -37,6 +42,8 @@ export const current = {
 	spin: computed(() => signals.spin.value),
 	audio: computed(() => signals.audio.value),
 	click: computed(() => signals.click.value),
+	filters: computed(() => signals.filters.value),
+	show: computed(() => signals.show.value),
 };
 
 export const handle = {
@@ -53,4 +60,7 @@ export const handle = {
 	spin,
 	audio: (name: string, element: HTMLAudioElement) => Object.assign(signals.audio.value, { [name]: element }),
 	click: (active: boolean) => (signals.click.value = active),
+	filter: (data: { gender: User['gender'][] | undefined; nat: Nationalities['1.4'][] | undefined }) =>
+		(signals.filters.value = data),
+	show: (state: boolean) => (signals.show.value = state),
 };

@@ -49,7 +49,7 @@ class RandomUser implements RandomUserProps {
 
 		const query = [
 			results ? `results=${results}` : undefined,
-			gender ? `gender=${gender}` : undefined,
+			gender ? `gender=${gender.filter(Boolean).join(',')}` : undefined,
 			password
 				? `password=${[password.charSets?.filter(Boolean).join(','), password.length].filter(Boolean).join(',')}`
 				: undefined,

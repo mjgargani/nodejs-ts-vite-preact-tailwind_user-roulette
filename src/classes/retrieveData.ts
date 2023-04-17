@@ -8,10 +8,11 @@ export default effect(() => {
 	handle.loading(true);
 
 	const data: RandomUser = new RandomUser({
+		format: 'json',
 		results: 12,
 		seed: current.seed.value,
-		format: 'json',
-		nat: ['br'],
+		gender: current.filters.value?.gender,
+		nat: current.filters.value?.nat,
 		exc: ['registered', 'id'],
 		lego: current.lego.peek(),
 	});

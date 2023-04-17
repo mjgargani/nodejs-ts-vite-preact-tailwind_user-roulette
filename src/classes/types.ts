@@ -109,7 +109,7 @@ export type RandomUserProps = {
 		format: 'json' | 'pretty' | 'csv' | 'yaml' | 'xml';
 		version: '1.0' | '1.1' | '1.2' | '1.3' | '1.4';
 		results?: number;
-		gender?: 'male' | 'female';
+		gender?: ('male' | 'female')[];
 		password?: Password;
 		seed?: string;
 		nat?: Array<Nationalities[RandomUserProps['props']['version']]>;

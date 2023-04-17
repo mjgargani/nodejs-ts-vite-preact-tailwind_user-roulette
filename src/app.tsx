@@ -21,7 +21,7 @@ function App() {
 	handle.i18next(useTranslation());
 
 	return (
-		<MainContainer>
+		<div class="flex justify-center">
 			<Audio
 				name="click"
 				src={[
@@ -32,9 +32,11 @@ function App() {
 			/>
 			<Filters />
 			<Seed />
-			<Swipe />
-			<Roulette />
-		</MainContainer>
+			<MainContainer>
+				<Swipe />
+				<Roulette />
+			</MainContainer>
+		</div>
 	);
 }
 

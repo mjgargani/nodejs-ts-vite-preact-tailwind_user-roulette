@@ -9,5 +9,5 @@ export default (value: string) => {
 			handle.loading(false);
 		});
 	}
-	return !!value && (signals.seed.value = value);
+	return (signals.seed.value = value);
 };

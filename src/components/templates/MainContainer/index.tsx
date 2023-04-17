@@ -2,7 +2,7 @@ import React from 'preact/compat';
 
 import type Preact from 'preact';
 import './styles.css';
-import { current } from '@/components/signals';
+import { current, handle } from '@/components/signals';
 import { ComponentChildren } from 'preact';
 
 type MainContainerProps = {
@@ -11,7 +11,11 @@ type MainContainerProps = {
 
 function MainContainer({ children }: MainContainerProps) {
 	return (
-		<div id="main-container" class={`${current.loading.value ? '!cursor-wait' : ''}`}>
+		<div
+			id="main-container"
+			class={`${current.loading.value ? '!cursor-wait' : ''}`}
+			onClick={() => handle.show(false)}
+		>
 			{children}
 		</div>
 	);

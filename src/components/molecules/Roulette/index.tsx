@@ -27,6 +27,7 @@ function Roulette() {
 			style={{
 				transition: 'all 2s',
 			}}
+			onClick={() => handle.show(false)}
 		>
 			{users?.map((el) => (
 				<CardItem id={`user-card-${el.angle}`} angle={el.angle} user={el} />
