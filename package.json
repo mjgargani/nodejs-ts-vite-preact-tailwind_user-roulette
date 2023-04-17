@@ -1,8 +1,13 @@
 {
 	"name": "colab-user-roulette",
 	"private": true,
-	"version": "0.0.0",
+	"version": "1.0.0",
 	"type": "commonjs",
+	"author": {
+		"name": "Rodrigo G. Oliveira",
+		"email": "mjgargani@gmail.com",
+		"url": "https://gargani.dev"
+	},
 	"scripts": {
 		"dev": "vite",
 		"build": "tsc && vite build",
