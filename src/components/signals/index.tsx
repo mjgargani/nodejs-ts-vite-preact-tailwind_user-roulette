@@ -20,6 +20,7 @@ export const signals = {
 	i18next: signal<UseTranslationResponse<'translation', undefined> | null>(null),
 	spin: signal<boolean>(false),
 	audio: signal<{ [key: string]: HTMLAudioElement }>({}),
+	click: signal<boolean>(true),
 };
 
 export const current = {
@@ -35,6 +36,7 @@ export const current = {
 	i18next: computed(() => signals.i18next.value as UseTranslationResponse<'translation', undefined>),
 	spin: computed(() => signals.spin.value),
 	audio: computed(() => signals.audio.value),
+	click: computed(() => signals.click.value),
 };
 
 export const handle = {
@@ -50,4 +52,5 @@ export const handle = {
 	i18next: (hook: UseTranslationResponse<'translation', undefined>) => (signals.i18next.value = hook),
 	spin,
 	audio: (name: string, element: HTMLAudioElement) => Object.assign(signals.audio.value, { [name]: element }),
+	click: (active: boolean) => (signals.click.value = active),
 };

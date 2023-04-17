@@ -2,15 +2,16 @@ import CardItem from '@/components/atom/RouletteItem';
 import { current, handle } from '@/components/signals';
 import { effect, signal } from '@preact/signals';
 import './styles.css';
-import Audio from '@/components/atom/Audio';
 
 const spinRoulette = signal<NodeJS.Timer | null>(null);
 
 effect(() => {
 	if (current.spin.value) {
 		spinRoulette.value = setInterval(() => {
+			current.audio.value.click.currentTime = 0;
+			current.audio.value.click.play();
 			handle.angle(current.angle.value + 30);
-		}, 100);
+		}, 150);
 	} else {
 		spinRoulette.value && clearInterval(spinRoulette.value);
 	}
@@ -27,7 +28,6 @@ function Roulette() {
 				transition: 'all 2s',
 			}}
 		>
-			<Audio />
 			{users?.map((el) => (
 				<CardItem id={`user-card-${el.angle}`} angle={el.angle} user={el} />
 			))}

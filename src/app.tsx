@@ -3,7 +3,7 @@ import type Preact from 'preact';
 import { h } from 'preact';
 import { useTranslation, withTranslation } from 'react-i18next';
 
-import { current, handle } from '@/components/signals';
+import { handle } from '@/components/signals';
 import MainContainer from '@/components/templates/MainContainer';
 import Seed from '@/components/atom/Seed';
 import Swipe from '@/components/atom/Swipe';
@@ -15,11 +15,6 @@ import clickMp3 from '@/assets/click.mp3';
 import clickWav from '@/assets/click.wav';
 import clickOgg from '@/assets/click.ogg';
 import Audio from './components/atom/Audio';
-import getAngle from './utils/getAngle';
-
-setInterval(() => {
-	current.audio.value.click.play();
-});
 
 function App() {
 	handle.i18next(useTranslation());

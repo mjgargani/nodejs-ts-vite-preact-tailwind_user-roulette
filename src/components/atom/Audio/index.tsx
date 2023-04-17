@@ -1,5 +1,4 @@
-import { current, handle } from '@/components/signals';
-import { effect } from '@preact/signals';
+import { handle } from '@/components/signals';
 import { useEffect, useRef } from 'preact/hooks';
 
 type AudioProps = {
@@ -17,7 +16,7 @@ function Audio({ name, src = [] }: AudioProps) {
 	});
 
 	return (
-		<audio ref={ref} id={`audio_${name}`} controls={false} preload="auto">
+		<audio ref={ref} id={`audio_${name}`} controls={false} preload="auto" loop={false} autoPlay={false} volume={0.5}>
 			{!!src.length && src.map((el, i) => <source key={i} src={el[1]} type={`audio/${el[0]}`} />)}
 		</audio>
 	);
