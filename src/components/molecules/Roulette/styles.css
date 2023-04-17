@@ -1,0 +1,13 @@
+#roulette-container {
+	-webkit-tap-highlight-color: rgba(255, 255, 255, 0.25);
+}
+
+#roulette-container * {
+	transition: transform 1s;
+}
+
+@media (min-width: 425px) {
+	#roulette-container * {
+		transition: width 0.5s, height 0.5s, transform 0.5s;
+	}
+}

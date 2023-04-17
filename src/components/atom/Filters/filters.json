@@ -1,0 +1,26 @@
+{
+	"gender": ["male", "female"],
+	"nat": [
+		"au",
+		"br",
+		"ca",
+		"ch",
+		"de",
+		"dk",
+		"es",
+		"fi",
+		"fr",
+		"gb",
+		"ie",
+		"in",
+		"ir",
+		"mx",
+		"nl",
+		"no",
+		"nz",
+		"rs",
+		"tr",
+		"ua",
+		"us"
+	]
+}

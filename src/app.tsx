@@ -1,29 +1,43 @@
-import { useState } from 'preact/hooks';
-import preactLogo from './assets/preact.svg';
-import viteLogo from '/vite.svg';
-import './app.css';
+import React, { useRef } from 'preact/compat';
+import type Preact from 'preact';
+import { h } from 'preact';
+import { useTranslation, withTranslation } from 'react-i18next';
 
-export function App() {
-  const [count, setCount] = useState(0);
+import { handle } from '@/components/signals';
+import MainContainer from '@/components/templates/MainContainer';
+import Seed from '@/components/atom/Seed';
+import Swipe from '@/components/atom/Swipe';
+import Roulette from '@/components/molecules/Roulette';
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
-          <img src={viteLogo} class="logo" alt="Vite logo" />
-        </a>
-        <a href="https://preactjs.com" target="_blank" rel="noreferrer">
-          <img src={preactLogo} class="logo preact" alt="Preact logo" />
-        </a>
-      </div>
-      <h1>Vite + Preact</h1>
-      <div class="card">
-        <button onClick={() => setCount((count) => count + 1)}>count is {count}</button>
-        <p>
-          Edit <code>src/app.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p class="read-the-docs">Click on the Vite and Preact logos to learn more</p>
-    </>
-  );
+import '@/classes/retrieveData';
+
+import clickMp3 from '@/assets/click.mp3';
+import clickWav from '@/assets/click.wav';
+import clickOgg from '@/assets/click.ogg';
+import Audio from './components/atom/Audio';
+import Filters from './components/atom/Filters';
+
+function App() {
+	handle.i18next(useTranslation());
+
+	return (
+		<div class="flex justify-center">
+			<Audio
+				name="click"
+				src={[
+					['mp3', clickMp3],
+					['wav', clickWav],
+					['ogg', clickOgg],
+				]}
+			/>
+			<Filters />
+			<Seed />
+			<MainContainer>
+				<Swipe />
+				<Roulette />
+			</MainContainer>
+		</div>
+	);
 }
+
+export default withTranslation()(App);
