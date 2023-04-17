@@ -15,6 +15,7 @@ import clickMp3 from '@/assets/click.mp3';
 import clickWav from '@/assets/click.wav';
 import clickOgg from '@/assets/click.ogg';
 import Audio from './components/atom/Audio';
+import Filters from './components/atom/Filters';
 
 function App() {
 	handle.i18next(useTranslation());
@@ -29,6 +30,7 @@ function App() {
 					['ogg', clickOgg],
 				]}
 			/>
+			<Filters />
 			<Seed />
 			<Swipe />
 			<Roulette />
