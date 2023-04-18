@@ -1,7 +1,7 @@
 import React from 'preact/compat';
 
 import { current, handle, signals } from '@/components/signals';
-import { batch, effect, signal } from '@preact/signals';
+import { batch, signal } from '@preact/signals';
 import { nanoid } from 'nanoid';
 import { type ChangeEvent } from 'preact/compat';
 
@@ -12,11 +12,12 @@ const delaySeed = (e: ChangeEvent) => {
 	handle.spin(true);
 
 	if (!delay.value) {
+		console.log('eita');
 		delay.value = true;
 		const timeout = setTimeout(() => {
 			const target = e.target! as HTMLInputElement;
-			if (delay.value && target.value) {
-				handle.seed(target.value);
+			if (delay.value) {
+				handle.seed(target.value || '');
 				delay.value = false;
 			}
 
