@@ -23,6 +23,10 @@ function Filters() {
 			.map((el) => el.checked && (el.value as User['gender']))
 			.filter(Boolean) as Array<User['gender']>;
 
+		if (current.filters.value?.gender !== dataGender && dataGender.length === 1) {
+			handle.seed('');
+		}
+
 		const dataNat = (nat as HTMLInputElement[])
 			.map((el) => el.checked && (el.value as Nationalities['1.4']))
 			.filter(Boolean) as Array<Nationalities['1.4']>;

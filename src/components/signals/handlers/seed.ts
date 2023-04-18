@@ -11,6 +11,13 @@ export default (value: string) => {
 		return signals.seed.value;
 	}
 
+	if (current.filters.value?.gender?.length === 1) {
+		handle.filter({
+			...current.filters.value,
+			gender: [],
+		});
+	}
+
 	signals.seed.value = value;
 	return signals.seed.value;
 };

@@ -2,6 +2,8 @@ import { batch } from '@preact/signals';
 import { current, handle, signals } from '..';
 
 export default (value: number) => {
+	if (current.spin.value) return;
+
 	const users = current.users.results.value;
 	if (!users?.length) return;
 

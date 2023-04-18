@@ -26,6 +26,8 @@ function CardItem({ id, testId, user, angle }: CardProps) {
 	const styles = additionalStyles(angle, user);
 
 	const handleClick = ({ target }: Event) => {
+		if (current.spin.value) return;
+
 		current.audio.value.click.currentTime = 0;
 		current.audio.value.click.play();
 		const { dataset } = target as HTMLDivElement;
