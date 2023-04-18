@@ -1,7 +1,7 @@
 {
-	"name": "colab-user-roulette",
+	"name": "user-roulette",
 	"private": true,
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"type": "commonjs",
 	"author": {
 		"name": "Rodrigo G. Oliveira",
