@@ -15,7 +15,7 @@ export const signals = {
 		results: signal<CustomUser[] | undefined>(undefined),
 	},
 	selected: signal<string>(''),
-	swipe: signal<number>(1),
+	swipe: signal<number>(3),
 	lego: signal<boolean>(false),
 	i18next: signal<UseTranslationResponse<'translation'> | undefined>(undefined),
 	spin: signal<boolean>(false),

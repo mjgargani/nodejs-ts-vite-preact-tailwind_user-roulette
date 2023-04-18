@@ -2,8 +2,8 @@ import React from 'preact/compat';
 
 function Shields() {
 	return (
-		<div class="absolute right-0 top-0 z-50 flex w-fit flex-col p-1">
-			<div class="mb-1 flex justify-end">
+		<div class="absolute -top-9 left-0 z-50 flex w-fit origin-bottom-left rotate-90 flex-row p-1 md:left-0 md:top-0 md:rotate-0 md:flex-col">
+			<div class="m-1">
 				<a
 					href="https://github.com/mjgargani/nodejs-ts-vite-preact-tailwind_user-roulette/releases"
 					target="_blank"
@@ -15,7 +15,7 @@ function Shields() {
 					/>
 				</a>
 			</div>
-			<div class="flex justify-end">
+			<div class="m-1">
 				<a
 					href="https://github.com/mjgargani/nodejs-ts-vite-preact-tailwind_user-roulette"
 					target="_blank"

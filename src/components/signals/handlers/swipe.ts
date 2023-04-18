@@ -6,14 +6,14 @@ export default (value: number) => {
 	if (!users?.length) return;
 
 	const id = users.findIndex((el) => el.login.uuid === current.selected.value);
-	if (value > 1) {
+	if (value > 3) {
 		const next = id + 1 >= users.length ? 0 : id + 1;
 		batch(() => {
 			handle.selected(users[next].login.uuid);
 		});
 	}
 
-	if (value < 1) {
+	if (value < 3) {
 		const before = id - 1 <= 0 ? users.length - 1 : id - 1;
 		batch(() => {
 			handle.selected(users[before].login.uuid);
