@@ -16,6 +16,7 @@ import clickWav from '@/assets/click.wav';
 import clickOgg from '@/assets/click.ogg';
 import Audio from './components/atom/Audio';
 import Filters from './components/atom/Filters';
+import Shields from './components/atom/Shields';
 
 function App() {
 	handle.i18next(useTranslation());
@@ -30,6 +31,7 @@ function App() {
 					['ogg', clickOgg],
 				]}
 			/>
+			<Shields />
 			<Filters />
 			<Seed />
 			<MainContainer>

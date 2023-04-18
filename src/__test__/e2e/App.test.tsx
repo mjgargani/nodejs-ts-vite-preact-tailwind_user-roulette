@@ -16,9 +16,7 @@ beforeEach(() => {
 	});
 });
 
-afterEach(() => {
-	cleanup();
-});
+afterEach(cleanup);
 
 describe('main page tests', () => {
 	it('needs to show all the components on screen', async () => {
