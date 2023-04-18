@@ -1,3 +1,4 @@
+// Fyi: https://developer.chrome.com/blog/autoplay/
 import React from 'preact/compat';
 
 import { handle } from '@/components/signals';

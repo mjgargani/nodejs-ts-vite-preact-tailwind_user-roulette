@@ -7,6 +7,8 @@ export default defineConfig({
 		'import.meta.vitest': 'undefined',
 	},
 	test: {
+		//https://github.com/vitest-dev/vitest/issues/2008
+		threads: false,
 		globals: true,
 		environment: 'jsdom',
 		setupFiles: ['./src/__test__/test-setup.ts'],
