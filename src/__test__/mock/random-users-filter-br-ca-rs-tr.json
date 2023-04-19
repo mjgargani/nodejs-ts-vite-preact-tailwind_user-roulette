@@ -1,0 +1,389 @@
+{
+	"results": [
+		{
+			"gender": "female",
+			"name": { "title": "Ms", "first": "Catarina", "last": "Gomes" },
+			"location": {
+				"street": { "number": 7715, "name": "Rua Santa Rita " },
+				"city": "Cabo Frio",
+				"state": "Espírito Santo",
+				"country": "Brazil",
+				"postcode": 57008,
+				"coordinates": { "latitude": "-57.3083", "longitude": "150.1847" },
+				"timezone": { "offset": "-10:00", "description": "Hawaii" }
+			},
+			"email": "catarina.gomes@example.com",
+			"login": {
+				"uuid": "27b1ca24-86e6-4a8f-abd4-3c102ab552d9",
+				"username": "crazyelephant806",
+				"password": "soulmate",
+				"salt": "x4AOF0yR",
+				"md5": "b46aca0fad453146c950e930b38004a2",
+				"sha1": "1c027dc812233be89f8f1a4d7befd5bfc58c8db0",
+				"sha256": "5cdd38c06780a190641ca80ab43bef0cd0c94c6d5821c95f9b8b7ac32ce2b1ed"
+			},
+			"dob": { "date": "1951-03-05T21:31:33.242Z", "age": 72 },
+			"phone": "(67) 3318-5975",
+			"cell": "(07) 3450-7170",
+			"picture": {
+				"large": "https://randomuser.me/api/portraits/women/18.jpg",
+				"medium": "https://randomuser.me/api/portraits/med/women/18.jpg",
+				"thumbnail": "https://randomuser.me/api/portraits/thumb/women/18.jpg"
+			},
+			"nat": "BR"
+		},
+		{
+			"gender": "female",
+			"name": { "title": "Ms", "first": "Nurdan", "last": "Koçyiğit" },
+			"location": {
+				"street": { "number": 1745, "name": "Atatürk Sk" },
+				"city": "Ankara",
+				"state": "Kırıkkale",
+				"country": "Turkey",
+				"postcode": 64657,
+				"coordinates": { "latitude": "72.8300", "longitude": "89.9275" },
+				"timezone": { "offset": "-3:00", "description": "Brazil, Buenos Aires, Georgetown" }
+			},
+			"email": "nurdan.kocyigit@example.com",
+			"login": {
+				"uuid": "81b5780c-2b1b-4d7e-8900-fabe8b8b5201",
+				"username": "angryladybug693",
+				"password": "hudson",
+				"salt": "lLdI7E6q",
+				"md5": "d6856e86b9360e13467069fcec96b814",
+				"sha1": "ff48b4360efcdc604ba23e4b131a138861efe952",
+				"sha256": "6441497a28e33cf570e1d92521880f03ecec4f443fe3904653680f4d291f783c"
+			},
+			"dob": { "date": "1991-05-09T07:29:47.669Z", "age": 31 },
+			"phone": "(548)-009-2088",
+			"cell": "(811)-214-1572",
+			"picture": {
+				"large": "https://randomuser.me/api/portraits/women/86.jpg",
+				"medium": "https://randomuser.me/api/portraits/med/women/86.jpg",
+				"thumbnail": "https://randomuser.me/api/portraits/thumb/women/86.jpg"
+			},
+			"nat": "TR"
+		},
+		{
+			"gender": "male",
+			"name": { "title": "Mr", "first": "Vasilije", "last": "Ivančević" },
+			"location": {
+				"street": { "number": 5746, "name": "Jevrema Nešića" },
+				"city": "Kanjiža",
+				"state": "Kosovo-Pomoravlje",
+				"country": "Serbia",
+				"postcode": 69355,
+				"coordinates": { "latitude": "67.8999", "longitude": "38.6293" },
+				"timezone": { "offset": "-12:00", "description": "Eniwetok, Kwajalein" }
+			},
+			"email": "vasilije.ivancevic@example.com",
+			"login": {
+				"uuid": "2908f7e4-707a-4d6e-87d1-0f31cdd12327",
+				"username": "tinypeacock578",
+				"password": "hhhh",
+				"salt": "Z5ZhJzzE",
+				"md5": "aa47396d9820a84e4988f0120b6f581e",
+				"sha1": "9661a525d04ad561d24829e198cf1998c27ec46a",
+				"sha256": "b2fe1c0b172dbdd3c2b1bfdc13a6dc625db575af1ed6369f0191a352f67d7b49"
+			},
+			"dob": { "date": "1955-08-07T21:04:21.055Z", "age": 67 },
+			"phone": "020-7465-639",
+			"cell": "065-1968-419",
+			"picture": {
+				"large": "https://randomuser.me/api/portraits/men/38.jpg",
+				"medium": "https://randomuser.me/api/portraits/med/men/38.jpg",
+				"thumbnail": "https://randomuser.me/api/portraits/thumb/men/38.jpg"
+			},
+			"nat": "RS"
+		},
+		{
+			"gender": "male",
+			"name": { "title": "Mr", "first": "Adauto", "last": "Novaes" },
+			"location": {
+				"street": { "number": 888, "name": "Rua São Sebastiao " },
+				"city": "São José dos Campos",
+				"state": "São Paulo",
+				"country": "Brazil",
+				"postcode": 72409,
+				"coordinates": { "latitude": "-56.1391", "longitude": "27.4189" },
+				"timezone": { "offset": "-6:00", "description": "Central Time (US & Canada), Mexico City" }
+			},
+			"email": "adauto.novaes@example.com",
+			"login": {
+				"uuid": "b3b2d309-543a-4ded-9966-76ec83b6a1c7",
+				"username": "redwolf136",
+				"password": "philips",
+				"salt": "Mld0xBue",
+				"md5": "2084228a4e43e96e2297455cef1a2c44",
+				"sha1": "36a31a9f31d42e38e0ddbab8b37f474393a5c1c6",
+				"sha256": "7353230a783c55082aae148e91383f77f00544adeada6eaf6284511f9f1a8bc4"
+			},
+			"dob": { "date": "1952-01-24T08:50:24.046Z", "age": 71 },
+			"phone": "(90) 3863-2014",
+			"cell": "(21) 5941-4259",
+			"picture": {
+				"large": "https://randomuser.me/api/portraits/men/64.jpg",
+				"medium": "https://randomuser.me/api/portraits/med/men/64.jpg",
+				"thumbnail": "https://randomuser.me/api/portraits/thumb/men/64.jpg"
+			},
+			"nat": "BR"
+		},
+		{
+			"gender": "female",
+			"name": { "title": "Mrs", "first": "Melike", "last": "Sinanoğlu" },
+			"location": {
+				"street": { "number": 6222, "name": "Maçka Cd" },
+				"city": "Osmaniye",
+				"state": "Bartın",
+				"country": "Turkey",
+				"postcode": 43582,
+				"coordinates": { "latitude": "26.5667", "longitude": "24.5417" },
+				"timezone": { "offset": "+2:00", "description": "Kaliningrad, South Africa" }
+			},
+			"email": "melike.sinanoglu@example.com",
+			"login": {
+				"uuid": "a4e81ebd-72ff-4339-b942-8370b31ddfba",
+				"username": "goldenelephant335",
+				"password": "season",
+				"salt": "0v5wMCpJ",
+				"md5": "ca6bce7edcd040fe1f2b8a2eb82d83d1",
+				"sha1": "b7e102d7200e4efd1d508dde8008c9dd9cb0eae5",
+				"sha256": "dd40aa4504178b72a8a402ee295a70bbc13886410ab12d24d6e552fceda410d3"
+			},
+			"dob": { "date": "1985-12-28T17:01:44.047Z", "age": 37 },
+			"phone": "(186)-737-9106",
+			"cell": "(220)-098-7076",
+			"picture": {
+				"large": "https://randomuser.me/api/portraits/women/76.jpg",
+				"medium": "https://randomuser.me/api/portraits/med/women/76.jpg",
+				"thumbnail": "https://randomuser.me/api/portraits/thumb/women/76.jpg"
+			},
+			"nat": "TR"
+		},
+		{
+			"gender": "male",
+			"name": { "title": "Mr", "first": "Blake", "last": "White" },
+			"location": {
+				"street": { "number": 5664, "name": "Lake of Bays Road" },
+				"city": "Windsor",
+				"state": "Yukon",
+				"country": "Canada",
+				"postcode": "W6M 1I6",
+				"coordinates": { "latitude": "-55.1694", "longitude": "-160.2952" },
+				"timezone": { "offset": "+2:00", "description": "Kaliningrad, South Africa" }
+			},
+			"email": "blake.white@example.com",
+			"login": {
+				"uuid": "f5751bbf-028a-4e05-9963-027318e72649",
+				"username": "goldencat883",
+				"password": "kordell1",
+				"salt": "0JOneBVe",
+				"md5": "5d3454dca912b3fdcaf4b68b825f036d",
+				"sha1": "e5ede6565b2fc9f7d6dec9941c0d9cfca81aaa79",
+				"sha256": "30e22a93aade8da80b14dda884576e95090acb1e5f50bfc9be6424c14683c015"
+			},
+			"dob": { "date": "1961-07-13T12:58:27.015Z", "age": 61 },
+			"phone": "Q02 J34-5221",
+			"cell": "L75 D92-6819",
+			"picture": {
+				"large": "https://randomuser.me/api/portraits/men/64.jpg",
+				"medium": "https://randomuser.me/api/portraits/med/men/64.jpg",
+				"thumbnail": "https://randomuser.me/api/portraits/thumb/men/64.jpg"
+			},
+			"nat": "CA"
+		},
+		{
+			"gender": "female",
+			"name": { "title": "Ms", "first": "Melina", "last": "Nogueira" },
+			"location": {
+				"street": { "number": 7175, "name": "Rua Vinte E Dois " },
+				"city": "Corumbá",
+				"state": "Rio de Janeiro",
+				"country": "Brazil",
+				"postcode": 67825,
+				"coordinates": { "latitude": "72.3250", "longitude": "-23.4996" },
+				"timezone": { "offset": "-4:00", "description": "Atlantic Time (Canada), Caracas, La Paz" }
+			},
+			"email": "melina.nogueira@example.com",
+			"login": {
+				"uuid": "05f1627d-28d9-4ab8-89bf-e5f5e59739c5",
+				"username": "goldenlion518",
+				"password": "oberon",
+				"salt": "oGIKKcsc",
+				"md5": "7aca1dc9abe7c679f21cdd2307e90aa1",
+				"sha1": "f3bb398f6bd7f1b135272107905bf08ad396fb77",
+				"sha256": "703dca49d645bc095ebcefbde61400b4e51d5dee8cd9d68886ecf16234b48d15"
+			},
+			"dob": { "date": "1969-10-14T12:49:16.816Z", "age": 53 },
+			"phone": "(89) 2993-3369",
+			"cell": "(57) 8394-1340",
+			"picture": {
+				"large": "https://randomuser.me/api/portraits/women/80.jpg",
+				"medium": "https://randomuser.me/api/portraits/med/women/80.jpg",
+				"thumbnail": "https://randomuser.me/api/portraits/thumb/women/80.jpg"
+			},
+			"nat": "BR"
+		},
+		{
+			"gender": "male",
+			"name": { "title": "Mr", "first": "Božo", "last": "Majstorović" },
+			"location": {
+				"street": { "number": 6811, "name": "Milićevo Sokače" },
+				"city": "Preševo",
+				"state": "Nišava",
+				"country": "Serbia",
+				"postcode": 16917,
+				"coordinates": { "latitude": "-42.1478", "longitude": "-85.7640" },
+				"timezone": { "offset": "-11:00", "description": "Midway Island, Samoa" }
+			},
+			"email": "bozo.majstorovic@example.com",
+			"login": {
+				"uuid": "b4c3dac6-bf20-4a33-90fd-c1ca742f899f",
+				"username": "lazyswan199",
+				"password": "helloo",
+				"salt": "7dN1yobY",
+				"md5": "17c736f0cec8324bf7d5c5ec2aede7e9",
+				"sha1": "d4068690a8a99c623b515b48e1451aac891c1323",
+				"sha256": "83430de31b26d192f3df6521f341ba950079a3a553f4d087bc7fb0cda0115300"
+			},
+			"dob": { "date": "1994-01-05T23:35:59.385Z", "age": 29 },
+			"phone": "012-5508-932",
+			"cell": "066-5243-317",
+			"picture": {
+				"large": "https://randomuser.me/api/portraits/men/91.jpg",
+				"medium": "https://randomuser.me/api/portraits/med/men/91.jpg",
+				"thumbnail": "https://randomuser.me/api/portraits/thumb/men/91.jpg"
+			},
+			"nat": "RS"
+		},
+		{
+			"gender": "male",
+			"name": { "title": "Mr", "first": "Munir", "last": "Fernandes" },
+			"location": {
+				"street": { "number": 8663, "name": "Rua Das Flores " },
+				"city": "Três Lagoas",
+				"state": "Sergipe",
+				"country": "Brazil",
+				"postcode": 86573,
+				"coordinates": { "latitude": "79.9802", "longitude": "129.4133" },
+				"timezone": { "offset": "-5:00", "description": "Eastern Time (US & Canada), Bogota, Lima" }
+			},
+			"email": "munir.fernandes@example.com",
+			"login": {
+				"uuid": "f9a317c1-852d-441a-a045-5793427b92f4",
+				"username": "ticklishdog465",
+				"password": "skydive",
+				"salt": "p4ydu2NX",
+				"md5": "7b1abc5bd9eb3c14aa1fbcbefe50568d",
+				"sha1": "afe84a0dfaf244374037390843442bbe6723dab7",
+				"sha256": "4f5726adc8cd4d84142fd00a90d752bc3692e81317fe92ee89b8e51ca458a29c"
+			},
+			"dob": { "date": "1970-03-29T10:00:36.037Z", "age": 53 },
+			"phone": "(80) 1506-5955",
+			"cell": "(79) 3717-7401",
+			"picture": {
+				"large": "https://randomuser.me/api/portraits/men/19.jpg",
+				"medium": "https://randomuser.me/api/portraits/med/men/19.jpg",
+				"thumbnail": "https://randomuser.me/api/portraits/thumb/men/19.jpg"
+			},
+			"nat": "BR"
+		},
+		{
+			"gender": "female",
+			"name": { "title": "Miss", "first": "Ceyhan", "last": "Çankaya" },
+			"location": {
+				"street": { "number": 2558, "name": "Kushimoto Sk" },
+				"city": "Balıkesir",
+				"state": "Kırıkkale",
+				"country": "Turkey",
+				"postcode": 76529,
+				"coordinates": { "latitude": "34.1078", "longitude": "113.4881" },
+				"timezone": { "offset": "+11:00", "description": "Magadan, Solomon Islands, New Caledonia" }
+			},
+			"email": "ceyhan.cankaya@example.com",
+			"login": {
+				"uuid": "2edb725b-08aa-4c4b-b4aa-38899040a597",
+				"username": "bluemeercat248",
+				"password": "kaitlyn",
+				"salt": "wxwNbdk4",
+				"md5": "fcf6330d3ecc8b8ae093a150a86e6f9c",
+				"sha1": "c8b6fb37230fb41b14cf6984da23fb27717a9345",
+				"sha256": "b75b50dd6e072831973c8a98132344d4ec5e3753c1533c7f3b0612dc5e00e63f"
+			},
+			"dob": { "date": "1980-01-25T12:53:31.327Z", "age": 43 },
+			"phone": "(815)-284-0838",
+			"cell": "(768)-049-5806",
+			"picture": {
+				"large": "https://randomuser.me/api/portraits/women/26.jpg",
+				"medium": "https://randomuser.me/api/portraits/med/women/26.jpg",
+				"thumbnail": "https://randomuser.me/api/portraits/thumb/women/26.jpg"
+			},
+			"nat": "TR"
+		},
+		{
+			"gender": "male",
+			"name": { "title": "Mr", "first": "Philip", "last": "Jones" },
+			"location": {
+				"street": { "number": 9336, "name": "Wellington St" },
+				"city": "Sandy Lake",
+				"state": "British Columbia",
+				"country": "Canada",
+				"postcode": "I2T 8N1",
+				"coordinates": { "latitude": "-10.2833", "longitude": "103.3742" },
+				"timezone": { "offset": "+5:30", "description": "Bombay, Calcutta, Madras, New Delhi" }
+			},
+			"email": "philip.jones@example.com",
+			"login": {
+				"uuid": "dde4ef55-6be9-4ce6-a725-71f9b9c0615e",
+				"username": "heavydog680",
+				"password": "aspire",
+				"salt": "G8WdT75T",
+				"md5": "6c5f822b0567f4972ac4b5d40d48109b",
+				"sha1": "48a87ed883dcb4841f20874ea58f723f8372996c",
+				"sha256": "69fbadd178a00c330d91277b3691e9623040b23d490013d19cab98359bba8d7e"
+			},
+			"dob": { "date": "1977-05-23T23:36:18.541Z", "age": 45 },
+			"phone": "J69 H00-1122",
+			"cell": "D19 W18-3555",
+			"picture": {
+				"large": "https://randomuser.me/api/portraits/men/15.jpg",
+				"medium": "https://randomuser.me/api/portraits/med/men/15.jpg",
+				"thumbnail": "https://randomuser.me/api/portraits/thumb/men/15.jpg"
+			},
+			"nat": "CA"
+		},
+		{
+			"gender": "female",
+			"name": { "title": "Mrs", "first": "Aubree", "last": "Addy" },
+			"location": {
+				"street": { "number": 8206, "name": "Cedar St" },
+				"city": "Cochrane",
+				"state": "Alberta",
+				"country": "Canada",
+				"postcode": "S8Q 5X3",
+				"coordinates": { "latitude": "84.4514", "longitude": "47.6148" },
+				"timezone": { "offset": "-5:00", "description": "Eastern Time (US & Canada), Bogota, Lima" }
+			},
+			"email": "aubree.addy@example.com",
+			"login": {
+				"uuid": "4150a8a6-1f1a-4d63-8c67-d1d9e13990cf",
+				"username": "happyelephant160",
+				"password": "50spanks",
+				"salt": "0Sed4lAl",
+				"md5": "10895f353447ef2722502cd5c76255e2",
+				"sha1": "4368127261b697c54fd402e81f1a6093e014879c",
+				"sha256": "5425930115e6c41f1787cd0e767559d7cd35837f1ffb9de949e6971ae252c6ab"
+			},
+			"dob": { "date": "1992-05-20T08:10:14.906Z", "age": 30 },
+			"phone": "I37 D18-1899",
+			"cell": "L90 V72-6855",
+			"picture": {
+				"large": "https://randomuser.me/api/portraits/women/5.jpg",
+				"medium": "https://randomuser.me/api/portraits/med/women/5.jpg",
+				"thumbnail": "https://randomuser.me/api/portraits/thumb/women/5.jpg"
+			},
+			"nat": "CA"
+		}
+	],
+	"info": { "seed": "014dd625ed67e77d", "results": 12, "page": 1, "version": "1.4" }
+}

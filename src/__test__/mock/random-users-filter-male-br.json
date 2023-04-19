@@ -1,0 +1,389 @@
+{
+	"results": [
+		{
+			"gender": "male",
+			"name": { "title": "Mr", "first": "Pompeu", "last": "Jesus" },
+			"location": {
+				"street": { "number": 6910, "name": "Rua Santa Catarina " },
+				"city": "Taboão da Serra",
+				"state": "Acre",
+				"country": "Brazil",
+				"postcode": 23568,
+				"coordinates": { "latitude": "27.9905", "longitude": "98.4957" },
+				"timezone": { "offset": "0:00", "description": "Western Europe Time, London, Lisbon, Casablanca" }
+			},
+			"email": "pompeu.jesus@example.com",
+			"login": {
+				"uuid": "87b9e023-a343-4b84-8878-955c9e613dbc",
+				"username": "orangeladybug577",
+				"password": "loulou",
+				"salt": "mNmqpSIs",
+				"md5": "b4d7c8698c24af7ea58ad81dcd6ce8c2",
+				"sha1": "159378e2fc46939d7ba1fc0f7e516c256c4fdda9",
+				"sha256": "2fa92c99face96b3198e1bd5d50a927d3d349bce0e26470d5ef6b9f8031ba6c7"
+			},
+			"dob": { "date": "1979-06-29T03:00:47.882Z", "age": 43 },
+			"phone": "(76) 8412-8774",
+			"cell": "(96) 5559-2948",
+			"picture": {
+				"large": "https://randomuser.me/api/portraits/men/35.jpg",
+				"medium": "https://randomuser.me/api/portraits/med/men/35.jpg",
+				"thumbnail": "https://randomuser.me/api/portraits/thumb/men/35.jpg"
+			},
+			"nat": "BR"
+		},
+		{
+			"gender": "male",
+			"name": { "title": "Mr", "first": "Arnaldo", "last": "Fernandes" },
+			"location": {
+				"street": { "number": 252, "name": "Rua São Sebastiao " },
+				"city": "Resende",
+				"state": "Minas Gerais",
+				"country": "Brazil",
+				"postcode": 64168,
+				"coordinates": { "latitude": "-2.0473", "longitude": "150.3470" },
+				"timezone": { "offset": "+11:00", "description": "Magadan, Solomon Islands, New Caledonia" }
+			},
+			"email": "arnaldo.fernandes@example.com",
+			"login": {
+				"uuid": "9998f4e6-d1c0-46ad-9df7-fe26f0db79f5",
+				"username": "whitemeercat257",
+				"password": "lawrence",
+				"salt": "7vvHAqd7",
+				"md5": "a27b9c0a7a7f92d16cf36051b26c0f65",
+				"sha1": "dd5bf098552d916dbd50b0d16aca840edc7b9686",
+				"sha256": "d1b394a7777bebae1bb82504a1e423e3812e1ec0228eeed3767cb610a76d4754"
+			},
+			"dob": { "date": "1951-08-07T06:39:26.583Z", "age": 71 },
+			"phone": "(99) 2683-6423",
+			"cell": "(97) 0723-0710",
+			"picture": {
+				"large": "https://randomuser.me/api/portraits/men/90.jpg",
+				"medium": "https://randomuser.me/api/portraits/med/men/90.jpg",
+				"thumbnail": "https://randomuser.me/api/portraits/thumb/men/90.jpg"
+			},
+			"nat": "BR"
+		},
+		{
+			"gender": "male",
+			"name": { "title": "Mr", "first": "Sinésio", "last": "Pires" },
+			"location": {
+				"street": { "number": 9016, "name": "Rua São Sebastiao " },
+				"city": "Ipatinga",
+				"state": "Pará",
+				"country": "Brazil",
+				"postcode": 77695,
+				"coordinates": { "latitude": "-27.8277", "longitude": "13.7584" },
+				"timezone": { "offset": "+4:00", "description": "Abu Dhabi, Muscat, Baku, Tbilisi" }
+			},
+			"email": "sinesio.pires@example.com",
+			"login": {
+				"uuid": "640f8e92-18ee-4e4a-95b7-45fc0c440c30",
+				"username": "orangecat149",
+				"password": "143143",
+				"salt": "A02JguLz",
+				"md5": "cac73ed7a9318865c25806e4feb25fbc",
+				"sha1": "6d25fa2df055eb0fffe1036236811309c2e36868",
+				"sha256": "5732fb9f70b0c35f4f8f4c8b6ddcf0a16d4cb0bdbbd29f3f77b175c0a1a8b898"
+			},
+			"dob": { "date": "1982-07-11T21:37:57.168Z", "age": 40 },
+			"phone": "(00) 9767-2201",
+			"cell": "(22) 1653-4482",
+			"picture": {
+				"large": "https://randomuser.me/api/portraits/men/64.jpg",
+				"medium": "https://randomuser.me/api/portraits/med/men/64.jpg",
+				"thumbnail": "https://randomuser.me/api/portraits/thumb/men/64.jpg"
+			},
+			"nat": "BR"
+		},
+		{
+			"gender": "male",
+			"name": { "title": "Mr", "first": "Vianei", "last": "da Cunha" },
+			"location": {
+				"street": { "number": 4251, "name": "Rua José Bonifácio " },
+				"city": "Sabará",
+				"state": "Piauí",
+				"country": "Brazil",
+				"postcode": 68328,
+				"coordinates": { "latitude": "-15.1261", "longitude": "6.8551" },
+				"timezone": { "offset": "-8:00", "description": "Pacific Time (US & Canada)" }
+			},
+			"email": "vianei.dacunha@example.com",
+			"login": {
+				"uuid": "70e446c6-a3ec-49ed-a9c6-fd915960820a",
+				"username": "greenbutterfly870",
+				"password": "internal",
+				"salt": "L06nqIjR",
+				"md5": "d31b810e617ccd23583e230b8a0b141f",
+				"sha1": "d6eec1c8992260f22359ee739a8a449d6de06061",
+				"sha256": "2733216f7e751e835351ff1d011bd203dcf513e80e19256e7f2705882db2e96e"
+			},
+			"dob": { "date": "1973-01-24T06:14:19.584Z", "age": 50 },
+			"phone": "(48) 1321-2833",
+			"cell": "(18) 7651-5046",
+			"picture": {
+				"large": "https://randomuser.me/api/portraits/men/67.jpg",
+				"medium": "https://randomuser.me/api/portraits/med/men/67.jpg",
+				"thumbnail": "https://randomuser.me/api/portraits/thumb/men/67.jpg"
+			},
+			"nat": "BR"
+		},
+		{
+			"gender": "male",
+			"name": { "title": "Mr", "first": "Celino", "last": "da Cunha" },
+			"location": {
+				"street": { "number": 9939, "name": "Avenida D. Pedro Ii" },
+				"city": "Tatuí",
+				"state": "Rio Grande do Norte",
+				"country": "Brazil",
+				"postcode": 18869,
+				"coordinates": { "latitude": "-80.6392", "longitude": "53.7146" },
+				"timezone": { "offset": "+5:30", "description": "Bombay, Calcutta, Madras, New Delhi" }
+			},
+			"email": "celino.dacunha@example.com",
+			"login": {
+				"uuid": "11fbbc44-0144-42a9-977d-37ea3ee5d209",
+				"username": "beautifulgorilla674",
+				"password": "frank",
+				"salt": "L4TJjM0F",
+				"md5": "8796d5c7a22ffe502a0cfcc06a10056f",
+				"sha1": "fb7f998e4b72a622643bd8a9c2651a1efb85c546",
+				"sha256": "423d0c043828ad009484e6e90ea508b14c12efceaa5c927a147430bb0d220dde"
+			},
+			"dob": { "date": "2000-07-11T16:25:03.768Z", "age": 22 },
+			"phone": "(15) 4352-0972",
+			"cell": "(10) 6790-6683",
+			"picture": {
+				"large": "https://randomuser.me/api/portraits/men/21.jpg",
+				"medium": "https://randomuser.me/api/portraits/med/men/21.jpg",
+				"thumbnail": "https://randomuser.me/api/portraits/thumb/men/21.jpg"
+			},
+			"nat": "BR"
+		},
+		{
+			"gender": "male",
+			"name": { "title": "Mr", "first": "Vêndel", "last": "Duarte" },
+			"location": {
+				"street": { "number": 9614, "name": "Avenida Brasil " },
+				"city": "Santa Luzia",
+				"state": "Pará",
+				"country": "Brazil",
+				"postcode": 41276,
+				"coordinates": { "latitude": "-59.1763", "longitude": "161.6290" },
+				"timezone": { "offset": "+2:00", "description": "Kaliningrad, South Africa" }
+			},
+			"email": "vendel.duarte@example.com",
+			"login": {
+				"uuid": "3265caa9-fe34-482b-b61d-83a7e16423d5",
+				"username": "brownwolf906",
+				"password": "dimas",
+				"salt": "Uff2STXG",
+				"md5": "a33c183a207a42067e702857a346183e",
+				"sha1": "6b2c85f37376b547dca60118051d3abc17772a24",
+				"sha256": "860bce099d465c1cb39fe784c06deabf53f7bf1fe648e565f05c50da5b002e70"
+			},
+			"dob": { "date": "1964-03-25T08:48:29.865Z", "age": 59 },
+			"phone": "(88) 1764-7725",
+			"cell": "(72) 8153-2569",
+			"picture": {
+				"large": "https://randomuser.me/api/portraits/men/37.jpg",
+				"medium": "https://randomuser.me/api/portraits/med/men/37.jpg",
+				"thumbnail": "https://randomuser.me/api/portraits/thumb/men/37.jpg"
+			},
+			"nat": "BR"
+		},
+		{
+			"gender": "male",
+			"name": { "title": "Mr", "first": "Murilo", "last": "Almeida" },
+			"location": {
+				"street": { "number": 805, "name": "Rua Santo Antônio " },
+				"city": "Boa Vista",
+				"state": "Pernambuco",
+				"country": "Brazil",
+				"postcode": 45436,
+				"coordinates": { "latitude": "-25.6656", "longitude": "-121.2382" },
+				"timezone": { "offset": "0:00", "description": "Western Europe Time, London, Lisbon, Casablanca" }
+			},
+			"email": "murilo.almeida@example.com",
+			"login": {
+				"uuid": "eca82817-9e71-4a67-9e14-2134bf0eb19e",
+				"username": "goldenswan274",
+				"password": "gotyoass",
+				"salt": "XKvi4rKp",
+				"md5": "10ec07da9580633c5d43a714e313000b",
+				"sha1": "e4d03db3efe3681bd407c1de62b3c0e82f7b6271",
+				"sha256": "db7007d6a466c1a17661ceb4da1f3b97d4e0499e08edf572ab458b51dbf93c8c"
+			},
+			"dob": { "date": "2001-03-06T10:24:16.788Z", "age": 22 },
+			"phone": "(13) 8857-4378",
+			"cell": "(30) 5965-9166",
+			"picture": {
+				"large": "https://randomuser.me/api/portraits/men/31.jpg",
+				"medium": "https://randomuser.me/api/portraits/med/men/31.jpg",
+				"thumbnail": "https://randomuser.me/api/portraits/thumb/men/31.jpg"
+			},
+			"nat": "BR"
+		},
+		{
+			"gender": "male",
+			"name": { "title": "Mr", "first": "Adruzilo", "last": "Peixoto" },
+			"location": {
+				"street": { "number": 2984, "name": "Rua Espirito Santo " },
+				"city": "Eunápolis",
+				"state": "São Paulo",
+				"country": "Brazil",
+				"postcode": 41729,
+				"coordinates": { "latitude": "43.1925", "longitude": "24.6376" },
+				"timezone": { "offset": "+10:00", "description": "Eastern Australia, Guam, Vladivostok" }
+			},
+			"email": "adruzilo.peixoto@example.com",
+			"login": {
+				"uuid": "2af8506a-f831-4874-840f-c331acf1aad6",
+				"username": "whitezebra334",
+				"password": "zxczxc",
+				"salt": "ccVbXDYI",
+				"md5": "6d78d529e2ff165967f745e236a3c0cc",
+				"sha1": "109d09b2e951f8dcadf6b95fbb1cc8bb51a0c18a",
+				"sha256": "a4f289f1e02727fc9a89942011b3a72e49cf0ae38e7f36050f0a98dd8582ab30"
+			},
+			"dob": { "date": "1999-10-19T21:37:44.390Z", "age": 23 },
+			"phone": "(91) 3419-7232",
+			"cell": "(20) 4184-0981",
+			"picture": {
+				"large": "https://randomuser.me/api/portraits/men/85.jpg",
+				"medium": "https://randomuser.me/api/portraits/med/men/85.jpg",
+				"thumbnail": "https://randomuser.me/api/portraits/thumb/men/85.jpg"
+			},
+			"nat": "BR"
+		},
+		{
+			"gender": "male",
+			"name": { "title": "Mr", "first": "Balbino", "last": "Moreira" },
+			"location": {
+				"street": { "number": 6744, "name": "Rua Minas Gerais " },
+				"city": "Itapipoca",
+				"state": "Espírito Santo",
+				"country": "Brazil",
+				"postcode": 82645,
+				"coordinates": { "latitude": "62.1016", "longitude": "23.0301" },
+				"timezone": { "offset": "+3:00", "description": "Baghdad, Riyadh, Moscow, St. Petersburg" }
+			},
+			"email": "balbino.moreira@example.com",
+			"login": {
+				"uuid": "9d0c15ae-b8f6-48f0-885b-11dbbc844fe5",
+				"username": "silverladybug544",
+				"password": "01234567",
+				"salt": "7fLaUWWm",
+				"md5": "a3fa5b9261b756fe12fad98d57fd01f3",
+				"sha1": "311a7067faa975b7efa09eac93b28b61c1d98dd7",
+				"sha256": "e4daccb1daafc9586e6eee5005a5f78396179ca043a036ab7082f05c33bf0a4f"
+			},
+			"dob": { "date": "1956-04-17T07:21:07.131Z", "age": 67 },
+			"phone": "(59) 5247-2360",
+			"cell": "(69) 5520-5728",
+			"picture": {
+				"large": "https://randomuser.me/api/portraits/men/0.jpg",
+				"medium": "https://randomuser.me/api/portraits/med/men/0.jpg",
+				"thumbnail": "https://randomuser.me/api/portraits/thumb/men/0.jpg"
+			},
+			"nat": "BR"
+		},
+		{
+			"gender": "male",
+			"name": { "title": "Mr", "first": "Francisco de Sales", "last": "Ferreira" },
+			"location": {
+				"street": { "number": 5476, "name": "Rua Espirito Santo " },
+				"city": "Franco da Rocha",
+				"state": "Amazonas",
+				"country": "Brazil",
+				"postcode": 44055,
+				"coordinates": { "latitude": "-79.9595", "longitude": "-46.7557" },
+				"timezone": { "offset": "+11:00", "description": "Magadan, Solomon Islands, New Caledonia" }
+			},
+			"email": "franciscodesales.ferreira@example.com",
+			"login": {
+				"uuid": "dd2c97bc-38c3-4d28-9489-fd3065d2f15f",
+				"username": "organicladybug767",
+				"password": "beerbeer",
+				"salt": "0n2ECBn1",
+				"md5": "33c6383f0a1ad9be13c850cc77306645",
+				"sha1": "0974114815d7a6bdf5e11a38034e0b3ad328d68f",
+				"sha256": "da46b56263921ca793b0ca0d332c85748c4a89d6db77820a84b7fb01539c4f2a"
+			},
+			"dob": { "date": "1993-03-01T19:18:38.436Z", "age": 30 },
+			"phone": "(76) 6404-0479",
+			"cell": "(04) 8226-6757",
+			"picture": {
+				"large": "https://randomuser.me/api/portraits/men/4.jpg",
+				"medium": "https://randomuser.me/api/portraits/med/men/4.jpg",
+				"thumbnail": "https://randomuser.me/api/portraits/thumb/men/4.jpg"
+			},
+			"nat": "BR"
+		},
+		{
+			"gender": "male",
+			"name": { "title": "Mr", "first": "Belmiro", "last": "Rocha" },
+			"location": {
+				"street": { "number": 4331, "name": "Travessa dos Açorianos" },
+				"city": "Umuarama",
+				"state": "São Paulo",
+				"country": "Brazil",
+				"postcode": 71186,
+				"coordinates": { "latitude": "-70.5971", "longitude": "65.9167" },
+				"timezone": { "offset": "+3:00", "description": "Baghdad, Riyadh, Moscow, St. Petersburg" }
+			},
+			"email": "belmiro.rocha@example.com",
+			"login": {
+				"uuid": "071a2a6c-952e-4494-a4d3-f1524dd9b65b",
+				"username": "goldenpeacock295",
+				"password": "everest",
+				"salt": "IvHQvKhk",
+				"md5": "23d57a3a1490e2f0902c133a865cf208",
+				"sha1": "41a59e5c2d5bc10fceeeb24c2572264f2aee08d3",
+				"sha256": "18cc895640ecfb0ff888e915e38e063bd172f72bf7b2ba2655b70d233dd513aa"
+			},
+			"dob": { "date": "1958-08-10T07:15:49.620Z", "age": 64 },
+			"phone": "(51) 8584-2407",
+			"cell": "(39) 9776-7076",
+			"picture": {
+				"large": "https://randomuser.me/api/portraits/men/15.jpg",
+				"medium": "https://randomuser.me/api/portraits/med/men/15.jpg",
+				"thumbnail": "https://randomuser.me/api/portraits/thumb/men/15.jpg"
+			},
+			"nat": "BR"
+		},
+		{
+			"gender": "male",
+			"name": { "title": "Mr", "first": "Isaí", "last": "da Costa" },
+			"location": {
+				"street": { "number": 6464, "name": "Rua São Luiz " },
+				"city": "São Gonçalo",
+				"state": "Alagoas",
+				"country": "Brazil",
+				"postcode": 23357,
+				"coordinates": { "latitude": "62.5872", "longitude": "-46.9033" },
+				"timezone": { "offset": "-3:00", "description": "Brazil, Buenos Aires, Georgetown" }
+			},
+			"email": "isai.dacosta@example.com",
+			"login": {
+				"uuid": "09e98f2b-a108-476c-b2b5-9e0bf454f500",
+				"username": "goldengoose702",
+				"password": "orion1",
+				"salt": "sH4UhCLx",
+				"md5": "8e346a6061a4d5a3768754ea41d18eee",
+				"sha1": "820727536a9867a3b06f4be37e4cec3eea47ca27",
+				"sha256": "ddb91032e7dcf55dc2393be52fb5480536f131b5280bd55ed48de226f88feeb1"
+			},
+			"dob": { "date": "1955-10-30T11:43:53.863Z", "age": 67 },
+			"phone": "(59) 7160-8413",
+			"cell": "(15) 0339-7481",
+			"picture": {
+				"large": "https://randomuser.me/api/portraits/men/21.jpg",
+				"medium": "https://randomuser.me/api/portraits/med/men/21.jpg",
+				"thumbnail": "https://randomuser.me/api/portraits/thumb/men/21.jpg"
+			},
+			"nat": "BR"
+		}
+	],
+	"info": { "seed": "ce59d057d17c8e2f", "results": 12, "page": 1, "version": "1.4" }
+}
