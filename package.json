@@ -15,7 +15,7 @@
 		"preview": "vite preview",
 		"test": "vitest watch",
 		"test:no-watch": "vitest run",
-		"test:coverage": "npm run test:no-watch -- --coverage",
+		"test:coverage": "npm run test:no-watch -- --coverage --watch false",
 		"test:badges": "npm run test:coverage && jest-coverage-badges --output './badges'",
 		"lint": "eslint . --ext .ts,.tsx",
 		"lint:fix": "eslint --fix 'src/**/*.{ts,tsx}'",
