@@ -70,3 +70,20 @@ export const handle = {
 		(signals.filters.value = data),
 	show: (state: boolean) => (signals.show.value = state),
 };
+
+// For the test env
+export const reset = () => {
+	signals.loading.value = true;
+	signals.seed.value = '1234';
+	signals.angle.value = 0;
+	signals.users.results.value = undefined;
+	signals.selected.value = '';
+	signals.swipe.value = 3;
+	signals.lego.value = false;
+	signals.i18next.value = undefined;
+	signals.spin.value = false;
+	signals.audio.value = {};
+	signals.click.value = true;
+	signals.filters.value = { gender: ['male', 'female'], nat: ['br'] };
+	signals.show.value = false;
+};

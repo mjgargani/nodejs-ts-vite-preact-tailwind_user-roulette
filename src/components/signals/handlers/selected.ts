@@ -6,8 +6,11 @@ export default (uuid: string | false) => {
 		if (uuid) {
 			const users = current.users.results.value;
 			if (users?.length) {
-				const target = computed(() => 360 - users.filter((el) => el.login.uuid === uuid)[0].angle).value;
-				handle.angle(target);
+				const angle = users.filter((el) => el.login.uuid === uuid)[0]?.angle;
+				if (angle !== undefined) {
+					const target = computed(() => 360 - angle).value;
+					handle.angle(target);
+				}
 			}
 		}
 

@@ -12,7 +12,6 @@ const delaySeed = (e: ChangeEvent) => {
 	handle.spin(true);
 
 	if (!delay.value) {
-		console.log('eita');
 		delay.value = true;
 		const timeout = setTimeout(() => {
 			const target = e.target! as HTMLInputElement;

@@ -22,8 +22,11 @@ function Swipe() {
 				value={current.swipe}
 				onInput={handleSwipe}
 				onPointerUp={() => {
-					current.audio.value.click.currentTime = 0;
-					current.audio.value.click.play();
+					if (current?.audio?.value?.click) {
+						current.audio.value.click.currentTime = 0;
+						current.audio.value.click.play();
+					}
+
 					handle.swipe(3);
 				}}
 			/>

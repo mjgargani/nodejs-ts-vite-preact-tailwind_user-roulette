@@ -10,8 +10,11 @@ const spinRoulette = signal<NodeJS.Timer | undefined>(undefined);
 effect(() => {
 	if (current.spin.value) {
 		spinRoulette.value = setInterval(() => {
-			current.audio.value.click.currentTime = 0;
-			current.audio.value.click.play();
+			if (current?.audio?.value?.click) {
+				current.audio.value.click.currentTime = 0;
+				current.audio.value.click.play();
+			}
+
 			handle.angle(current.angle.value + 30);
 		}, 150);
 	} else if (spinRoulette.value) {
