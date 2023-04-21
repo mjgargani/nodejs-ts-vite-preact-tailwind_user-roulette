@@ -1,20 +1,20 @@
 import { batch, effect } from '@preact/signals';
 import RandomUser from './RandomUser';
 import { current, handle } from '@/components/signals';
-import { type RandomUserResponse } from './types';
+import { type RandomUserProps, type RandomUserResponse } from './types';
 import colors from '@/utils/colors';
 
-export default effect(() => {
+export const retrieveUsers = async ({ seed, gender, nat, lego }: Partial<RandomUserProps['props']>) => {
 	handle.loading(true);
 
 	const data: RandomUser = new RandomUser({
 		format: 'json',
 		results: 12,
-		seed: current.seed.value,
-		gender: current.filters.value?.gender,
-		nat: current.filters.value?.nat,
 		exc: ['registered', 'id'],
-		lego: current.lego.peek(),
+		seed,
+		gender,
+		nat,
+		lego,
 	});
 
 	data
@@ -39,4 +39,14 @@ export default effect(() => {
 			handle.loading(false);
 			console.error(error);
 		});
-});
+};
+
+export const fetchEffect = () =>
+	effect(() => {
+		retrieveUsers({
+			seed: current.seed.value,
+			gender: current.filters.gender(),
+			nat: current.filters.nat(),
+			lego: current.lego.peek(),
+		});
+	});

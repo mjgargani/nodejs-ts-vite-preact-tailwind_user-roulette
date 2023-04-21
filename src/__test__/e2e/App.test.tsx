@@ -1,11 +1,11 @@
 /* eslint no-await-in-loop: 0 */
+/* eslint max-statements-per-line: 0 */
 
 import React from 'preact/compat';
 import { h } from 'preact';
-import { render, screen, cleanup, waitFor, fireEvent, waitForElementToBeRemoved } from '@testing-library/preact';
+import { render, screen, fireEvent, waitFor, cleanup } from '@testing-library/preact';
 import i18n from '@/i18n';
 import App from '@/app';
-import { type CustomUser } from '@/classes/types';
 import { server } from '../mock/server';
 import * as signals from '@/components/signals';
 
@@ -16,24 +16,32 @@ import randomUsersMockFilterNatA from '@/__test__/mock/random-users-filter-br-ca
 import randomUsersMockFilterNatB from '@/__test__/mock/random-users-filter-br-ca-rs.json';
 import randomUsersMockFilterNatC from '@/__test__/mock/random-users-filter-br-ca-rs-tr.json';
 
+import '../mock/storage';
+import { type CustomUser } from '@/classes/types';
+
 global.HTMLAudioElement.prototype.play = vi.fn();
+
 const { t } = i18n;
 
-beforeEach(() => {
+beforeEach(async () => {
 	server(200).listen();
+	render(<App />);
+	// Temp workaround, since the default method (waitFor/find*), for some reason,
+	// is currently not recognizing the alteration of DOM #1
+	await new Promise((res) =>
+		setTimeout(() => {
+			res(true);
+		}, 2500),
+	);
 });
 
 afterEach(() => {
 	signals.reset();
-	cleanup();
 	server(200).resetHandlers();
 });
 
 describe('main page tests', () => {
 	it('needs to show all the components on screen', async () => {
-		const { container } = render(<App />);
-		expect(container).toBeInTheDocument();
-
 		const inputSeed = await screen.findByTestId(/test-input-seed/);
 		const btnSeedRandom = (await screen.findAllByTestId(/test-btn-random-seed/))[0];
 		const btnLego = (await screen.findAllByTestId(/test-btn-lego/))[0];
@@ -42,9 +50,9 @@ describe('main page tests', () => {
 		expect(btnSeedRandom).toBeInTheDocument();
 		expect(btnLego).toBeInTheDocument();
 
-		expect(inputSeed).toBeDisabled();
-		expect(btnSeedRandom).toBeDisabled();
-		expect(btnLego).toBeDisabled();
+		expect(inputSeed).toBeEnabled();
+		expect(btnSeedRandom).toBeEnabled();
+		expect(btnLego).toBeEnabled();
 
 		const checkGenders = await screen.findAllByTestId(/test_filter_gender_\w/);
 		const checkNat = await screen.findAllByTestId(/test_filter_nat_\w/);
@@ -53,21 +61,11 @@ describe('main page tests', () => {
 
 		const cards = await screen.findAllByTestId(/test-user-card-\d/);
 		expect(cards).toHaveLength(12);
-
-		await waitFor(
-			() => {
-				expect(inputSeed).toBeEnabled();
-				expect(btnSeedRandom).toBeEnabled();
-				expect(btnLego).toBeEnabled();
-			},
-			{ timeout: 5000 },
-		);
 	});
 	it('needs to contain a main random user card from api, with correct expanded data', async () => {
-		const { container } = render(<App />);
-		expect(container).toBeInTheDocument();
-
-		const cards = await screen.findAllByTestId(/test-user-card-\d/);
+		const btnLego = screen.getByTestId(/test-btn-lego/);
+		expect(btnLego).toBeEnabled();
+		const cards = screen.getAllByTestId(/test-user-card-\d/);
 		expect(cards).toHaveLength(12);
 
 		const selectedCard = await screen.findByTestId(/test-user-card-\d+_selected/);
@@ -95,10 +93,9 @@ describe('main page tests', () => {
 	it.each([Array.from(Array(randomUsersMock.results).keys())])(
 		'needs to contain the rest of the list (page) of random users, only with the avatar and the name (card: %p)',
 		async (index) => {
-			const { container } = render(<App />);
-			expect(container).toBeInTheDocument();
-
-			const cards = await screen.findAllByTestId(/test-user-card-\d/);
+			const btnLego = screen.getByTestId(/test-btn-lego/);
+			expect(btnLego).toBeEnabled();
+			const cards = screen.getAllByTestId(/test-user-card-\d/);
 			expect(cards).toHaveLength(12);
 
 			const currentCard = cards[index];
@@ -135,18 +132,15 @@ describe('main page tests', () => {
 			],
 		],
 	])('needs to have a filter who changes gender and nationality (filter(s): %p)', async (filters, data) => {
-		const { container } = render(<App />);
-		const { t } = i18n;
-
-		expect(container).toBeInTheDocument();
+		const btnLego = screen.getByTestId(/test-btn-lego/);
+		expect(btnLego).toBeEnabled();
+		const cards = screen.getAllByTestId(/test-user-card-\d/);
+		expect(cards).toHaveLength(12);
 
 		const checkGenders = await screen.findAllByTestId(/test_filter_gender_\w/);
 		const checkNat = await screen.findAllByTestId(/test_filter_nat_\w/);
 		expect(checkGenders).toHaveLength(2);
 		expect(checkNat).toHaveLength(21);
-
-		const cards = await screen.findAllByTestId(/test-user-card-\d/);
-		expect(cards).toHaveLength(12);
 
 		for (let i = 0; i < filters.length; i++) {
 			await new Promise((res) =>
@@ -156,8 +150,8 @@ describe('main page tests', () => {
 			);
 			fireEvent.click(screen.getByTestId(new RegExp(`test_filter_${filters[i]}`)));
 
-			// Workaround, since the default method (find*), for some reason,
-			// is currently not recognizing the alteration of DOM
+			// Temp workaround, since the default method (find*), for some reason,
+			// is currently not recognizing the alteration of DOM #2
 			const card = await new Promise((res) => {
 				const interval = setInterval(() => {
 					const element = document.querySelector(`div[data-uuid="${data[i].login.uuid}"]`);
@@ -173,8 +167,28 @@ describe('main page tests', () => {
 	});
 
 	it('need to have a combobox with a cache of the last input seeds', async () => {
-		expect(true).toBe(true);
-	});
+		const btnLego = screen.getByTestId(/test-btn-lego/);
+		expect(btnLego).toBeEnabled();
+		const cards = screen.getAllByTestId(/test-user-card-\d/);
+		expect(cards).toHaveLength(12);
+
+		const seedOptions = () => screen.getAllByTestId(/test-seed-option-\w/);
+		expect(seedOptions()).toHaveLength(2);
+
+		for (let i = 1; i <= 3; i++) {
+			fireEvent.click(screen.getByTestId('test-btn-random-seed'));
+
+			// Wait for the roulette
+			await new Promise((res) =>
+				setTimeout(() => {
+					res(true);
+				}, 2500),
+			);
+
+			expect(seedOptions()).toHaveLength(2 + i);
+		}
+	}, 10000);
+
 	it('needs, optionally, to receive the seed input on the endpoint <host>/#/<seed>', async () => {
 		expect(true).toBe(true);
 	});

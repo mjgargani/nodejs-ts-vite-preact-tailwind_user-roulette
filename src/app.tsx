@@ -9,7 +9,7 @@ import Seed from '@/components/atom/Seed';
 import Swipe from '@/components/atom/Swipe';
 import Roulette from '@/components/molecules/Roulette';
 
-import '@/classes/retrieveData';
+import { fetchEffect } from '@/classes/retrieveData';
 
 import clickMp3 from '@/assets/click.mp3';
 import clickWav from '@/assets/click.wav';
@@ -19,6 +19,7 @@ import Filters from './components/atom/Filters';
 import Shields from './components/atom/Shields';
 
 function App() {
+	fetchEffect();
 	handle.i18next(useTranslation());
 
 	return (

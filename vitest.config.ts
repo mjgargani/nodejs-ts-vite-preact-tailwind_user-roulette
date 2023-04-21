@@ -15,6 +15,7 @@ export default defineConfig({
 			reporter: ['json-summary', 'text'],
 			exclude: ['src/**/*d.ts', 'src/index.tsx', 'src/**/types.ts'],
 		},
+		clearMocks: true,
 		mockReset: true,
 		restoreMocks: true,
 	},

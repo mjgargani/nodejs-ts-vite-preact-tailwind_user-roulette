@@ -6,10 +6,14 @@ import swipe from './handlers/swipe';
 import spin from './handlers/spin';
 import seed from './handlers/seed';
 import loading from './handlers/loading';
+import * as filters from './handlers/filters';
+
+import { type Seed } from '../atom/Filters';
+import * as storage from '@/utils/storage';
 
 export const signals = {
 	loading: signal<boolean>(true),
-	seed: signal<string>('1234'),
+	seed: signal<string>(filters.get<Seed>('seeds', filters.initial.seeds).filter((el) => Boolean(el.selected))[0].seed),
 	angle: signal<number>(0),
 	users: {
 		results: signal<CustomUser[] | undefined>(undefined),
@@ -21,16 +25,11 @@ export const signals = {
 	spin: signal<boolean>(false),
 	audio: signal<Record<string, HTMLAudioElement>>({}),
 	click: signal<boolean>(true),
-	filters: signal<
-		| {
-				gender: Array<User['gender']> | undefined;
-				nat: Array<Nationalities['1.4']> | undefined;
-		  }
-		| undefined
-	>({
-		gender: ['male', 'female'],
-		nat: ['br'],
-	}),
+	filters: {
+		seeds: signal<Seed[]>(filters.get<Seed>('seeds', filters.initial.seeds)),
+		gender: signal<Array<User['gender']>>(filters.get<User['gender']>('gender', filters.initial.gender)),
+		nat: signal<Array<Nationalities['1.4']>>(filters.get<Nationalities['1.4']>('nat', filters.initial.nat)),
+	},
 	show: signal<boolean>(false),
 };
 
@@ -48,7 +47,11 @@ export const current = {
 	spin: computed(() => signals.spin.value),
 	audio: computed(() => signals.audio.value),
 	click: computed(() => signals.click.value),
-	filters: computed(() => signals.filters.value),
+	filters: {
+		seeds: () => filters.get<Seed>('seeds', filters.initial.seeds),
+		gender: () => filters.get<User['gender']>('gender', filters.initial.gender),
+		nat: () => filters.get<Nationalities['1.4']>('nat', filters.initial.nat),
+	},
 	show: computed(() => signals.show.value),
 };
 
@@ -66,15 +69,13 @@ export const handle = {
 	spin,
 	audio: (name: string, element: HTMLAudioElement) => Object.assign(signals.audio.value, { [name]: element }),
 	click: (active: boolean) => (signals.click.value = active),
-	filter: (data: { gender: Array<User['gender']> | undefined; nat: Array<Nationalities['1.4']> | undefined }) =>
-		(signals.filters.value = data),
+	filters,
 	show: (state: boolean) => (signals.show.value = state),
 };
 
 // For the test env
 export const reset = () => {
 	signals.loading.value = true;
-	signals.seed.value = '1234';
 	signals.angle.value = 0;
 	signals.users.results.value = undefined;
 	signals.selected.value = '';
@@ -84,6 +85,11 @@ export const reset = () => {
 	signals.spin.value = false;
 	signals.audio.value = {};
 	signals.click.value = true;
-	signals.filters.value = { gender: ['male', 'female'], nat: ['br'] };
 	signals.show.value = false;
+
+	storage.cls();
+	signals.seed.value = filters.get<Seed>('seeds', filters.initial.seeds).filter((el) => Boolean(el.selected))[0].seed;
+	signals.filters.seeds.value = filters.get<Seed>('seeds', filters.initial.seeds);
+	signals.filters.gender.value = filters.get<User['gender']>('gender', filters.initial.gender);
+	signals.filters.nat.value = filters.get<Nationalities['1.4']>('nat', filters.initial.nat);
 };
