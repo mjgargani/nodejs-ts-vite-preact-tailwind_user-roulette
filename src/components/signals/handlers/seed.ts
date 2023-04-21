@@ -1,4 +1,4 @@
-import { batch, signal } from '@preact/signals';
+import { batch } from '@preact/signals';
 import { current, handle, signals } from '..';
 import { type User } from '@/classes/types';
 import { type Seed } from '@/components/atom/Filters';

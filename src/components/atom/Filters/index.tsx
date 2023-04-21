@@ -7,6 +7,7 @@ import './styles.css';
 import * as storage from '@/utils/storage';
 import { batch } from '@preact/signals';
 import { retrieveUsers } from '@/classes/retrieveData';
+import { route } from 'preact-router';
 
 export type Seed = { seed: string; selected: boolean };
 
@@ -22,8 +23,10 @@ function Filters() {
 			.map((el) => (el.seed === optionSeed ? { seed: el.seed, selected: true } : { seed: el.seed, selected: false }));
 
 		handle.filters.set<Seed>('seeds', newSeeds);
-		handle.seed(
-			handle.filters.get<Seed>('seeds', handle.filters.initial.seeds).filter((el) => Boolean(el.selected))[0].seed,
+		route(
+			`/${
+				handle.filters.get<Seed>('seeds', handle.filters.initial.seeds).filter((el) => Boolean(el.selected))[0].seed
+			}`,
 		);
 	};
 
@@ -35,7 +38,7 @@ function Filters() {
 			.filter(Boolean) as Array<User['gender']>;
 
 		if (current.filters.gender() !== dataGender && dataGender.length === 1) {
-			handle.seed('');
+			route('/');
 		}
 
 		handle.filters.set<User['gender']>('gender', dataGender);
@@ -55,6 +58,7 @@ function Filters() {
 			.filter(Boolean) as Array<Nationalities['1.4']>;
 
 		handle.filters.set<Nationalities['1.4']>('nat', dataNat);
+		route(`${current.seed.value}`);
 		retrieveUsers({
 			seed: current.seed.value,
 			gender: current.filters.gender(),

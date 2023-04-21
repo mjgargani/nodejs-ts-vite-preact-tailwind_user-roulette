@@ -4,6 +4,7 @@ import { current, handle, signals } from '@/components/signals';
 import { batch, signal } from '@preact/signals';
 import { nanoid } from 'nanoid';
 import { type ChangeEvent } from 'preact/compat';
+import { route } from 'preact-router';
 
 const delay = signal<boolean>(false);
 
@@ -16,7 +17,7 @@ const delaySeed = (e: ChangeEvent) => {
 		const timeout = setTimeout(() => {
 			const target = e.target! as HTMLInputElement;
 			if (delay.value) {
-				handle.seed(target.value || '');
+				route(`/${target.value}`);
 				delay.value = false;
 			}
 
@@ -49,7 +50,7 @@ function Seed() {
 			<button
 				onClick={(e: Event) => {
 					e.preventDefault();
-					handle.seed(nanoid());
+					route(`/${nanoid()}`);
 				}}
 				disabled={current.loading.value}
 				class="mr-1"
@@ -62,7 +63,7 @@ function Seed() {
 					e.preventDefault();
 					batch(() => {
 						handle.lego();
-						handle.seed(nanoid());
+						route(`/${nanoid()}`);
 					});
 				}}
 				disabled={current.loading.value}

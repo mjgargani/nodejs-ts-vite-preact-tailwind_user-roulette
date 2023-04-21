@@ -17,29 +17,38 @@ import clickOgg from '@/assets/click.ogg';
 import Audio from './components/atom/Audio';
 import Filters from './components/atom/Filters';
 import Shields from './components/atom/Shields';
+import Router, { type CustomHistory, route } from 'preact-router';
+import { createHashHistory } from 'history';
 
 function App() {
 	fetchEffect();
 	handle.i18next(useTranslation());
 
 	return (
-		<div class="flex justify-center">
-			<Audio
-				name="click"
-				src={[
-					['mp3', clickMp3],
-					['wav', clickWav],
-					['ogg', clickOgg],
-				]}
-			/>
-			<Shields />
-			<Filters />
-			<Seed />
-			<MainContainer>
-				<Swipe />
-				<Roulette />
-			</MainContainer>
-		</div>
+		<Router
+			history={createHashHistory() as unknown as CustomHistory}
+			onChange={({ matches }) => {
+				handle.seed(matches?.seed ?? '');
+			}}
+		>
+			<div path="/:seed?" class="flex justify-center">
+				<Audio
+					name="click"
+					src={[
+						['mp3', clickMp3],
+						['wav', clickWav],
+						['ogg', clickOgg],
+					]}
+				/>
+				<Shields />
+				<Filters />
+				<Seed />
+				<MainContainer>
+					<Swipe />
+					<Roulette />
+				</MainContainer>
+			</div>
+		</Router>
 	);
 }
 
