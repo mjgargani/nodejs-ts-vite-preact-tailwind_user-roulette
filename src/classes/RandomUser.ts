@@ -76,10 +76,13 @@ class RandomUser implements RandomUserProps {
 				'access-control-allow-origin': '*',
 				'content-type': `${contentType(format)}; charset=utf-8`,
 			},
-		}).then(
-			async (response): Promise<RandomUserResponse | RandomUserResponseError | string> =>
-				['json', 'pretty'].includes(format) ? response.json() : response.text(),
-		);
+		}).then(async (response): Promise<RandomUserResponse | RandomUserResponseError | string> => {
+			if ([200, 304].includes(response.status)) {
+				return ['json', 'pretty'].includes(format) ? response.json() : response.text();
+			}
+
+			throw new Error('Unable to retrieve API information, please reload the page or try again later');
+		});
 	}
 }
 

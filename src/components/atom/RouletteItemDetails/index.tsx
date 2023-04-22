@@ -16,7 +16,7 @@ function RouletteItemDetails({ isSelected, user, classes }: RouletteItemDetailsP
 	return (
 		<section id="main-user-card-details" data-expanded={isSelected} class={classes.address as string}>
 			<p class="mb-2 text-center text-sm md:text-xl">
-				<span class="mr-2">{t(user.gender)}</span>
+				{!current.lego.value && <span class="mr-2">{t(user.gender)}</span>}
 				<span>{t(user.nat.toLocaleLowerCase())}</span>
 			</p>
 			<p class="mb-2 rounded bg-black/5 text-center text-sm md:text-base">

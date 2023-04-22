@@ -24,7 +24,8 @@
 			},
 			"rules": {
 				"@typescript-eslint/no-floating-promises": "off",
-				"no-return-assign": "off"
+				"no-return-assign": "off",
+				"no-promise-executor-return": "off"
 			}
 		}
 	],

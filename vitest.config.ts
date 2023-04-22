@@ -7,8 +7,6 @@ export default defineConfig({
 		'import.meta.vitest': 'undefined',
 	},
 	test: {
-		//https://github.com/vitest-dev/vitest/issues/2008
-		threads: false,
 		globals: true,
 		environment: 'jsdom',
 		setupFiles: ['./src/__test__/test-setup.ts'],
@@ -17,6 +15,7 @@ export default defineConfig({
 			reporter: ['json-summary', 'text'],
 			exclude: ['src/**/*d.ts', 'src/index.tsx', 'src/**/types.ts'],
 		},
+		clearMocks: true,
 		mockReset: true,
 		restoreMocks: true,
 	},
