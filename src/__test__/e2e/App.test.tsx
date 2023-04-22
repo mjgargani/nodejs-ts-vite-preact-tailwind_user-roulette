@@ -37,7 +37,7 @@ beforeEach(async () => {
 
 afterEach(() => {
 	signals.reset();
-	server(200).resetHandlers();
+	server(503).resetHandlers();
 });
 
 describe('main page tests', () => {
@@ -193,8 +193,4 @@ describe('main page tests', () => {
 			expect(selectSeed).toHaveTextContent(inputSeed.value);
 		}
 	}, 10000);
-
-	it('needs return a warning message on screen when the status of API be different than 200', async () => {
-		expect(true).toBe(true);
-	});
 });

@@ -17,7 +17,7 @@ const mock: Record<string, RandomUserResponse> = {
 	'male,female,br,ca,rs,tr': randomFilterNatC as RandomUserResponse,
 };
 
-export const handlers = (statusCode: 200) => [
+export const handlers = (statusCode: 200 | 503) => [
 	rest.get('https://randomuser.me/api/1.4/', async (req, res, ctx) => {
 		const filters = req.url.searchParams;
 
@@ -28,6 +28,15 @@ export const handlers = (statusCode: 200) => [
 
 		const response = mock[condition] || randomUsers;
 
-		return res(ctx.status(statusCode), ctx.json(response));
+		return res(
+			ctx.status(statusCode),
+			ctx.json(
+				statusCode === 200
+					? response
+					: {
+							error: 'Uh oh, something has gone wrong. Please tweet us @randomapi about the issue. Thank you.',
+					  },
+			),
+		);
 	}),
 ];

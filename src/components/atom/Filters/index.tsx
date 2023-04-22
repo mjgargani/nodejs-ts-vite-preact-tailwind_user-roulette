@@ -148,18 +148,20 @@ function Filters() {
 								</div>
 							))
 						)}
-						<button
-							class="ml-1"
-							onClick={() =>
-								handle.notification(
-									true,
-									'normal',
-									'In principle, the "Random User API" does not have options with non-cisgender sexual diversity',
-								)
-							}
-						>
-							ℹ️
-						</button>
+						{!current.lego.value && (
+							<button
+								class="ml-1"
+								onClick={() =>
+									handle.notification(
+										true,
+										'normal',
+										'In principle, the "Random User API" does not have options with non-cisgender sexual diversity',
+									)
+								}
+							>
+								ℹ️
+							</button>
+						)}
 					</div>
 				</div>
 				<div class="flex flex-wrap justify-center">
