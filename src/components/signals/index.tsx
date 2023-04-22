@@ -13,7 +13,7 @@ import * as storage from '@/utils/storage';
 import { type NotificationProps } from '../atom/Notification';
 
 export const signals = {
-	loading: signal<boolean>(true),
+	loading: signal<boolean>(false),
 	seed: signal<string>(filters.get<Seed>('seeds', filters.initial.seeds).filter((el) => Boolean(el.selected))[0].seed),
 	angle: signal<number>(0),
 	users: {
@@ -80,7 +80,7 @@ export const handle = {
 
 // For the test env
 export const reset = () => {
-	signals.loading.value = true;
+	signals.loading.value = false;
 	signals.angle.value = 0;
 	signals.users.results.value = undefined;
 	signals.selected.value = '';

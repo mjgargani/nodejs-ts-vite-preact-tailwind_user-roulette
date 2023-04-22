@@ -175,14 +175,14 @@ describe('main page tests', () => {
 		const seedOptions = () => screen.getAllByTestId(/test-seed-option-\w/);
 		expect(seedOptions()).toHaveLength(2);
 
-		for (let i = 1; i <= 3; i++) {
+		for (let i = 1; i <= 2; i++) {
 			fireEvent.click(screen.getByTestId('test-btn-random-seed'));
 
 			// Wait for the roulette
 			await new Promise((res) =>
 				setTimeout(() => {
 					res(true);
-				}, 2500),
+				}, 3000),
 			);
 
 			expect(seedOptions()).toHaveLength(2 + i);

@@ -37,8 +37,10 @@ function Filters() {
 			.map((el) => el.checked && (el.value as User['gender']))
 			.filter(Boolean) as Array<User['gender']>;
 
-		if (current.filters.gender() !== dataGender && dataGender.length === 1) {
+		if (current.filters.gender() !== dataGender && dataGender.length === 1 && Boolean(current.seed.value)) {
+			handle.seed('');
 			route('/');
+			handle.notification(true, 'warning', 'It is not possible to use seeds for a specific gender');
 		}
 
 		handle.filters.set<User['gender']>('gender', dataGender);
@@ -146,6 +148,18 @@ function Filters() {
 								</div>
 							))
 						)}
+						<button
+							class="ml-1"
+							onClick={() =>
+								handle.notification(
+									true,
+									'normal',
+									'In principle, the "Random User API" does not have options with non-cisgender sexual diversity',
+								)
+							}
+						>
+							ℹ️
+						</button>
 					</div>
 				</div>
 				<div class="flex flex-wrap justify-center">

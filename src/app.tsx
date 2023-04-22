@@ -24,6 +24,7 @@ import Notification from './components/atom/Notification';
 function App() {
 	fetchEffect();
 	handle.i18next(useTranslation());
+	const { t } = current.i18next.value;
 
 	return (
 		<Router
@@ -45,7 +46,7 @@ function App() {
 				<Filters />
 				<Seed />
 				<Notification show={current.notification.value[0]} type={current.notification.value[1]}>
-					{current.notification.value[2]}
+					{t(current.notification.value[2])}
 				</Notification>
 				<MainContainer>
 					<Swipe />
