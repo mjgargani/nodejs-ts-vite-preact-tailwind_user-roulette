@@ -10,6 +10,7 @@ import * as filters from './handlers/filters';
 
 import { type Seed } from '../atom/Filters';
 import * as storage from '@/utils/storage';
+import { type NotificationProps } from '../atom/Notification';
 
 export const signals = {
 	loading: signal<boolean>(true),
@@ -31,6 +32,7 @@ export const signals = {
 		nat: signal<Array<Nationalities['1.4']>>(filters.get<Nationalities['1.4']>('nat', filters.initial.nat)),
 	},
 	show: signal<boolean>(false),
+	notification: signal<[boolean, NotificationProps['type'], string]>([false, 'normal', '']),
 };
 
 export const current = {
@@ -53,6 +55,7 @@ export const current = {
 		nat: () => filters.get<Nationalities['1.4']>('nat', filters.initial.nat),
 	},
 	show: computed(() => signals.show.value),
+	notification: computed(() => signals.notification.value),
 };
 
 export const handle = {
@@ -71,6 +74,8 @@ export const handle = {
 	click: (active: boolean) => (signals.click.value = active),
 	filters,
 	show: (state: boolean) => (signals.show.value = state),
+	notification: (show: boolean, type?: NotificationProps['type'], message?: string) =>
+		(signals.notification.value = [show, type ?? 'normal', message ?? '']),
 };
 
 // For the test env
@@ -86,6 +91,7 @@ export const reset = () => {
 	signals.audio.value = {};
 	signals.click.value = true;
 	signals.show.value = false;
+	signals.notification.value = [false, 'normal', ''];
 
 	storage.cls();
 	signals.seed.value = filters.get<Seed>('seeds', filters.initial.seeds).filter((el) => Boolean(el.selected))[0].seed;

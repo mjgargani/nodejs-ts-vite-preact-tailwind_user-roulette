@@ -3,7 +3,7 @@ import type Preact from 'preact';
 import { h } from 'preact';
 import { useTranslation, withTranslation } from 'react-i18next';
 
-import { handle } from '@/components/signals';
+import { current, handle } from '@/components/signals';
 import MainContainer from '@/components/templates/MainContainer';
 import Seed from '@/components/atom/Seed';
 import Swipe from '@/components/atom/Swipe';
@@ -19,6 +19,7 @@ import Filters from './components/atom/Filters';
 import Shields from './components/atom/Shields';
 import Router, { type CustomHistory, route } from 'preact-router';
 import { createHashHistory } from 'history';
+import Notification from './components/atom/Notification';
 
 function App() {
 	fetchEffect();
@@ -43,6 +44,9 @@ function App() {
 				<Shields />
 				<Filters />
 				<Seed />
+				<Notification show={current.notification.value[0]} type={current.notification.value[1]}>
+					{current.notification.value[2]}
+				</Notification>
 				<MainContainer>
 					<Swipe />
 					<Roulette />
