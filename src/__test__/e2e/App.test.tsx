@@ -186,12 +186,14 @@ describe('main page tests', () => {
 			);
 
 			expect(seedOptions()).toHaveLength(2 + i);
+
+			const inputSeed: HTMLInputElement = screen.getByTestId(/test-input-seed/);
+			const selectSeed: HTMLSelectElement = screen.getByTestId(/test-seed-select/);
+
+			expect(selectSeed).toHaveTextContent(inputSeed.value);
 		}
 	}, 10000);
 
-	it('needs, optionally, to receive the seed input on the endpoint <host>/#/<seed>', async () => {
-		expect(true).toBe(true);
-	});
 	it('needs return a warning message on screen when the status of API be different than 200', async () => {
 		expect(true).toBe(true);
 	});

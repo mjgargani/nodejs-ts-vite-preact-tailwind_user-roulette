@@ -86,6 +86,7 @@ function Filters() {
 							title={t('Previous Seeds')!}
 							onChange={handleSeeds}
 							class="mr-1 w-3/4 rounded bg-gray-900 text-gray-50"
+							data-testid="test-seed-select"
 						>
 							<option id={`filter_seed_none`} value="" data-testid="test-seed-option-none" selected={false}>
 								{`<${t('None')}>`}
